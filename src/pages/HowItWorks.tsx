@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, CheckCircle, Smartphone, TrendingUp, Shield, Zap, HandCoins } from "lucide-react";
-import getLoanImg from "@/assets/get-loan.png";
-import customerLoanImg from "@/assets/customer-loan.jpg";
+import getLoanImg from "@/assets/get-loan.webp";
+import customerLoanImg from "@/assets/customer-loan.webp";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
@@ -51,7 +51,7 @@ const HowItWorks = () => (
             className="lg:w-1/2 w-full relative"
           >
             <div className="relative rounded-[2rem] lg:rounded-[4rem] overflow-hidden aspect-[16/10] lg:aspect-[4/5] shadow-2xl border-2 lg:border-8 border-white">
-              <img src={getLoanImg} alt="Get a loan instantly" className="w-full h-full object-cover" />
+              <img src={getLoanImg} alt="Get a loan instantly" className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
               
               {/* Floating Success Badge - Responsive Scaling */}
@@ -78,7 +78,7 @@ const HowItWorks = () => (
             className="relative flex flex-col"
           >
             <div className="relative rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden flex-grow shadow-2xl group min-h-[400px] lg:min-h-[500px]">
-              <img src={customerLoanImg} alt="Agenda Money customer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={customerLoanImg} alt="Agenda Money customer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
               <div className="absolute inset-0 bg-primary/5 mix-blend-overlay"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             </div>

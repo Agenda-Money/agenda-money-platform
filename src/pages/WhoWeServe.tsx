@@ -8,9 +8,9 @@ import osmanImg from "@/assets/osman.jpg";
 import akuImg from "@/assets/aku.jpg";
 import owusuImg from "@/assets/owusu.jpg";
 import mrAmuzuImg from "@/assets/mr amuzu.jpg";
-import aliImg from "@/assets/ali-received.jpg";
+import aliImg from "@/assets/ali-received.webp";
 import backboneImg from "@/assets/backbone.webp";
-import iphoneImg from "@/assets/iPhone 3_.png";
+import iphoneImg from "@/assets/iPhone 3_.webp";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
@@ -32,7 +32,7 @@ const WhoWeServe = () => (
     <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-primary text-primary-foreground overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl mx-4 lg:mx-8 mt-4">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={backboneImg} alt="Backbone of Ghana" className="w-full h-full object-cover opacity-50" />
+        <img src={backboneImg} alt="Backbone of Ghana" className="w-full h-full object-cover opacity-50" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent"></div>
       </div>
 
@@ -71,6 +71,7 @@ const WhoWeServe = () => (
                     src={p.image} 
                     alt={p.name} 
                     className="w-full h-full rounded-full object-cover border-[6px] border-white"
+                    loading="lazy"
                   />
                 </div>
               </div>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MessageCircle, Facebook, Instagram, Twitter, Linkedin, Send, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
-import contactImg from "@/assets/ali-mkumbwa-WUG0QcXVh0k-unsplash.jpg";
+import contactImg from "@/assets/ali-mkumbwa-WUG0QcXVh0k-unsplash.webp";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };

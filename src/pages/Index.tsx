@@ -64,7 +64,7 @@ const Index = () => {
             
             <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.8 }} className="lg:w-1/2 w-full relative">
                <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[4/3] lg:aspect-square shadow-2xl">
-                 <img src={heroImg} alt="Accra" className="w-full h-full object-cover" />
+                 <img src={heroImg} alt="Accra" className="w-full h-full object-cover" loading="lazy" />
                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent mix-blend-multiply"></div>
                </div>
                

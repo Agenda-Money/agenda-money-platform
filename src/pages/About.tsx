@@ -6,7 +6,7 @@ import { ArrowRight, Users, Zap, Shield, Lightbulb, TrendingUp, Target, Heart } 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
 
-import aboutImg from "@/assets/business-partners-shaking-hands-agreement.jpg";
+import aboutImg from "@/assets/business-partners-shaking-hands-agreement.webp";
 
 const About = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
@@ -44,7 +44,7 @@ const About = () => (
             className="lg:w-1/2 w-full relative"
           >
             <div className="relative rounded-[4rem] overflow-hidden aspect-[4/3] shadow-2xl border-8 border-white/5">
-              <img src={aboutImg} alt="Agenda Money Team" className="w-full h-full object-cover" />
+              <img src={aboutImg} alt="Agenda Money Team" className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent"></div>
             </div>
             
