@@ -1,77 +1,162 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = {
+    quick: [
+      { label: "Home", to: "/" },
+      { label: "How It Works", to: "/how-it-works" },
+      { label: "Who We Serve", to: "/who-we-serve" },
+      { label: "FAQs", to: "/faqs" },
+    ],
+    company: [
+      { label: "About Us", to: "/about" },
+      { label: "Contact", to: "/contact" },
+      { label: "Careers", to: "#" },
+    ],
+    legal: [
+      { label: "Privacy Policy", to: "#" },
+      { label: "Terms & Conditions", to: "#" },
+      { label: "Cookie Policy", to: "#" },
+    ]
+  };
+
+  const socialLinks = [
+    { Icon: Facebook, href: "#" },
+    { Icon: Instagram, href: "#" },
+    { Icon: Twitter, href: "#" },
+    { Icon: Linkedin, href: "#" },
+    { Icon: Youtube, href: "#" },
+  ];
+
   return (
-    <footer className="bg-foreground text-primary-foreground">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div>
-            <span className="text-2xl font-heading font-extrabold">
-              Agenda<span className="text-secondary">Money</span>
-            </span>
-            <p className="mt-4 text-sm opacity-70 leading-relaxed">
-              Empowering individuals and micro-businesses across Ghana with fast, affordable micro-loans.
+    <footer className="relative bg-[#0F0F0F] text-white pt-16 lg:pt-24 pb-12 overflow-hidden rounded-t-[3rem] lg:rounded-t-[5rem] mt-[-3rem] z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.3)]">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-secondary opacity-[0.02] rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16 lg:mb-20">
+          
+          {/* Brand & Mission */}
+          <div className="lg:col-span-4">
+            <Link to="/" className="inline-block mb-6 lg:mb-8">
+              <span className="text-3xl font-heading font-black tracking-tighter">
+                Agenda<span className="text-primary italic">Money.</span>
+              </span>
+            </Link>
+            <p className="text-white/50 text-base lg:text-lg leading-relaxed mb-8 max-w-sm font-medium">
+              We're redefining credit accessibility in Ghana. Fast, fair, and completely digital micro-loans for the backbone of our economy.
             </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-secondary">Quick Links</h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Home", to: "/" },
-                { label: "How It Works", to: "/how-it-works" },
-                { label: "Who We Serve", to: "/who-we-serve" },
-                { label: "FAQs", to: "/faqs" },
-                { label: "About Us", to: "/about" },
-                { label: "Contact", to: "/contact" },
-              ].map((l) => (
-                <li key={l.to}>
-                  <Link to={l.to} className="text-sm opacity-70 hover:opacity-100 hover:text-secondary transition-all">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-secondary">Legal</h4>
-            <ul className="space-y-3">
-              <li><span className="text-sm opacity-70">Privacy Policy</span></li>
-              <li><span className="text-sm opacity-70">Terms & Conditions</span></li>
-              <li><span className="text-sm opacity-70">Cookie Policy</span></li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-secondary">Contact</h4>
-            <ul className="space-y-3">
-              <li><a href="mailto:support@agendamoney.com" className="text-sm opacity-70 hover:opacity-100 hover:text-secondary">support@agendamoney.com</a></li>
-              <li><a href="tel:0558587833" className="text-sm opacity-70 hover:opacity-100 hover:text-secondary">0558587833</a></li>
-            </ul>
-            <div className="flex gap-4 mt-6">
-              {[Facebook, Instagram, Twitter, Linkedin, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="opacity-50 hover:opacity-100 hover:text-secondary transition-all">
-                  <Icon size={18} />
+            <div className="flex gap-3">
+              {socialLinks.map(({ Icon, href }, i) => (
+                <a 
+                  key={i} 
+                  href={href} 
+                  className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
+                >
+                  <Icon size={18} className="lg:w-5 lg:h-5 group-hover:scale-110 transition-transform" />
                 </a>
               ))}
             </div>
           </div>
+
+          {/* Navigation & Company - Unified Column on Desktop, Split on Mobile */}
+          <div className="lg:col-span-4 grid grid-cols-2 gap-8 lg:contents">
+            <div>
+              <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-6 lg:mb-8">Navigation</h4>
+              <ul className="space-y-3 lg:space-y-4">
+                {footerLinks.quick.map((link) => (
+                  <li key={link.label}>
+                    <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
+                      <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-6 lg:mb-8">Company</h4>
+              <ul className="space-y-3 lg:space-y-4">
+                {footerLinks.company.map((link) => (
+                  <li key={link.label}>
+                    <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
+                      <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="lg:col-span-4">
+            <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-6 lg:mb-8">Connect With Us</h4>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6">
+              <a href="mailto:support@agendamoney.com" className="flex items-center gap-4 group p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/20 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Email Support</p>
+                  <p className="text-sm font-bold">support@agendamoney.com</p>
+                </div>
+              </a>
+              <a href="tel:0558587833" className="flex items-center gap-4 group p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-secondary/20 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+                  <Phone size={18} />
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Call Center</p>
+                  <p className="text-sm font-bold">0558587833</p>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs opacity-50 text-center md:text-left">
-            © 2025 Agenda Money Limited. A member of the Micro Credit Association of Ghana (MCAG).
-          </p>
-          <div className="flex gap-6 text-xs opacity-50">
-            <span>MTN MoMo</span>
-            <span>Telecel Cash</span>
-            <span>AirtelTigo Money</span>
+        {/* Bottom Bar */}
+        <div className="pt-12 border-t border-white/10 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col items-center lg:items-start gap-2">
+            <p className="text-white/30 text-xs font-medium tracking-wide">
+              © {currentYear} Agenda Money Limited. Registered Micro Credit Institution.
+            </p>
+            <p className="text-white/20 text-[10px] font-bold uppercase tracking-widest">
+              Member of the Micro Credit Association of Ghana (MCAG)
+            </p>
+          </div>
+
+          <div className="flex items-center gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hidden sm:block">Partners</span>
+            <div className="flex items-center gap-6">
+              {/* MoMo Badges - Stylized Text Representation for Sleekness */}
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                <span className="text-[10px] font-black tracking-tighter">MTN MoMo</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-red-500"></div>
+                <span className="text-[10px] font-black tracking-tighter">Telecel Cash</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                <span className="text-[10px] font-black tracking-tighter">AT Money</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex gap-6">
+            {footerLinks.legal.map((link) => (
+              <Link key={link.label} to={link.to} className="text-[10px] font-bold uppercase tracking-widest text-white/30 hover:text-white transition-colors">
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
