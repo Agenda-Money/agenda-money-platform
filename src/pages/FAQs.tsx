@@ -31,9 +31,9 @@ const faqSections = [
   {
     title: "Loan Details",
     items: [
-      { q: "How much can I borrow?", a: "First-time applicants can access between GHS 50 and GHS 300. The limit grows up to GHS 2,000 over time based on repayment history." },
-      { q: "What are the loan durations?", a: "1, 5, 10, and 14 days. A 30-day option is available on merit. You only pay interest for the days you are indebted." },
-      { q: "What is the interest rate?", a: "0.5% per day. This reduces as your credit score increases. E.g., 3.5% for 7 days, 7% for 14 days." },
+      { q: "How much can I borrow?", a: "Applicants can access between GHS 50 and GHS 2,000 depending on their qualification and repayment history." },
+      { q: "What are the loan durations?", a: "1, 5, 10, 14, and 30 days. You only pay interest for the days you are indebted." },
+      { q: "What is the interest rate?", a: "0.5% per day. E.g., 3.5% for 7 days, 7% for 14 days." },
       { q: "What happens if I repay late?", a: "A penal interest of 2% per day applies on any overdue amount." },
       { q: "What happens if I don't repay?", a: "After all recovery measures are exhausted, the borrower is blacklisted and cannot access new loans. The credit record is shared with Ghana's Credit Bureau. Connections within the defaulter's network may also be negatively affected." },
     ],

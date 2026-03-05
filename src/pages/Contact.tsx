@@ -95,17 +95,16 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Main Contact Grid */}
-      <section className="py-16 lg:py-24 bg-background px-2 lg:px-8">
+      <section className="py-16 lg:py-24 bg-background px-4 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             
             {/* Left Side: Cards */}
             <div className="lg:col-span-5 space-y-6">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger}>
-                <motion.h2 variants={fadeUp} className="text-2xl lg:text-3xl font-heading font-black text-[#1A1A1A] mb-8 lg:mb-10 px-4 lg:px-0 text-center lg:text-left">Our Channels</motion.h2>
+                <motion.h2 variants={fadeUp} className="text-2xl lg:text-3xl font-heading font-black text-[#1A1A1A] mb-8 lg:mb-10 text-center lg:text-left">Our Channels</motion.h2>
                 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4 px-4 lg:px-0">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
                   {contactMethods.map((method, i) => (
                     <motion.a 
                       key={i}
@@ -125,17 +124,6 @@ const Contact = () => {
                     </motion.a>
                   ))}
                 </div>
-
-                <motion.div variants={fadeUp} className="mt-10 lg:mt-12 pt-10 lg:pt-12 border-t border-black/5 px-4 lg:px-0 text-center lg:text-left">
-                  <p className="font-heading font-black text-[10px] lg:text-xs uppercase tracking-widest text-[#8A8A8A] mb-6">Stay Connected</p>
-                  <div className="flex gap-4 justify-center lg:justify-start">
-                    {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                      <a key={i} href="#" className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-black/5 flex items-center justify-center text-[#6A6A6A] hover:bg-primary hover:text-white hover:border-primary transition-all">
-                        <Icon size={18} className="lg:w-5 lg:h-5" />
-                      </a>
-                    ))}
-                  </div>
-                </motion.div>
               </motion.div>
             </div>
 
@@ -145,7 +133,7 @@ const Contact = () => {
                 initial={{ opacity: 0, x: 20 }} 
                 whileInView={{ opacity: 1, x: 0 }} 
                 viewport={{ once: true, margin: "-50px" }}
-                className="bg-[#FAFAFA] rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-12 border border-black/5 shadow-2xl relative overflow-hidden mx-2 lg:mx-0"
+                className="bg-[#FAFAFA] rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-12 border border-black/5 shadow-2xl relative overflow-hidden"
               >
                 {/* Decorative glow */}
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary opacity-5 rounded-full blur-[80px] pointer-events-none"></div>

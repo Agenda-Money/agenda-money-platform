@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Zap, Smartphone, Shield, CheckCircle, ArrowRight, ArrowUp, Users, TrendingUp, Clock, Star } from "lucide-react";
-import heroImg from "@/assets/hero-accra.jpg";
+import heroAccra from "@/assets/hero-accra.jpg";
 import adizaImg from "@/assets/adizs.jpg";
 import alexImg from "@/assets/alex.jpg";
 import kofiImg from "@/assets/kofi.jpg";
+import iphone3Img from "@/assets/iPhone 3_.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -42,8 +43,8 @@ const Index = () => {
                 <Zap size={18} /> Instant Loans in Ghana
               </motion.div>
               <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-[1.05] mb-6 tracking-tight text-[#1A1A1A]">
-                Your money, <br/>
-                <span className="text-primary">your future.</span>
+                Giving credit <br/>
+                <span className="text-primary">where it's due.</span>
               </motion.h1>
               <motion.p variants={fadeUp} className="text-xl opacity-80 mb-10 leading-relaxed max-w-lg text-[#4A4A4A]">
                 Fast, simple, affordable micro-loans for individuals and small businesses. No collateral. Just cash when you need it.
@@ -64,7 +65,7 @@ const Index = () => {
             
             <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.8 }} className="lg:w-1/2 w-full relative">
                <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[4/3] lg:aspect-square shadow-2xl">
-                 <img src={heroImg} alt="Accra" className="w-full h-full object-cover" loading="lazy" />
+                 <img src={heroAccra} alt="Accra" className="w-full h-full object-cover" loading="lazy" />
                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent mix-blend-multiply"></div>
                </div>
                
@@ -93,41 +94,37 @@ const Index = () => {
         </div>
       </section>
 
-      {/* TICKER */}
-      <div className="bg-[#1A1A1A] text-white py-4 overflow-hidden shadow-inner">
-        <div className="animate-ticker whitespace-nowrap flex items-center">
-          {[...Array(2)].map((_, i) => (
-            <span key={i} className="inline-flex items-center text-sm lg:text-base font-bold tracking-wide uppercase">
-              &nbsp;&nbsp;&nbsp;&nbsp;GHS 50 - GHS 2,000 Available <span className="mx-6 text-primary">●</span> No Collateral Required <span className="mx-6 text-primary">●</span> Instant Mobile Money Disbursement <span className="mx-6 text-primary">●</span> 0.5% Per Day Interest <span className="mx-6 text-primary">●</span> 95% Customer Retention Rate <span className="mx-6 text-primary">●</span> Serving All of Ghana <span className="mx-6 text-primary">●</span>
-            </span>
+      {/* REFINED FULL-WIDTH TICKER */}
+      <div className="bg-[#0A0A0A] text-white py-6 overflow-hidden border-y border-white/5 relative z-20">
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
+        
+        <div className="animate-ticker whitespace-nowrap flex items-center gap-16">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="flex items-center gap-16">
+              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> GHS 50 - 2,000 Available
+              </span>
+              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> No Collateral Required
+              </span>
+              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Instant MoMo Payouts
+              </span>
+              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> 0.5% Daily Interest
+              </span>
+              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Serving All of Ghana
+              </span>
+            </div>
           ))}
         </div>
       </div>
 
-      {/* STATS SECTION */}
-      <section className="py-24 lg:py-32 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {[
-              { num: "GHS 560K+", label: "Total Disbursed", icon: TrendingUp, color: "text-primary", bg: "bg-primary/10" },
-              { num: "95%", label: "Retention Rate", icon: Users, color: "text-secondary", bg: "bg-secondary/10" },
-              { num: "<1%", label: "Default Rate", icon: Shield, color: "text-emerald-500", bg: "bg-emerald-500/10" },
-              { num: "Mins", label: "Avg. Approval", icon: Clock, color: "text-primary", bg: "bg-primary/10" },
-            ].map((s) => (
-              <motion.div key={s.label} variants={fadeUp} className="bg-white border border-black/5 rounded-[2.5rem] p-8 lg:p-10 text-center shadow-xl shadow-black/5 hover:-translate-y-2 transition-transform duration-300">
-                <div className={`${s.bg} w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6`}>
-                  <s.icon className={`${s.color}`} size={36} />
-                </div>
-                <div className={`text-4xl lg:text-5xl font-heading font-black text-[#1A1A1A] tracking-tight mb-2`}>{s.num}</div>
-                <div className="text-lg font-bold text-[#6A6A6A]">{s.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* WHAT IS AGENDA MONEY */}
-      <section className="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden rounded-[3rem] lg:rounded-[5rem] mx-4 lg:mx-8 shadow-2xl shadow-primary/30">
+      <section className="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden rounded-[3rem] lg:rounded-[5rem] mx-4 lg:mx-8 shadow-2xl shadow-primary/30 mt-8 mb-24 lg:mb-32">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -150,7 +147,9 @@ const Index = () => {
               <div className="absolute -top-6 -right-6 bg-secondary text-secondary-foreground w-24 h-24 rounded-full flex items-center justify-center font-heading font-black text-2xl shadow-xl transform rotate-12">
                 FAST
               </div>
-              <Smartphone className="mx-auto text-primary mb-8" size={80} strokeWidth={1.5} />
+              <div className="w-full h-48 lg:h-64 mb-8 flex items-center justify-center">
+                <img src={iphone3Img} alt="Agenda Money App" className="h-full object-contain drop-shadow-2xl" loading="lazy" />
+              </div>
               <p className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">100% Mobile</p>
               <p className="text-[#6A6A6A] text-lg max-w-sm mx-auto">Apply, get approved, and receive cash instantly — all from the comfort of your phone.</p>
             </motion.div>
@@ -191,55 +190,30 @@ const Index = () => {
         </div>
       </section>
 
-      {/* LOAN LADDER / DETAILS COMPOSITE */}
+      {/* LOAN DETAILS SECTION */}
       <section className="py-24 lg:py-32 bg-[#FAFAFA] border-y border-black/5">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-7xl mx-auto">
-            
-            {/* Left: Ladder */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-heading font-extrabold text-[#1A1A1A] mb-6 leading-tight">
-                Unlock higher limits <br/>as you repay.
-              </motion.h2>
-              <motion.p variants={fadeUp} className="text-lg text-[#6A6A6A] mb-12">
-                We reward good behaviour. The more you borrow and repay on time, the larger your loan limit becomes and the lower your interest rate!
-              </motion.p>
-              
-              <div className="space-y-6">
-                {[
-                  { step: "Tier 3", range: "GHS 500 – 2,000", rate: "Lowest rate", color: "bg-emerald-500 text-white", border: "border-transparent" },
-                  { step: "Tier 2", range: "GHS 300 – 500", rate: "Medium rate", color: "bg-secondary text-secondary-foreground", border: "border-transparent" },
-                  { step: "Tier 1", range: "GHS 50 – 300", rate: "Starting rate", color: "bg-white text-foreground shadow-lg", border: "border-black/5" },
-                ].map((s, i) => (
-                  <motion.div key={s.step} variants={fadeUp} className={`${s.color} border ${s.border} rounded-[2rem] p-6 lg:p-8 flex items-center justify-between`}>
-                    <div>
-                      <div className="font-heading font-black text-2xl mb-1">{s.step}</div>
-                      <div className={`text-sm font-bold opacity-90 ${i === 2 ? "text-[#6A6A6A]" : ""}`}>{s.range}</div>
-                    </div>
-                    <div className="text-right flex items-center gap-3">
-                      <span className="font-bold">{s.rate}</span>
-                      {i < 2 && <ArrowUp size={24} className="opacity-80 drop-shadow-md" strokeWidth={3} />}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Right: Details Cards */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 gap-6">
-               <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-8 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-center min-h-[250px] sm:translate-y-12">
-                 <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center text-primary mb-6"><TrendingUp size={32} /></div>
-                 <h3 className="text-2xl font-heading font-black text-[#1A1A1A] mb-3">0.5% Daily</h3>
-                 <p className="text-[#6A6A6A] font-medium leading-relaxed">Pay only for the days you borrow. No hidden fees.</p>
-               </motion.div>
-               <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-8 shadow-xl shadow-primary/30 flex flex-col justify-center min-h-[250px]">
-                 <div className="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center text-white mb-6"><Clock size={32} /></div>
-                 <h3 className="text-2xl font-heading font-black mb-3">Flexible Term</h3>
-                 <p className="text-white/90 font-medium leading-relaxed">Choose from 1, 5, 10, 14, or 30 days to repay easily.</p>
-               </motion.div>
-            </motion.div>
-
+          <div className="max-w-4xl mx-auto text-center mb-16 lg:mb-20">
+             <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-4xl md:text-5xl font-heading font-extrabold text-[#1A1A1A] mb-6 tracking-tight">
+               Fast, Flexible, Affordable.
+             </motion.h2>
+             <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-lg text-[#6A6A6A] leading-relaxed max-w-2xl mx-auto">
+               We've designed our loans to be as transparent as possible. Choose your term, know your interest, and get funded instantly.
+             </motion.p>
           </div>
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+             <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-center min-h-[300px]">
+               <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center text-primary mb-8"><TrendingUp size={40} /></div>
+               <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">0.5% Daily</h3>
+               <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed">Pay only for the days you borrow. No hidden fees, no application costs.</p>
+             </motion.div>
+             <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col justify-center min-h-[300px]">
+               <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8"><Clock size={40} /></div>
+               <h3 className="text-3xl font-heading font-black mb-4">Flexible Terms</h3>
+               <p className="text-white/90 text-lg font-medium leading-relaxed">Repay in 1, 5, 10, 14, or 30 days. You're in complete control.</p>
+             </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -331,7 +305,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16 lg:mb-20">
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-4">Trusted by thousands</motion.h2>
-            <motion.p variants={fadeUp} className="text-xl text-primary font-bold">95% of customers return for a second loan.</motion.p>
+            <motion.p variants={fadeUp} className="text-xl text-primary font-bold">Trusted by Ghanaians for fast and reliable financial support.</motion.p>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((t, i) => (

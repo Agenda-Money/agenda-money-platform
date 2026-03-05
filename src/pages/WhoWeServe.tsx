@@ -10,7 +10,6 @@ import owusuImg from "@/assets/owusu.jpg";
 import mrAmuzuImg from "@/assets/mr amuzu.jpg";
 import aliImg from "@/assets/ali-received.webp";
 import backboneImg from "@/assets/backbone.webp";
-import iphoneImg from "@/assets/iPhone 3_.webp";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
@@ -110,44 +109,28 @@ const WhoWeServe = () => (
             </motion.div>
           </motion.div>
 
-          {/* Middle: Floating Info Cards (5 cols) */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="lg:col-span-5 relative">
+          {/* Right: Info Cards (8 cols) */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="lg:col-span-8 relative">
              {/* Decorative background blob */}
              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-full blur-[60px] pointer-events-none"></div>
 
-             <div className="grid sm:grid-cols-1 gap-6 relative">
-               <motion.div variants={fadeUp} className="bg-white rounded-[2rem] lg:rounded-[2.5rem] p-6 lg:p-10 shadow-2xl shadow-black/5 border border-black/5 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
-                 <div className="bg-secondary/10 w-14 h-14 lg:w-20 lg:h-20 rounded-xl lg:rounded-full flex items-center justify-center text-secondary mb-6 lg:mb-8">
-                   <TrendingUp size={28} className="lg:w-10 lg:h-10" />
+             <div className="grid md:grid-cols-2 gap-8 relative">
+               <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-2xl shadow-black/5 border border-black/5 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
+                 <div className="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center text-secondary mb-8">
+                   <TrendingUp size={40} />
                  </div>
-                 <h3 className="text-2xl lg:text-3xl font-heading font-black text-[#1A1A1A] mb-3 lg:mb-4">Financial Inclusion</h3>
-                 <p className="text-[#6A6A6A] text-base lg:text-lg leading-relaxed flex-grow">We provide capital to ambitious Ghanaians who are locked out of the traditional banking system due to lack of collateral or formal histories.</p>
+                 <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Financial Inclusion</h3>
+                 <p className="text-[#6A6A6A] text-lg leading-relaxed flex-grow">We provide capital to ambitious Ghanaians who are locked out of the traditional banking system due to lack of collateral or formal histories.</p>
                </motion.div>
 
-               <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2rem] lg:rounded-[2.5rem] p-6 lg:p-10 shadow-2xl shadow-primary/30 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
-                 <div className="bg-white/20 w-14 h-14 lg:w-20 lg:h-20 rounded-xl lg:rounded-full flex items-center justify-center text-white mb-6 lg:mb-8">
-                   <HandCoins size={28} className="lg:w-10 lg:h-10" />
+               <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
+                 <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8">
+                   <HandCoins size={40} />
                  </div>
-                 <h3 className="text-2xl lg:text-3xl font-heading font-black mb-3 lg:mb-4">Nationwide Access</h3>
-                 <p className="text-white/90 text-base lg:text-lg leading-relaxed flex-grow">Based in Accra, we serve all 16 regions of Ghana. Our 100% online platform ensures distance is never a barrier to opportunity.</p>
+                 <h3 className="text-3xl font-heading font-black mb-4">Nationwide Access</h3>
+                 <p className="text-white/90 text-lg leading-relaxed flex-grow">Based in Accra, we serve all 16 regions of Ghana. Our 100% online platform ensures distance is never a barrier to opportunity.</p>
                </motion.div>
              </div>
-          </motion.div>
-
-          {/* Right: iPhone Mockup (3 cols) */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }} 
-            className="lg:col-span-3 hidden xl:flex items-center justify-center relative group"
-          >
-             <div className="relative w-full max-w-[280px] aspect-[1/2] rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3">
-               <img src={iphoneImg} alt="Agenda Money Mobile App" className="w-full h-full object-contain" />
-               <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500"></div>
-             </div>
-             
-             {/* Decorative blurred rings behind phone */}
-             <div className="absolute inset-0 -z-10 bg-primary/5 rounded-full blur-3xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           </motion.div>
 
         </div>
