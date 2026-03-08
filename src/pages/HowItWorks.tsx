@@ -5,7 +5,7 @@ import { ArrowRight, Users, CheckCircle, Smartphone, TrendingUp, Shield, Zap, Ha
 import getLoanImg from "@/assets/get-loan.webp";
 import customerLoanImg from "@/assets/customer-loan.webp";
 
-const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const steps = [

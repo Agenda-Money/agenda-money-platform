@@ -11,7 +11,7 @@ import mrAmuzuImg from "@/assets/mr amuzu.jpg";
 import aliImg from "@/assets/ali-received.webp";
 import backboneImg from "@/assets/backbone.webp";
 
-const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } } };
 const stagger = { visible: { transition: { staggerChildren: 0.08 } } };
 
 const personas = [

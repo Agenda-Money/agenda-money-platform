@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Zap, Shield, TrendingUp, Target, Heart } from "lucide-react";
 import aboutImg from "@/assets/business-partners-shaking-hands-agreement.webp";
 
-const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const About = () => (
