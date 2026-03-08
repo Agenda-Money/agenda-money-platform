@@ -1,124 +1,79 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MessageCircle, Facebook, Instagram, Twitter, Linkedin, Send, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MessageCircle, Send, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import contactImg from "@/assets/ali-mkumbwa-WUG0QcXVh0k-unsplash.webp";
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } } };
+const stagger = { visible: { transition: { staggerChildren: 0.08 } } };
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const contactMethods = [
-    { 
-      icon: Mail, 
-      title: "Email Support", 
-      value: "support@agendamoney.com", 
-      href: "mailto:support@agendamoney.com",
-      color: "bg-primary/10 text-primary",
-      borderColor: "hover:border-primary/30"
-    },
-    { 
-      icon: Phone, 
-      title: "Call Center", 
-      value: "0558587833", 
-      href: "tel:0558587833",
-      color: "bg-secondary/10 text-secondary",
-      borderColor: "hover:border-secondary/30"
-    },
-    { 
-      icon: MapPin, 
-      title: "Office Location", 
-      value: "Accra, Ghana", 
-      href: "#",
-      color: "bg-emerald-500/10 text-emerald-500",
-      borderColor: "hover:border-emerald-500/30"
-    },
-    { 
-      icon: Clock, 
-      title: "Business Hours", 
-      value: "Mon - Fri, 8am - 5pm", 
-      href: "#",
-      color: "bg-orange-500/10 text-orange-500",
-      borderColor: "hover:border-orange-500/30"
-    }
+    { icon: Mail, title: "Email Support", value: "support@agendamoney.com", href: "mailto:support@agendamoney.com", accent: "bg-primary/8 text-primary" },
+    { icon: Phone, title: "Call Center", value: "0558587833", href: "tel:0558587833", accent: "bg-secondary/8 text-secondary" },
+    { icon: MapPin, title: "Office Location", value: "Accra, Ghana", href: "#", accent: "bg-success/8 text-success" },
+    { icon: Clock, title: "Business Hours", value: "Mon - Fri, 8am - 5pm", href: "#", accent: "bg-warning/10 text-warning" }
   ];
 
   return (
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#1A1A1A] text-white overflow-hidden rounded-b-[4rem] lg:rounded-b-[6rem] shadow-2xl mx-4 lg:mx-8 mt-4 mb-20">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary opacity-10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary opacity-5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
+      {/* Hero */}
+      <section className="relative pt-28 pb-20 lg:pt-40 lg:pb-28 bg-overlay text-primary-foreground overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary opacity-8 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
         
-        <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <motion.div initial="hidden" animate="visible" variants={stagger} className="text-left w-full lg:w-auto">
-              <motion.div variants={fadeUp} className="inline-block bg-white/10 backdrop-blur-md text-white font-bold px-6 py-3 rounded-full mb-8 tracking-wide text-sm uppercase">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div initial="hidden" animate="visible" variants={stagger} className="text-left">
+              <motion.div variants={fadeUp} className="inline-block bg-white/8 text-white/70 font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide text-xs uppercase border border-white/10">
                 Let's Talk
               </motion.div>
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-8 leading-[1.05] tracking-tight text-white">
-                Get in <br/>
-                <span className="text-primary italic">Touch.</span>
+              <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-6 leading-[1.08] tracking-tight">
+                Get in <br /><span className="text-primary">Touch.</span>
               </motion.h1>
-              <motion.p variants={fadeUp} className="text-xl text-white/70 leading-relaxed max-w-lg mb-10">
-                Have a question or need financial support? Our team is here to help you navigate your journey with ease.
+              <motion.p variants={fadeUp} className="text-base lg:text-lg text-white/60 leading-relaxed max-w-md mb-8">
+                Have a question or need financial support? Our team is here to help you navigate your journey.
               </motion.p>
-              
-              <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
-                <a 
-                  href="https://wa.me/233558587833" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="group inline-flex items-center gap-3 bg-[#25D366] text-white rounded-full px-8 py-5 font-bold hover:scale-105 transition-all shadow-xl shadow-green-500/20"
-                >
-                  <MessageCircle size={24} className="group-hover:rotate-12 transition-transform" />
+              <motion.div variants={fadeUp}>
+                <a href="https://wa.me/233558587833" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2.5 bg-success text-success-foreground rounded-full px-6 py-4 font-bold text-sm hover:scale-105 transition-all shadow-lg shadow-success/20">
+                  <MessageCircle size={18} className="group-hover:rotate-12 transition-transform" />
                   WhatsApp Support
                 </a>
               </motion.div>
             </motion.div>
             
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95, rotate: 2 }} 
-              animate={{ opacity: 1, scale: 1, rotate: 0 }} 
-              transition={{ duration: 0.8 }} 
-              className="relative w-full"
-            >
-              <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[16/10] lg:aspect-[4/5] shadow-2xl border-4 lg:border-8 border-white/5">
+            <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }} className="relative w-full">
+              <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[16/10] lg:aspect-[4/5] shadow-2xl shadow-black/20 border border-white/5">
                 <img src={contactImg} alt="Contact Agenda Money" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-overlay/70 via-transparent to-transparent" />
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 lg:py-24 bg-background px-4 lg:px-8">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+      {/* Contact section */}
+      <section className="py-14 lg:py-20 bg-background px-4 lg:px-8">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
             
-            {/* Left Side: Cards */}
-            <div className="lg:col-span-5 space-y-6">
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger}>
-                <motion.h2 variants={fadeUp} className="text-2xl lg:text-3xl font-heading font-black text-[#1A1A1A] mb-8 lg:mb-10 text-center lg:text-left">Our Channels</motion.h2>
+            {/* Contact cards */}
+            <div className="lg:col-span-5 space-y-4">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+                <motion.h2 variants={fadeUp} className="text-xl lg:text-2xl font-heading font-bold text-text-primary mb-6 text-center lg:text-left">Our Channels</motion.h2>
                 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-3">
                   {contactMethods.map((method, i) => (
-                    <motion.a 
-                      key={i}
-                      href={method.href}
-                      variants={fadeUp}
-                      className={`block p-5 lg:p-6 rounded-[1.5rem] lg:rounded-[2rem] border border-black/5 bg-white shadow-xl shadow-black/[0.02] transition-all group ${method.borderColor} hover:-translate-y-1`}
-                    >
-                      <div className="flex items-center gap-4 lg:gap-6">
-                        <div className={`w-12 h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl shrink-0 ${method.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                          <method.icon size={24} className="lg:w-7 lg:h-7" />
+                    <motion.a key={i} href={method.href} variants={fadeUp} className="block p-4 rounded-xl border border-border/50 bg-surface-elevated shadow-sm transition-all group hover:border-primary/20 hover:-translate-y-0.5 hover:shadow-md">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-10 h-10 rounded-lg shrink-0 ${method.accent} flex items-center justify-center group-hover:scale-105 transition-transform`}>
+                          <method.icon size={18} />
                         </div>
                         <div>
-                          <p className="text-[9px] lg:text-[10px] uppercase tracking-widest font-black text-[#8A8A8A] mb-1">{method.title}</p>
-                          <p className="text-base lg:text-lg font-bold text-[#1A1A1A]">{method.value}</p>
+                          <p className="text-[9px] uppercase tracking-widest font-semibold text-text-muted mb-0.5">{method.title}</p>
+                          <p className="text-sm font-semibold text-text-primary">{method.value}</p>
                         </div>
                       </div>
                     </motion.a>
@@ -127,50 +82,42 @@ const Contact = () => {
               </motion.div>
             </div>
 
-            {/* Right Side: Form */}
+            {/* Form */}
             <div className="lg:col-span-7">
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }} 
-                whileInView={{ opacity: 1, x: 0 }} 
-                viewport={{ once: true, margin: "-50px" }}
-                className="bg-[#FAFAFA] rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-12 border border-black/5 shadow-2xl relative overflow-hidden"
-              >
-                {/* Decorative glow */}
-                <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary opacity-5 rounded-full blur-[80px] pointer-events-none"></div>
-
+              <motion.div initial={{ opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-surface rounded-2xl p-5 lg:p-10 border border-border/50 relative overflow-hidden">
                 {submitted ? (
-                  <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-16 lg:py-20">
-                    <div className="bg-emerald-500 w-20 h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center text-white mx-auto mb-6 lg:mb-8 shadow-2xl shadow-emerald-500/30">
-                      <Send size={32} className="lg:w-10 lg:h-10" />
+                  <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-14">
+                    <div className="bg-success w-16 h-16 rounded-2xl flex items-center justify-center text-success-foreground mx-auto mb-5 shadow-lg shadow-success/20">
+                      <Send size={24} />
                     </div>
-                    <h3 className="text-3xl lg:text-4xl font-heading font-black text-[#1A1A1A] mb-3 lg:mb-4">Message Received!</h3>
-                    <p className="text-[#6A6A6A] text-lg lg:text-xl max-w-sm mx-auto">We'll get back to you within 24 business hours. Thank you for reaching out!</p>
+                    <h3 className="text-2xl font-heading font-bold text-text-primary mb-2">Message Received!</h3>
+                    <p className="text-text-secondary text-sm max-w-xs mx-auto">We'll get back to you within 24 business hours.</p>
                   </motion.div>
                 ) : (
                   <>
-                    <h3 className="text-2xl lg:text-3xl font-heading font-black text-[#1A1A1A] mb-2">Send us a message</h3>
-                    <p className="text-base text-[#6A6A6A] font-medium mb-8 lg:mb-10">Fill the form below and we'll be in touch soon.</p>
+                    <h3 className="text-xl font-heading font-bold text-text-primary mb-1">Send us a message</h3>
+                    <p className="text-sm text-text-secondary mb-6">Fill the form below and we'll be in touch soon.</p>
                     
-                    <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
-                      <div className="grid sm:grid-cols-2 gap-5 lg:gap-6">
-                        <div className="space-y-2">
-                          <label className="text-[10px] font-black uppercase tracking-widest text-[#8A8A8A] ml-2">Full Name</label>
-                          <input type="text" required placeholder="Enter your name" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-5 lg:px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:ring-4 focus:ring-primary/20 transition-all outline-none" />
+                    <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+                      <div className="grid sm:grid-cols-2 gap-3">
+                        <div className="space-y-1.5">
+                          <label className="text-[10px] font-semibold uppercase tracking-widest text-text-muted ml-1">Full Name</label>
+                          <input type="text" required placeholder="Enter your name" className="w-full rounded-xl border border-border/50 bg-surface-elevated px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all" />
                         </div>
-                        <div className="space-y-2">
-                          <label className="text-[10px] font-black uppercase tracking-widest text-[#8A8A8A] ml-2">Phone Number</label>
-                          <input type="tel" required placeholder="0XX XXX XXXX" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-5 lg:px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:ring-4 focus:ring-primary/20 transition-all outline-none" />
+                        <div className="space-y-1.5">
+                          <label className="text-[10px] font-semibold uppercase tracking-widest text-text-muted ml-1">Phone Number</label>
+                          <input type="tel" required placeholder="0XX XXX XXXX" className="w-full rounded-xl border border-border/50 bg-surface-elevated px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all" />
                         </div>
                       </div>
                       
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-[#8A8A8A] ml-2">Email (Optional)</label>
-                        <input type="email" placeholder="email@example.com" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-5 lg:px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:ring-4 focus:ring-primary/20 transition-all outline-none" />
+                      <div className="space-y-1.5">
+                        <label className="text-[10px] font-semibold uppercase tracking-widest text-text-muted ml-1">Email (Optional)</label>
+                        <input type="email" placeholder="email@example.com" className="w-full rounded-xl border border-border/50 bg-surface-elevated px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all" />
                       </div>
 
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-[#8A8A8A] ml-2">Subject</label>
-                        <select required className="w-full appearance-none rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-5 lg:px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:ring-4 focus:ring-primary/20 transition-all outline-none cursor-pointer">
+                      <div className="space-y-1.5">
+                        <label className="text-[10px] font-semibold uppercase tracking-widest text-text-muted ml-1">Subject</label>
+                        <select required className="w-full appearance-none rounded-xl border border-border/50 bg-surface-elevated px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all cursor-pointer">
                           <option value="">Select a topic</option>
                           <option>General Enquiry</option>
                           <option>Loan Support</option>
@@ -179,24 +126,22 @@ const Contact = () => {
                         </select>
                       </div>
 
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-[#8A8A8A] ml-2">Your Message</label>
-                        <textarea required placeholder="How can we help you?" rows={5} className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-5 lg:px-6 py-4 lg:py-6 text-sm lg:text-base focus:ring-4 focus:ring-primary/20 transition-all outline-none resize-none" />
+                      <div className="space-y-1.5">
+                        <label className="text-[10px] font-semibold uppercase tracking-widest text-text-muted ml-1">Your Message</label>
+                        <textarea required placeholder="How can we help you?" rows={4} className="w-full rounded-xl border border-border/50 bg-surface-elevated px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all resize-none" />
                       </div>
 
-                      <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white rounded-[1.25rem] lg:rounded-[1.5rem] py-6 lg:py-8 text-lg lg:text-xl font-bold shadow-xl shadow-primary/30 transition-transform hover:-translate-y-1 mt-2 lg:mt-4">
-                        Send Message <Send className="ml-2 w-5 h-5 lg:w-6 lg:h-6" />
+                      <Button type="submit" className="w-full bg-primary hover:bg-primary-hover text-primary-foreground rounded-xl py-6 text-base font-bold shadow-md shadow-primary/20 transition-all hover:-translate-y-0.5 mt-1">
+                        Send Message <Send className="ml-2" size={16} />
                       </Button>
                     </form>
                   </>
                 )}
               </motion.div>
             </div>
-
           </div>
         </div>
       </section>
-
     </div>
   );
 };

@@ -5,59 +5,53 @@ import { ArrowRight, Users, CheckCircle, Smartphone, TrendingUp, Shield, Zap, Ha
 import getLoanImg from "@/assets/get-loan.webp";
 import customerLoanImg from "@/assets/customer-loan.webp";
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
-const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } } };
+const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const steps = [
-  { num: "01", title: "Get a Node Code", desc: "Connect with a trusted Agenda Money Node. Their unique code is your gateway to rapid loan access.", icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
-  { num: "02", title: "Quick Application", desc: "Our 100% digital process takes minutes. Just your details, Ghana Card, and a selfie.", icon: Smartphone, color: "text-primary", bg: "bg-primary/10" },
-  { num: "03", title: "Real-Time Review", desc: "Our intelligent engine reviews your application instantly. No paperwork, no queues, no stress.", icon: Zap, color: "text-amber-500", bg: "bg-amber-500/10" },
-  { num: "04", title: "Instant Payout", desc: "Funds hit your MoMo wallet (MTN, Telecel, or AT) immediately upon approval — 24/7.", icon: HandCoins, color: "text-emerald-500", bg: "bg-emerald-500/10" },
+  { num: "01", title: "Get a Node Code", desc: "Connect with a trusted Agenda Money Node. Their unique code is your gateway to rapid loan access.", icon: Users, accent: "bg-primary/8 text-primary" },
+  { num: "02", title: "Quick Application", desc: "Our 100% digital process takes minutes. Just your details, Ghana Card, and a selfie.", icon: Smartphone, accent: "bg-secondary/8 text-secondary" },
+  { num: "03", title: "Real-Time Review", desc: "Our intelligent engine reviews your application instantly. No paperwork, no queues, no stress.", icon: Zap, accent: "bg-warning/10 text-warning" },
+  { num: "04", title: "Instant Payout", desc: "Funds hit your MoMo wallet (MTN, Telecel, or AT) immediately upon approval — 24/7.", icon: HandCoins, accent: "bg-success/10 text-success" },
 ];
 
 const HowItWorks = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
     
-    {/* REFINED LIGHT HERO */}
-    <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-[#FAFAFA] overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-sm border-b border-black/5 mx-2 lg:mx-8 mt-4 mb-12 lg:mb-20">
-      <div className="absolute top-0 right-0 w-[400px] lg:w-[800px] h-[400px] lg:h-[800px] bg-primary opacity-5 rounded-full blur-[60px] lg:blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+    {/* HERO */}
+    <section className="relative pt-24 pb-16 lg:pt-40 lg:pb-28 bg-surface overflow-hidden">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="lg:w-1/2 text-left">
-            <motion.div variants={fadeUp} className="inline-block bg-primary/10 text-primary font-bold px-4 lg:px-6 py-2 lg:py-3 rounded-full mb-6 lg:mb-8 tracking-wide text-xs lg:text-sm uppercase">
+            <motion.div variants={fadeUp} className="inline-block bg-primary/8 text-primary font-bold px-4 py-1.5 rounded-full mb-5 tracking-wide text-xs uppercase border border-primary/10">
               Fast. Simple. Digital.
             </motion.div>
-            <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-6 lg:mb-8 leading-[1.1] tracking-tight text-[#1A1A1A]">
-              Get your money <br/>
-              <span className="text-primary italic">in minutes.</span>
+            <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-5 leading-[1.1] tracking-tight text-text-primary">
+              Get your money <br />
+              <span className="text-primary">in minutes.</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-lg lg:text-xl text-[#6A6A6A] leading-relaxed max-w-xl mb-8 lg:mb-10 font-medium">
+            <motion.p variants={fadeUp} className="text-base lg:text-lg text-text-secondary leading-relaxed max-w-lg mb-8">
               We've dismantled the traditional banking hurdles. No visits, no paperwork — just the financial support you need, exactly when you need it.
             </motion.p>
             <motion.div variants={fadeUp}>
               <Link to="/#apply">
-                <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white rounded-full px-8 lg:px-12 py-6 lg:py-8 text-lg lg:text-xl font-bold transition-all shadow-xl shadow-primary/20 hover:-translate-y-1 group">
-                  Apply Now <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" size={24} />
+                <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-primary-foreground rounded-full px-10 py-7 text-lg font-bold shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 group">
+                  Apply Now <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </Button>
               </Link>
             </motion.div>
           </motion.div>
           
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95, rotate: 2 }} 
-            animate={{ opacity: 1, scale: 1, rotate: 0 }} 
-            transition={{ duration: 0.8 }} 
-            className="lg:w-1/2 w-full relative"
-          >
-            <div className="relative rounded-[2rem] lg:rounded-[4rem] overflow-hidden aspect-[16/10] lg:aspect-[4/5] shadow-2xl border-2 lg:border-8 border-white">
+          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }} className="lg:w-1/2 w-full relative">
+            <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[16/10] lg:aspect-[4/5] shadow-2xl shadow-black/10 border border-border/30">
               <img src={getLoanImg} alt="Get a loan instantly" className="w-full h-full object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-overlay/15 via-transparent to-transparent" />
               
-              {/* Floating Success Badge - Responsive Scaling */}
-              <div className="absolute bottom-4 right-4 lg:bottom-8 lg:right-8 bg-[#25D366] text-white p-3 lg:p-6 rounded-2xl lg:rounded-3xl shadow-2xl flex items-center gap-2 lg:gap-4 animate-bounce-slow">
-                <div className="bg-white/20 p-1.5 lg:p-2 rounded-lg"><CheckCircle size={18} className="lg:w-6 lg:h-6" /></div>
-                <div className="font-bold tracking-tight text-xs lg:text-base whitespace-nowrap">GHS 500 Received</div>
+              <div className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6 bg-success text-success-foreground p-3 lg:p-4 rounded-xl shadow-lg flex items-center gap-2">
+                <CheckCircle size={16} />
+                <span className="font-bold text-xs lg:text-sm">GHS 500 Received</span>
               </div>
             </div>
           </motion.div>
@@ -65,124 +59,96 @@ const HowItWorks = () => (
       </div>
     </section>
 
-    {/* THE JOURNEY - SPLIT LAYOUT REFINED */}
-    <section className="py-16 lg:py-40 bg-background relative z-20">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 max-w-7xl mx-auto items-stretch">
+    {/* STEPS */}
+    <section className="py-16 lg:py-28 bg-background">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto items-start">
           
-          {/* Left: Immersive Image & Testimonial */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }} 
-            whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ once: true, margin: "-50px" }} 
-            className="relative flex flex-col"
-          >
-            <div className="relative rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden flex-grow shadow-2xl group min-h-[400px] lg:min-h-[500px]">
-              <img src={customerLoanImg} alt="Agenda Money customer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-              <div className="absolute inset-0 bg-primary/5 mix-blend-overlay"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          {/* Left: Image */}
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+            <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl group">
+              <img src={customerLoanImg} alt="Agenda Money customer" className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-overlay/50 via-transparent to-transparent" />
             </div>
 
-            <div className="bg-[#FAFAFA] border border-black/5 rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-10 shadow-xl shadow-black/[0.02] relative -mt-12 lg:-mt-16 z-10 mx-4 lg:mx-8">
-              <p className="text-[#1A1A1A] text-xl md:text-2xl lg:text-3xl font-heading font-black leading-tight mb-4 lg:mb-6 italic">
-                "I applied from my shop while serving customers. The cash arrived before I even finished packing their goods."
+            <div className="bg-surface-elevated border border-border/50 rounded-2xl p-5 lg:p-7 shadow-lg relative -mt-10 mx-4 lg:mx-6 z-10">
+              <p className="text-text-primary text-lg lg:text-xl font-heading font-bold leading-snug mb-3 italic">
+                "I applied from my shop while serving customers. The cash arrived before I even finished."
               </p>
-              <div className="flex items-center gap-4">
-                 <div className="bg-secondary/10 px-4 lg:px-6 py-2 lg:py-3 rounded-full text-secondary font-bold text-xs lg:text-sm uppercase tracking-wider border border-secondary/20 font-black">
-                   Financial Freedom
-                 </div>
+              <div className="bg-secondary/8 px-3 py-1.5 rounded-full text-secondary font-bold text-xs uppercase tracking-wider inline-block border border-secondary/10">
+                Financial Freedom
               </div>
             </div>
           </motion.div>
 
-          {/* Right: The Steps - Perfectly Aligned with Connecting Line */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="flex flex-col justify-center py-4 lg:py-8 relative mt-8 lg:mt-0">
-             {/* Vertical Connecting Line - Adjusted for Mobile Visibility */}
-             <div className="absolute left-[1.95rem] lg:left-[2.4rem] top-32 lg:top-40 bottom-24 w-0.1 border-l-2 border-dashed border-primary/20 -z-10 block"></div>
-
-            <motion.div variants={fadeUp} className="mb-10 lg:mb-14">
-              <h2 className="text-3xl lg:text-6xl font-heading font-black text-[#1A1A1A] mb-4 lg:mb-6 tracking-tight leading-none">
-                The <span className="text-primary italic font-black">Process.</span>
+          {/* Right: Steps */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-col justify-center py-4 relative">
+            <motion.div variants={fadeUp} className="mb-8 lg:mb-10">
+              <h2 className="text-3xl lg:text-5xl font-heading font-extrabold text-text-primary mb-3 tracking-tight leading-none">
+                The <span className="text-primary">Process.</span>
               </h2>
-              <p className="text-lg lg:text-xl text-[#6A6A6A] font-medium leading-relaxed max-w-lg">
-                Designed for modern lives. We've removed every barrier so you can move forward with confidence.
+              <p className="text-base text-text-secondary leading-relaxed max-w-md">
+                Designed for modern lives. We've removed every barrier so you can move forward.
               </p>
             </motion.div>
 
-            <div className="space-y-8 lg:space-y-12">
+            <div className="space-y-5 lg:space-y-6">
               {steps.map((s) => (
-                <motion.div key={s.num} variants={fadeUp} className="group flex gap-6 lg:gap-10 items-start p-1 lg:p-2 hover:translate-x-2 transition-transform duration-300">
-                  <div className={`${s.bg} w-12 h-12 lg:w-16 lg:h-16 rounded-[1rem] lg:rounded-[1.5rem] flex items-center justify-center shrink-0 shadow-lg shadow-black/[0.03] group-hover:scale-110 transition-transform group-hover:shadow-primary/20 relative z-10 border border-black/5 bg-white`}>
-                    <s.icon className={`${s.color}`} size={24} />
+                <motion.div key={s.num} variants={fadeUp} className="group flex gap-4 lg:gap-6 items-start p-1 hover:translate-x-1 transition-transform duration-200">
+                  <div className={`${s.accent} w-11 h-11 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform border border-border/30`}>
+                    <s.icon size={20} />
                   </div>
-                  <div className="pt-0.5 lg:pt-1">
-                    <h3 className="text-xl lg:text-2xl font-heading font-black text-[#1A1A1A] mb-1 lg:mb-2 tracking-tight group-hover:text-primary transition-colors">{s.title}</h3>
-                    <p className="text-base lg:text-lg text-[#6A6A6A] leading-relaxed font-medium">{s.desc}</p>
+                  <div>
+                    <h3 className="text-lg lg:text-xl font-heading font-bold text-text-primary mb-1 group-hover:text-primary transition-colors">{s.title}</h3>
+                    <p className="text-sm text-text-secondary leading-relaxed">{s.desc}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>
 
-    {/* GROWTH PATH SECTION - REFINED IMMERSIVE LIGHT THEME */}
-    <section className="py-20 lg:py-32 bg-[#F8F8F8] border-y border-black/5 rounded-[3rem] lg:rounded-[6rem] mx-2 lg:mx-8 mb-12 lg:mb-20 relative overflow-hidden text-[#1A1A1A]">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 w-[400px] lg:w-[800px] h-[400px] lg:h-[800px] bg-primary opacity-5 rounded-full blur-[80px] lg:blur-[120px] translate-x-1/4 -translate-y-1/4 pointer-events-none animate-pulse-slow"></div>
-      <div className="absolute bottom-0 left-0 w-[300px] lg:w-[600px] h-[300px] lg:h-[600px] bg-secondary opacity-5 rounded-full blur-[60px] lg:blur-[100px] -translate-x-1/4 translate-y-1/4 pointer-events-none animate-pulse-slow delay-700"></div>
-
-      <div className="container mx-auto px-6 relative z-10 text-center max-w-7xl">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger}>
-          <motion.div variants={fadeUp} className="mb-12 lg:mb-20">
-            <h2 className="text-4xl md:text-7xl lg:text-8xl font-heading font-black mb-6 lg:mb-8 tracking-tighter leading-[1.1] lg:leading-tight italic">
-              A smarter way <br/>
-              <span className="text-primary not-italic font-black">to build your future.</span>
+    {/* GROWTH PATH */}
+    <section className="py-16 lg:py-28 bg-surface">
+      <div className="container mx-auto px-4 text-center max-w-6xl">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+          <motion.div variants={fadeUp} className="mb-10 lg:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold mb-4 tracking-tight text-text-primary">
+              A smarter way <br /><span className="text-primary">to build your future.</span>
             </h2>
-            <p className="text-lg lg:text-2xl text-[#6A6A6A] font-medium max-w-3xl mx-auto leading-relaxed px-4 lg:px-0">
+            <p className="text-base text-text-secondary max-w-2xl mx-auto leading-relaxed">
               Our automated path rewards your consistency. The more you use Agenda Money responsibly, the more benefits you unlock.
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-12 mb-16 lg:mb-24 text-left">
+          <div className="grid md:grid-cols-3 gap-5 lg:gap-6 mb-12 text-left">
             {[
-              { title: "Higher Limits", desc: "Repay on time to automatically boost your limit up to GHS 2,000.", icon: TrendingUp, accent: "bg-blue-500/10 text-blue-500", delay: 0 },
-              { title: "Lower Rates", desc: "Your interest rate decreases as your credit health improves over time.", icon: Shield, accent: "bg-secondary/10 text-secondary", delay: 0.1 },
-              { title: "Node Status", desc: "Successfully repay 5 loans to unlock Node status and its benefits.", icon: Users, accent: "bg-primary/10 text-primary", delay: 0.2 }
+              { title: "Higher Limits", desc: "Repay on time to automatically boost your limit up to GHS 2,000.", icon: TrendingUp, accent: "bg-secondary/8 text-secondary" },
+              { title: "Lower Rates", desc: "Your interest rate decreases as your credit health improves over time.", icon: Shield, accent: "bg-primary/8 text-primary" },
+              { title: "Node Status", desc: "Successfully repay 5 loans to unlock Node status and its benefits.", icon: Users, accent: "bg-warning/10 text-warning" }
             ].map((item, i) => (
-              <motion.div 
-                key={i} 
-                variants={{
-                  hidden: { opacity: 0, y: 40, scale: 0.95 },
-                  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, delay: item.delay } }
-                }}
-                className="bg-white/80 backdrop-blur-md p-8 lg:p-12 rounded-[2.5rem] lg:rounded-[4rem] border border-black/5 hover:border-primary/30 transition-all group shadow-xl shadow-black/[0.01] lg:shadow-2xl hover:-translate-y-2 lg:hover:-translate-y-3 relative overflow-hidden"
-              >
-                {/* Subtle Card Glow on Hover */}
-                <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                
-                <div className={`w-14 h-14 lg:w-18 lg:h-18 rounded-[1.25rem] lg:rounded-[1.75rem] flex items-center justify-center mb-6 lg:mb-10 group-hover:scale-110 transition-transform ${item.accent} shadow-xl shadow-black/[0.03] border border-black/5`}>
-                  <item.icon size={24} className="lg:w-9 lg:h-9" />
+              <motion.div key={i} variants={fadeUp} className="bg-surface-elevated p-7 lg:p-9 rounded-2xl border border-border/50 hover:border-primary/20 hover:shadow-md transition-all group">
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 ${item.accent} border border-border/30`}>
+                  <item.icon size={20} />
                 </div>
-                <h4 className="text-2xl lg:text-3xl font-black mb-4 lg:mb-6 tracking-tight text-[#1A1A1A]">{item.title}</h4>
-                <p className="text-[#6A6A6A] text-base lg:text-xl leading-relaxed font-medium">{item.desc}</p>
+                <h4 className="text-xl font-heading font-bold mb-3 text-text-primary">{item.title}</h4>
+                <p className="text-text-secondary text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
 
           <motion.div variants={fadeUp}>
             <Link to="/#apply">
-              <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-[#1A1A1A] text-white rounded-full px-10 lg:px-20 py-8 lg:py-12 text-xl lg:text-3xl font-black shadow-2xl shadow-primary/30 transition-all hover:scale-105 active:scale-95 group border-none">
-                Start Your Journey <ArrowRight className="ml-4 lg:w-10 lg:h-10 group-hover:translate-x-3 transition-transform" size={28} />
+              <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground rounded-full px-10 py-7 text-lg font-bold shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 group">
+                Start Your Journey <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Button>
             </Link>
           </motion.div>
         </motion.div>
       </div>
     </section>
-
   </div>
 );
 

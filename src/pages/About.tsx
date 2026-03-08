@@ -1,61 +1,53 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Zap, Shield, Lightbulb, TrendingUp, Target, Heart } from "lucide-react";
-
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
-const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
-
+import { ArrowRight, Users, Zap, Shield, TrendingUp, Target, Heart } from "lucide-react";
 import aboutImg from "@/assets/business-partners-shaking-hands-agreement.webp";
+
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } } };
+const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 const About = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
     
-    {/* Hero Section */}
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#1A1A1A] text-white overflow-hidden rounded-b-[4rem] lg:rounded-b-[6rem] shadow-2xl mx-4 lg:mx-8 mt-4">
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary opacity-10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+    {/* Hero */}
+    <section className="relative pt-28 pb-20 lg:pt-40 lg:pb-28 bg-overlay text-primary-foreground overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary opacity-8 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
       
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="lg:w-1/2 text-left">
-            <motion.div variants={fadeUp} className="inline-block bg-primary/20 text-primary font-bold px-6 py-3 rounded-full mb-8 tracking-wide text-sm uppercase">
+            <motion.div variants={fadeUp} className="inline-block bg-primary/15 text-primary font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide text-xs uppercase border border-primary/10">
               Our Story
             </motion.div>
-            <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-8 leading-[1.05] tracking-tight">
-              <span className="text-primary italic">We are</span> <br/>
-              <span className="text-white">Agenda Money.</span>
+            <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-6 leading-[1.08] tracking-tight">
+              <span className="text-primary">We are</span> <br />Agenda Money.
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-xl text-white/70 leading-relaxed mb-10 max-w-lg font-medium">
+            <motion.p variants={fadeUp} className="text-base lg:text-lg text-white/65 leading-relaxed mb-8 max-w-lg">
               We're on a mission to empower individuals and micro-businesses by providing affordable and easily accessible digital financial services — credit first.
             </motion.p>
             <motion.div variants={fadeUp}>
               <Link to="/#apply">
-                <Button size="lg" className="bg-secondary hover:bg-white text-black rounded-full px-12 py-8 text-xl font-bold transition-all shadow-xl shadow-secondary/20 hover:-translate-y-1">
-                  Get Started <ArrowRight className="ml-2" size={24} />
+                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full px-10 py-7 text-lg font-bold shadow-lg shadow-secondary/20 transition-all hover:-translate-y-0.5">
+                  Get Started <ArrowRight className="ml-2" size={20} />
                 </Button>
               </Link>
             </motion.div>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }} 
-            animate={{ opacity: 1, scale: 1 }} 
-            transition={{ duration: 0.8 }} 
-            className="lg:w-1/2 w-full relative"
-          >
-            <div className="relative rounded-[4rem] overflow-hidden aspect-[4/3] shadow-2xl border-8 border-white/5">
+          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }} className="lg:w-1/2 w-full relative">
+            <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl shadow-black/20 border border-white/5">
               <img src={aboutImg} alt="Agenda Money Team" className="w-full h-full object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-overlay/70 via-transparent to-transparent" />
             </div>
             
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 lg:-bottom-8 -left-2 lg:-left-8 bg-white p-4 lg:p-8 rounded-[2rem] lg:rounded-[3rem] shadow-2xl border border-black/5 flex items-center gap-4 lg:gap-6 text-black">
-              <div className="bg-primary/20 p-3 lg:p-5 rounded-xl lg:rounded-2xl text-primary">
-                <TrendingUp size={24} className="lg:w-8 lg:h-8" />
+            <div className="absolute -bottom-4 lg:-bottom-6 left-2 lg:-left-6 bg-surface-elevated p-3 lg:p-5 rounded-2xl shadow-xl border border-border flex items-center gap-3 text-text-primary">
+              <div className="bg-primary/10 p-2.5 rounded-xl text-primary">
+                <TrendingUp size={18} />
               </div>
               <div>
-                <p className="font-heading font-black text-xl lg:text-2xl tracking-tighter">2030 Vision</p>
-                <p className="text-[10px] lg:text-sm font-bold opacity-60">100K Active Customers</p>
+                <p className="font-heading font-bold text-base tracking-tight">2030 Vision</p>
+                <p className="text-[10px] font-medium text-text-muted">100K Active Customers</p>
               </div>
             </div>
           </motion.div>
@@ -63,108 +55,84 @@ const About = () => (
       </div>
     </section>
 
-    {/* Vision Section */}
-    <section className="py-32 bg-accent relative overflow-hidden rounded-[4rem] lg:rounded-[6rem] mx-4 lg:mx-8 my-12 shadow-inner">
-       <div className="absolute top-0 left-0 w-full h-full">
-         <div className="absolute top-[-20%] right-[-10%] w-[40%] h-[100%] bg-primary opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
-       </div>
-       
-       <div className="container mx-auto px-6 max-w-5xl relative z-10">
-         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid lg:grid-cols-12 gap-16 items-center">
-           <div className="lg:col-span-8">
-             <motion.div variants={fadeUp} className="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center text-primary mb-10">
-               <Target size={40} />
-             </motion.div>
-             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[#1A1A1A] mb-10 tracking-tight leading-[1.1]">
-               Our North Star <br/>
-               <span className="text-primary italic">is Impact.</span>
-             </motion.h2>
-             <motion.p variants={fadeUp} className="text-2xl md:text-3xl lg:text-4xl text-[#1A1A1A] leading-[1.3] font-medium italic border-l-4 border-secondary pl-8">
-               "To build and manage a loan book of <span className="text-primary font-black">$5 million</span> for <span className="text-[#1A1A1A] font-black underline decoration-secondary decoration-8 underline-offset-8">100,000 active customers</span> by 2030."
-             </motion.p>
-           </div>
-           
-           <motion.div variants={fadeUp} className="lg:col-span-4 hidden lg:block">
-              <div className="bg-white p-10 rounded-[3rem] shadow-2xl border border-black/5 rotate-3 hover:rotate-0 transition-transform duration-500">
-                <div className="text-7xl font-heading font-black text-primary mb-2">100K</div>
-                <div className="text-sm font-black uppercase tracking-[0.2em] text-[#8A8A8A]">Target Customers</div>
-              </div>
-           </motion.div>
-         </motion.div>
-       </div>
+    {/* Vision */}
+    <section className="py-20 lg:py-28 bg-accent relative overflow-hidden">
+      <div className="container mx-auto px-4 max-w-4xl relative z-10">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center">
+          <motion.div variants={fadeUp} className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 mx-auto">
+            <Target size={28} />
+          </motion.div>
+          <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-text-primary mb-8 tracking-tight leading-[1.1]">
+            Our North Star <span className="text-primary">is Impact.</span>
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-xl md:text-2xl text-text-primary leading-relaxed font-medium border-l-4 border-secondary pl-6 text-left max-w-2xl mx-auto">
+            "To build and manage a loan book of <span className="text-primary font-bold">$5 million</span> for <span className="font-bold underline decoration-secondary decoration-4 underline-offset-4">100,000 active customers</span> by 2030."
+          </motion.p>
+        </motion.div>
+      </div>
     </section>
 
-    {/* Philosophy (De-AIed Values) */}
-    <section className="py-32 bg-background relative px-4 lg:px-8">
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-24 items-center">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-12">
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-heading font-black text-[#1A1A1A] tracking-tight leading-[1.1]">
-              The Agenda <br/>
-              <span className="text-primary italic">Philosophy.</span>
+    {/* Values */}
+    <section className="py-20 lg:py-28 bg-background">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-heading font-extrabold text-text-primary tracking-tight leading-[1.1]">
+              The Agenda <span className="text-primary">Philosophy.</span>
             </motion.h2>
             
-            <div className="space-y-10">
+            <div className="space-y-6">
               {[
-                { icon: Users, title: "Community at the Core", desc: "We don't just lend; we build networks. Every loan is an investment in a Ghanaian's future.", color: "bg-primary" },
-                { icon: Zap, title: "Digital-First Simplicity", desc: "Financial services shouldn't be a chore. We strip away the paperwork and focus on speed.", color: "bg-secondary" },
-                { icon: Shield, title: "Unwavering Integrity", desc: "Transparency is our currency. We operate with radical honesty in every transaction.", color: "bg-black" }
+                { icon: Users, title: "Community at the Core", desc: "We don't just lend; we build networks. Every loan is an investment in a Ghanaian's future.", color: "bg-primary text-primary-foreground" },
+                { icon: Zap, title: "Digital-First Simplicity", desc: "Financial services shouldn't be a chore. We strip away the paperwork and focus on speed.", color: "bg-secondary text-secondary-foreground" },
+                { icon: Shield, title: "Unwavering Integrity", desc: "Transparency is our currency. We operate with radical honesty in every transaction.", color: "bg-overlay text-primary-foreground" }
               ].map((item, i) => (
-                <motion.div key={i} variants={fadeUp} className="flex gap-4 lg:gap-8 group">
-                  <div className={`shrink-0 w-14 h-14 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl ${item.color} flex items-center justify-center text-white shadow-xl shadow-black/10 group-hover:scale-110 transition-transform`}>
-                    <item.icon size={28} className="lg:w-8 lg:h-8" />
+                <motion.div key={i} variants={fadeUp} className="flex gap-4 group">
+                  <div className={`shrink-0 w-11 h-11 rounded-xl ${item.color} flex items-center justify-center shadow-md group-hover:scale-105 transition-transform`}>
+                    <item.icon size={20} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-heading font-black text-[#1A1A1A] mb-1 lg:mb-2">{item.title}</h3>
-                    <p className="text-base lg:text-lg text-[#6A6A6A] leading-relaxed max-w-md">{item.desc}</p>
+                    <h3 className="text-lg font-heading font-bold text-text-primary mb-1">{item.title}</h3>
+                    <p className="text-sm text-text-secondary leading-relaxed max-w-sm">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
           
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }} 
-            whileInView={{ opacity: 1, x: 0 }} 
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="bg-secondary/5 rounded-[4rem] p-12 lg:p-16 border border-secondary/10 relative overflow-hidden group">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-secondary opacity-20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
-               
-               <div className="relative z-10 space-y-8">
-                  <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-secondary shadow-lg">
-                    <Target size={32} />
-                  </div>
-                  <h3 className="text-3xl font-heading font-black text-[#1A1A1A]">Deep Innovation.</h3>
-                  <p className="text-xl text-[#4A4A4A] leading-relaxed font-medium">
-                    We're not just digitizing existing processes. We're rethinking how finance works for the backbone of Ghana from the ground up.
-                  </p>
-                  <ul className="space-y-4 pt-6 text-sm font-black uppercase tracking-widest text-[#8A8A8A]">
-                    <li className="flex items-center gap-4"><span className="w-2 h-2 bg-primary rounded-full"></span> Zero Paperwork</li>
-                    <li className="flex items-center gap-4"><span className="w-2 h-2 bg-secondary rounded-full"></span> 2-Minute Approvals</li>
-                    <li className="flex items-center gap-4"><span className="w-2 h-2 bg-black rounded-full"></span> Nationwide Reach</li>
-                  </ul>
-               </div>
+          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+            <div className="bg-surface rounded-2xl p-8 lg:p-10 border border-border/50 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-secondary/5 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2" />
+              <div className="relative z-10 space-y-5">
+                <div className="w-11 h-11 bg-surface-elevated rounded-xl flex items-center justify-center text-secondary shadow-sm border border-border/50">
+                  <Target size={22} />
+                </div>
+                <h3 className="text-2xl font-heading font-bold text-text-primary">Deep Innovation.</h3>
+                <p className="text-base text-text-secondary leading-relaxed">
+                  We're not just digitizing existing processes. We're rethinking how finance works for the backbone of Ghana.
+                </p>
+                <ul className="space-y-2.5 pt-4 text-xs font-semibold uppercase tracking-widest text-text-muted">
+                  <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-primary rounded-full" /> Zero Paperwork</li>
+                  <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-secondary rounded-full" /> 2-Minute Approvals</li>
+                  <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-overlay rounded-full" /> Nationwide Reach</li>
+                </ul>
+              </div>
             </div>
-            
-            {/* Decorative Pulse */}
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary rounded-full blur-3xl opacity-20 animate-pulse"></div>
           </motion.div>
         </div>
       </div>
     </section>
 
     {/* Affiliations */}
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6 text-center">
+    <section className="py-16 bg-surface">
+      <div className="container mx-auto px-4 text-center">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-          <motion.h3 variants={fadeUp} className="text-xs font-black uppercase tracking-[0.3em] text-[#8A8A8A] mb-10">Memberships & Affiliations</motion.h3>
-          <motion.div variants={fadeUp} className="flex justify-center gap-6 flex-wrap">
-            <div className="bg-[#FAFAFA] border border-black/5 rounded-3xl px-12 py-6 font-heading font-black text-xl text-[#1A1A1A] shadow-xl shadow-black/[0.02] hover:scale-105 transition-transform">
+          <motion.h3 variants={fadeUp} className="text-[10px] font-bold uppercase tracking-widest text-text-muted mb-8">Memberships & Affiliations</motion.h3>
+          <motion.div variants={fadeUp} className="flex justify-center gap-4 flex-wrap">
+            <div className="bg-surface-elevated border border-border/50 rounded-2xl px-8 py-4 font-heading font-bold text-base text-text-primary shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
               MCAG <span className="text-primary">Member</span>
             </div>
-            <div className="bg-[#FAFAFA] border border-black/5 rounded-3xl px-12 py-6 font-heading font-black text-xl text-[#1A1A1A] shadow-xl shadow-black/[0.02] hover:scale-105 transition-transform">
+            <div className="bg-surface-elevated border border-border/50 rounded-2xl px-8 py-4 font-heading font-bold text-base text-text-primary shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
               G.I.A.C. <span className="text-secondary">Portfolio</span>
             </div>
           </motion.div>
@@ -172,27 +140,24 @@ const About = () => (
       </div>
     </section>
 
-    {/* Big CTA */}
-    <section className="py-32 bg-primary relative overflow-hidden rounded-[4rem] lg:rounded-[6rem] mx-4 lg:mx-8 mb-12 shadow-2xl shadow-primary/30 text-white group">
-       <div className="absolute inset-0 bg-[#0F0F0F] opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
-       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-       
-       <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-            <Heart className="mx-auto mb-10 text-white opacity-60 animate-pulse" size={60} />
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black mb-12 tracking-tighter leading-tight">
-              Join our growing <br/>
-              <span className="text-secondary italic">financial community.</span>
-            </h2>
-            <Link to="/#apply">
-              <Button size="lg" className="bg-white hover:bg-secondary text-primary hover:text-white rounded-full px-16 py-10 text-2xl font-black shadow-2xl transition-all hover:scale-110">
-                Apply Now <ArrowRight className="ml-4" size={32} />
-              </Button>
-            </Link>
-          </motion.div>
-       </div>
+    {/* CTA */}
+    <section className="py-20 lg:py-28 bg-primary relative overflow-hidden text-primary-foreground">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white opacity-5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      
+      <div className="container mx-auto px-4 relative z-10 text-center">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+          <Heart className="mx-auto mb-6 text-white/50" size={40} />
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-8 tracking-tight leading-tight">
+            Join our growing <br /><span className="text-secondary">financial community.</span>
+          </h2>
+          <Link to="/#apply">
+            <Button size="lg" className="bg-surface-elevated hover:bg-secondary text-primary hover:text-secondary-foreground rounded-full px-12 py-8 text-xl font-bold shadow-xl transition-all hover:scale-105">
+              Apply Now <ArrowRight className="ml-2" size={24} />
+            </Button>
+          </Link>
+        </motion.div>
+      </div>
     </section>
-
   </div>
 );
 
