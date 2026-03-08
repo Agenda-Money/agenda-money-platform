@@ -11,74 +11,63 @@ import mrAmuzuImg from "@/assets/mr amuzu.jpg";
 import aliImg from "@/assets/ali-received.webp";
 import backboneImg from "@/assets/backbone.webp";
 
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } } };
+const stagger = { visible: { transition: { staggerChildren: 0.08 } } };
 
-// Full list of personas for this page (excluding the 3 on Home to avoid duplication if desired, or showing all. Let's show the remaining 5 as requested)
 const personas = [
   { name: "Beatrice", role: "Seamstress", story: "Fresh out of dressmaking school, Beatrice uses Agenda Money to buy fabrics and accessories. She's already built a loyal customer base in her community.", image: beatriceImg },
   { name: "Osman", role: "MoMo Agent", story: "Osman's Mobile Money business depends on having enough float. AM loans keep his e-cash topped up so he never has to turn customers away.", image: osmanImg },
   { name: "Aku", role: "Market Trader", story: "A single mother of three, Aku relies on AM loans for medical emergencies and to restock her market stall with provisions every week.", image: akuImg },
-  { name: "Owusu", role: "Fan Milk Seller", story: "Riding in the hot sun all day is not fun for Owusu the Fan Milk seller but he’s not giving up on his dream to rent a studio flat this year. He uses AM loans to augment his working capital while saving for his accommodation.", image: owusuImg },
-  { name: "Mr. Amuzu", role: "Parent", story: "Mr. Amuzu relies on AM loans to buy stationery for his son Kojo, a pupil of Awoyo L/A primary school. Kojo dreams of being a pilot one day and flying his family around the world.", image: mrAmuzuImg },
-  { name: "Ali", role: "Carpenter", story: "Ali runs a busy carpentry shop. When large lumber orders come in, he depends on Agenda Money for quick, hassle-free capital. These loans ensure he always has the materials to meet his deadlines on time.", image: aliImg },
+  { name: "Owusu", role: "Fan Milk Seller", story: "Riding in the hot sun all day is not fun for Owusu but he's not giving up on his dream. He uses AM loans to augment his working capital while saving for accommodation.", image: owusuImg },
+  { name: "Mr. Amuzu", role: "Parent", story: "Mr. Amuzu relies on AM loans to buy stationery for his son Kojo, a pupil of Awoyo L/A primary school. Kojo dreams of being a pilot one day.", image: mrAmuzuImg },
+  { name: "Ali", role: "Carpenter", story: "Ali runs a busy carpentry shop. When large lumber orders come in, he depends on Agenda Money for quick, hassle-free capital to meet deadlines.", image: aliImg },
 ];
 
 const WhoWeServe = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
     
-    {/* HERO SECTION */}
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-primary text-primary-foreground overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl mx-4 lg:mx-8 mt-4">
-      {/* Background Image with Overlay */}
+    {/* HERO */}
+    <section className="relative pt-28 pb-20 lg:pt-40 lg:pb-28 bg-primary text-primary-foreground overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src={backboneImg} alt="Backbone of Ghana" className="w-full h-full object-cover opacity-50" loading="lazy" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent"></div>
+        <img src={backboneImg} alt="Backbone of Ghana" className="w-full h-full object-cover opacity-40" loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/30" />
       </div>
-
-      {/* Decorative Blur */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white opacity-10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
       
       <div className="container mx-auto px-4 lg:px-8 text-center relative z-10">
-        <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-4xl mx-auto">
-          <motion.div variants={fadeUp} className="inline-block bg-white/20 backdrop-blur-md text-white font-bold px-6 py-3 rounded-full mb-8 tracking-wide text-sm uppercase">
+        <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl mx-auto">
+          <motion.div variants={fadeUp} className="inline-block bg-white/15 backdrop-blur-sm text-white font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide text-xs uppercase border border-white/10">
             Real Stories. Real Impact.
           </motion.div>
-          <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-8 leading-[1.1] tracking-tight">
-            Empowering the <br/>
-            <span className="text-secondary">Backbone</span> of Ghana
+          <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-6 leading-[1.1] tracking-tight">
+            Empowering the <br /><span className="text-secondary">Backbone</span> of Ghana
           </motion.h1>
-          <motion.p variants={fadeUp} className="text-xl opacity-90 leading-relaxed max-w-2xl mx-auto">
-            Ghana's informal sector employs 80% of the workforce but contributes only 27% to GDP — we're here to change that narrative.
+          <motion.p variants={fadeUp} className="text-lg opacity-85 leading-relaxed max-w-xl mx-auto">
+            Ghana's informal sector employs 80% of the workforce but contributes only 27% to GDP — we're here to change that.
           </motion.p>
         </motion.div>
       </div>
     </section>
 
-    {/* PERSONAS GRID */}
-    <section className="py-24 lg:py-32 bg-background">
+    {/* PERSONAS */}
+    <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-32 md:mb-40">
-           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-heading font-extrabold text-[#1A1A1A]">Meet our <span className="text-primary">Champions</span></motion.h2>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-24 md:mb-32">
+          <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-text-primary">Meet our <span className="text-primary">Champions</span></motion.h2>
         </motion.div>
 
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-32 max-w-7xl mx-auto">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-28 max-w-6xl mx-auto">
           {personas.map((p) => (
-            <motion.div key={p.name} variants={fadeUp} className="relative bg-[#FAFAFA] border border-black/5 rounded-[3rem] p-8 md:p-10 pt-28 md:pt-36 shadow-xl shadow-black/5 hover:-translate-y-2 transition-transform duration-300 text-center flex flex-col items-center">
-              <div className="absolute -top-24 md:-top-28 left-1/2 -translate-x-1/2">
-                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-primary to-secondary shadow-2xl shadow-primary/20">
-                  <img 
-                    src={p.image} 
-                    alt={p.name} 
-                    className="w-full h-full rounded-full object-cover border-[6px] border-white"
-                    loading="lazy"
-                  />
+            <motion.div key={p.name} variants={fadeUp} className="relative bg-surface border border-border/50 rounded-2xl lg:rounded-3xl p-6 md:p-8 pt-24 md:pt-28 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center">
+              <div className="absolute -top-20 md:-top-24 left-1/2 -translate-x-1/2">
+                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full p-1.5 bg-gradient-to-tr from-primary to-secondary shadow-lg shadow-primary/15">
+                  <img src={p.image} alt={p.name} className="w-full h-full rounded-full object-cover border-4 border-background" loading="lazy" />
                 </div>
               </div>
-              <h3 className="font-heading font-black text-3xl text-[#1A1A1A] mb-2">{p.name}</h3>
-              <p className="inline-block bg-white text-secondary font-bold uppercase tracking-wider px-5 py-2 rounded-full mb-6 shadow-sm border border-black/5 text-sm">{p.role}</p>
-              <p className="text-[#6A6A6A] text-lg leading-relaxed flex-grow">{p.story}</p>
-              <div className="mt-8 flex gap-1">
-                {[...Array(5)].map((_, j) => <Star key={j} size={16} className="text-yellow-400 fill-yellow-400" />)}
+              <h3 className="font-heading font-bold text-2xl text-text-primary mb-1">{p.name}</h3>
+              <p className="inline-block bg-surface-elevated text-secondary font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4 border border-border/50 text-xs">{p.role}</p>
+              <p className="text-text-secondary text-sm leading-relaxed flex-grow">{p.story}</p>
+              <div className="mt-5 flex gap-0.5">
+                {[...Array(5)].map((_, j) => <Star key={j} size={12} className="text-warning fill-warning" />)}
               </div>
             </motion.div>
           ))}
@@ -86,57 +75,50 @@ const WhoWeServe = () => (
       </div>
     </section>
 
-    {/* SPLIT LAYOUT: MARKET OPPORTUNITY (Fido Score Style) */}
-    <section className="py-24 lg:py-32 bg-accent/50 border-t border-primary/10 rounded-t-[3rem] lg:rounded-t-[5rem] overflow-hidden">
+    {/* MARKET OPPORTUNITY */}
+    <section className="py-20 lg:py-28 bg-surface">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-8 items-center max-w-[90rem] mx-auto relative">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center max-w-6xl mx-auto">
           
-          {/* Left: Giant Text Anchors (4 cols) */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="lg:col-span-4 lg:pr-12">
-            <motion.div variants={fadeUp} className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">The Gap</motion.div>
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-[#1A1A1A] leading-[1.1] tracking-tight mb-8">
-              Closing the <br/><span className="text-secondary font-black">$5 Billion</span> <br/>Credit Gap.
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="lg:col-span-5">
+            <motion.div variants={fadeUp} className="inline-block bg-primary/8 text-primary font-bold px-4 py-1.5 rounded-full mb-5 tracking-wide uppercase text-xs border border-primary/10">The Gap</motion.div>
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-text-primary leading-[1.1] tracking-tight mb-6">
+              Closing the <br /><span className="text-secondary">$5 Billion</span> <br />Credit Gap.
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-lg lg:text-xl text-[#6A6A6A] leading-relaxed mb-10">
+            <motion.p variants={fadeUp} className="text-base text-text-secondary leading-relaxed mb-8">
               The SME credit gap in Sub-Saharan Africa exceeds US$330 billion. In Ghana alone, that gap is over US$5 billion. Agenda Money is here to close it — one sustainable micro-loan at a time.
             </motion.p>
             <motion.div variants={fadeUp}>
               <Link to="/#apply">
-                <Button size="lg" className="bg-primary hover:bg-primary-hover text-white rounded-full px-12 py-8 text-xl font-bold shadow-xl shadow-primary/30 transition-transform hover:-translate-y-1">
-                  Join the Movement <ArrowRight className="ml-2" size={24} />
+                <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground rounded-full px-10 py-7 text-lg font-bold shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5">
+                  Join the Movement <ArrowRight className="ml-2" size={20} />
                 </Button>
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right: Info Cards (8 cols) */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="lg:col-span-8 relative">
-             {/* Decorative background blob */}
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-full blur-[60px] pointer-events-none"></div>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="lg:col-span-7">
+            <div className="grid md:grid-cols-2 gap-5">
+              <motion.div variants={fadeUp} className="bg-surface-elevated rounded-2xl p-7 shadow-sm border border-border/50 hover:shadow-md hover:-translate-y-1 transition-all">
+                <div className="bg-secondary/8 w-12 h-12 rounded-xl flex items-center justify-center text-secondary mb-5">
+                  <TrendingUp size={24} />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-text-primary mb-3">Financial Inclusion</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">We provide capital to Ghanaians locked out of traditional banking due to lack of collateral or formal histories.</p>
+              </motion.div>
 
-             <div className="grid md:grid-cols-2 gap-8 relative">
-               <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-2xl shadow-black/5 border border-black/5 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
-                 <div className="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center text-secondary mb-8">
-                   <TrendingUp size={40} />
-                 </div>
-                 <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Financial Inclusion</h3>
-                 <p className="text-[#6A6A6A] text-lg leading-relaxed flex-grow">We provide capital to ambitious Ghanaians who are locked out of the traditional banking system due to lack of collateral or formal histories.</p>
-               </motion.div>
-
-               <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
-                 <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8">
-                   <HandCoins size={40} />
-                 </div>
-                 <h3 className="text-3xl font-heading font-black mb-4">Nationwide Access</h3>
-                 <p className="text-white/90 text-lg leading-relaxed flex-grow">Based in Accra, we serve all 16 regions of Ghana. Our 100% online platform ensures distance is never a barrier to opportunity.</p>
-               </motion.div>
-             </div>
+              <motion.div variants={fadeUp} className="bg-primary text-primary-foreground rounded-2xl p-7 shadow-lg shadow-primary/20 hover:-translate-y-1 transition-all">
+                <div className="bg-white/15 w-12 h-12 rounded-xl flex items-center justify-center text-white mb-5">
+                  <HandCoins size={24} />
+                </div>
+                <h3 className="text-xl font-heading font-bold mb-3">Nationwide Access</h3>
+                <p className="text-white/80 text-sm leading-relaxed">Based in Accra, we serve all 16 regions. Our online platform ensures distance is never a barrier.</p>
+              </motion.div>
+            </div>
           </motion.div>
-
         </div>
       </div>
     </section>
-
   </div>
 );
 

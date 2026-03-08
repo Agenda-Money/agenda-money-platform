@@ -9,12 +9,12 @@ import kofiImg from "@/assets/kofi.jpg";
 import iphone3Img from "@/assets/iPhone 3_.webp";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 const stagger = {
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 const personas = [
@@ -34,289 +34,280 @@ const Index = () => {
   return (
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-[#FAFAFA]">
+      {/* ===== HERO ===== */}
+      <section className="relative pt-28 pb-20 lg:pt-40 lg:pb-28 bg-surface overflow-hidden">
+        {/* Soft gradient blobs */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/[0.04] rounded-full blur-[80px] translate-y-1/2 -translate-x-1/3 pointer-events-none" />
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="lg:w-1/2 text-left z-10">
-              <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold tracking-wide uppercase mb-8">
-                <Zap size={18} /> Instant Loans in Ghana
+              <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-primary/8 text-primary px-4 py-2 rounded-full text-xs font-bold tracking-wide uppercase mb-6 border border-primary/10">
+                <Zap size={14} /> Ghana's Micro-Loan Platform
               </motion.div>
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-[1.05] mb-6 tracking-tight text-[#1A1A1A]">
-                Giving credit <br/>
+              <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-extrabold leading-[1.08] mb-5 tracking-tight text-text-primary">
+                Giving credit <br />
                 <span className="text-primary">where it's due.</span>
               </motion.h1>
-              <motion.p variants={fadeUp} className="text-xl opacity-80 mb-10 leading-relaxed max-w-lg text-[#4A4A4A]">
+              <motion.p variants={fadeUp} className="text-lg text-text-secondary mb-8 leading-relaxed max-w-md">
                 Fast, simple, affordable micro-loans for individuals and small businesses. No collateral. Just cash when you need it.
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mb-10">
+              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 mb-8">
                 <Link to="/#apply">
-                  <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full px-12 py-8 text-xl font-bold shadow-xl shadow-secondary/20 transition-all hover:-translate-y-1">
-                    Apply Now <ArrowRight className="ml-2" size={24} />
+                  <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground rounded-full px-10 py-7 text-lg font-bold shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5">
+                    Apply Now <ArrowRight className="ml-2" size={20} />
                   </Button>
                 </Link>
                 <Link to="/how-it-works">
-                  <Button size="lg" variant="outline" className="rounded-full px-10 py-8 text-lg font-bold border-2 text-[#1A1A1A] hover:bg-black/5 transition-all">
+                  <Button size="lg" variant="outline" className="rounded-full px-8 py-7 text-lg font-semibold border-2 border-border text-text-primary hover:bg-surface transition-all">
                     How it works
                   </Button>
                 </Link>
               </motion.div>
+              {/* Trust row */}
+              <motion.div variants={fadeUp} className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-text-muted font-medium">
+                <span className="flex items-center gap-1.5"><Zap size={12} className="text-primary" /> 2-Min Approval</span>
+                <span className="flex items-center gap-1.5"><Smartphone size={12} className="text-secondary" /> 100% Online</span>
+                <span className="flex items-center gap-1.5"><Shield size={12} className="text-success" /> Safe & Secure</span>
+                <span className="flex items-center gap-1.5"><CheckCircle size={12} className="text-primary" /> MCAG Member</span>
+              </motion.div>
             </motion.div>
             
-            <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.8 }} className="lg:w-1/2 w-full relative">
-               <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[4/3] lg:aspect-square shadow-2xl">
-                 <img src={heroAccra} alt="Accra" className="w-full h-full object-cover" loading="lazy" />
-                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent mix-blend-multiply"></div>
-               </div>
-               
-               {/* Floating Badges */}
-               <div className="absolute -bottom-6 lg:-bottom-8 -left-2 lg:-left-12 bg-white p-3 lg:p-6 rounded-2xl lg:rounded-[2rem] shadow-2xl border border-black/5 flex items-center gap-3 lg:gap-5">
-                 <div className="bg-secondary/20 p-2 lg:p-4 rounded-full text-secondary">
-                   <Smartphone size={20} className="lg:w-7 lg:h-7" />
-                 </div>
-                 <div>
-                   <p className="font-heading font-bold text-base lg:text-xl text-[#1A1A1A]">100% Mobile</p>
-                   <p className="text-[10px] lg:text-sm text-[#4A4A4A] font-medium">Apply from anywhere</p>
-                 </div>
-               </div>
+            <motion.div initial={{ opacity: 0, scale: 0.96, y: 16 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.7 }} className="lg:w-1/2 w-full relative">
+              <div className="relative rounded-3xl lg:rounded-[2.5rem] overflow-hidden aspect-[4/3] lg:aspect-square shadow-2xl shadow-black/10">
+                <img src={heroAccra} alt="Accra market scene" className="w-full h-full object-cover" loading="eager" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-multiply" />
+              </div>
+              
+              {/* Floating badges */}
+              <div className="absolute -bottom-4 lg:-bottom-6 left-2 lg:-left-6 bg-surface-elevated p-3 lg:p-4 rounded-2xl shadow-xl border border-border flex items-center gap-3">
+                <div className="bg-secondary/10 p-2.5 rounded-xl text-secondary">
+                  <Smartphone size={18} />
+                </div>
+                <div>
+                  <p className="font-heading font-bold text-sm text-text-primary">100% Mobile</p>
+                  <p className="text-[10px] text-text-muted font-medium">Apply from anywhere</p>
+                </div>
+              </div>
 
-               <div className="absolute -top-6 lg:-top-8 -right-2 lg:-right-8 bg-white p-3 lg:p-5 rounded-2xl lg:rounded-[2rem] shadow-2xl border border-black/5 flex items-center gap-2 lg:gap-4">
-                 <div className="bg-primary/20 p-2 lg:p-3 rounded-full text-primary">
-                   <CheckCircle size={18} className="lg:w-6 lg:h-6" />
-                 </div>
-                 <div>
-                   <p className="font-heading font-bold text-sm lg:text-lg text-[#1A1A1A]">Approved in</p>
-                   <p className="text-primary font-black text-base lg:text-xl">Mins</p>
-                 </div>
-               </div>
+              <div className="absolute -top-4 lg:-top-6 right-2 lg:-right-4 bg-surface-elevated p-3 lg:p-4 rounded-2xl shadow-xl border border-border flex items-center gap-2.5">
+                <div className="bg-primary/10 p-2 rounded-xl text-primary">
+                  <CheckCircle size={16} />
+                </div>
+                <div>
+                  <p className="font-heading font-bold text-sm text-text-primary">Approved in</p>
+                  <p className="text-primary font-black text-base">Minutes</p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* REFINED FULL-WIDTH TICKER */}
-      <div className="bg-[#0A0A0A] text-white py-6 overflow-hidden border-y border-white/5 relative z-20">
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
-        
-        <div className="animate-ticker whitespace-nowrap flex items-center gap-16">
+      {/* ===== TICKER ===== */}
+      <div className="bg-overlay text-primary-foreground py-4 overflow-hidden relative z-20">
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-overlay to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-overlay to-transparent z-10 pointer-events-none" />
+        <div className="animate-ticker whitespace-nowrap flex items-center gap-12">
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="flex items-center gap-16">
-              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> GHS 50 - 2,000 Available
-              </span>
-              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> No Collateral Required
-              </span>
-              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Instant MoMo Payouts
-              </span>
-              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> 0.5% Daily Interest
-              </span>
-              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Serving All of Ghana
-              </span>
+            <div key={i} className="flex items-center gap-12">
+              {["GHS 50 - 2,000 Available", "No Collateral Required", "Instant MoMo Payouts", "0.5% Daily Interest", "Serving All of Ghana"].map((text, j) => (
+                <span key={j} className="flex items-center gap-3 text-xs font-bold tracking-widest uppercase opacity-70">
+                  <span className={`w-1 h-1 rounded-full ${j % 2 === 0 ? 'bg-primary' : 'bg-secondary'}`} /> {text}
+                </span>
+              ))}
             </div>
           ))}
         </div>
       </div>
 
-
-      {/* WHAT IS AGENDA MONEY */}
-      <section className="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden rounded-[3rem] lg:rounded-[5rem] mx-4 lg:mx-8 shadow-2xl shadow-primary/30 mt-8 mb-24 lg:mb-32">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-        <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* ===== WHAT IS AGENDA MONEY ===== */}
+      <section className="py-20 lg:py-28 bg-primary text-primary-foreground relative overflow-hidden rounded-3xl lg:rounded-[3rem] mx-3 lg:mx-6 shadow-xl shadow-primary/20 mt-6 mb-20">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white opacity-5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        <div className="container mx-auto px-5 lg:px-10 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-8 leading-[1.1]">
-                Emergency cash. <br/>Working capital. <br/><span className="text-secondary">Real impact.</span>
+              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold mb-6 leading-[1.1]">
+                Emergency cash. <br />Working capital. <br /><span className="text-secondary">Real impact.</span>
               </motion.h2>
-              <motion.p variants={fadeUp} className="text-lg opacity-90 leading-relaxed mb-10 max-w-lg">
+              <motion.p variants={fadeUp} className="text-base lg:text-lg opacity-85 leading-relaxed mb-8 max-w-lg">
                 Agenda Money is an online micro-loan platform built for Ghanaians who need fast, affordable financial support — without the bank queues, paperwork, or collateral. 
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
+              <motion.div variants={fadeUp} className="flex flex-wrap gap-2.5">
                 {["No Collateral", "Paperless", "Cashless", "Branchless", "24/7 Access", "Nationwide"].map((p) => (
-                  <span key={p} className="bg-white/20 backdrop-blur-md text-white font-bold px-6 py-3 rounded-full text-sm tracking-wide">
+                  <span key={p} className="bg-white/15 backdrop-blur-md text-white font-semibold px-4 py-2 rounded-full text-xs tracking-wide border border-white/10">
                     {p}
                   </span>
                 ))}
               </motion.div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white rounded-[3rem] p-12 lg:p-16 text-center shadow-2xl relative">
-              <div className="absolute -top-6 -right-6 bg-secondary text-secondary-foreground w-24 h-24 rounded-full flex items-center justify-center font-heading font-black text-2xl shadow-xl transform rotate-12">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-surface-elevated rounded-3xl p-8 lg:p-12 text-center shadow-2xl relative">
+              <div className="absolute -top-4 -right-4 bg-secondary text-secondary-foreground w-16 h-16 rounded-2xl flex items-center justify-center font-heading font-black text-xs shadow-lg rotate-6">
                 FAST
               </div>
-              <div className="w-full h-48 lg:h-64 mb-8 flex items-center justify-center">
-                <img src={iphone3Img} alt="Agenda Money App" className="h-full object-contain drop-shadow-2xl" loading="lazy" />
+              <div className="w-full h-40 lg:h-56 mb-6 flex items-center justify-center">
+                <img src={iphone3Img} alt="Agenda Money App" className="h-full object-contain drop-shadow-xl" loading="lazy" />
               </div>
-              <p className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">100% Mobile</p>
-              <p className="text-[#6A6A6A] text-lg max-w-sm mx-auto">Apply, get approved, and receive cash instantly — all from the comfort of your phone.</p>
+              <p className="text-2xl font-heading font-black text-text-primary mb-2">100% Mobile</p>
+              <p className="text-text-secondary text-sm max-w-xs mx-auto">Apply, get approved, and receive cash instantly — all from your phone.</p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="py-24 lg:py-32 bg-background">
+      {/* ===== HOW IT WORKS ===== */}
+      <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16 lg:mb-20">
-            <motion.div variants={fadeUp} className="inline-block bg-secondary/10 text-secondary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Simple. Fast. Yours.</motion.div>
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight">Get your loan in 3 easy steps</motion.h2>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-12 lg:mb-16">
+            <motion.div variants={fadeUp} className="inline-block bg-secondary/8 text-secondary font-bold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase text-xs border border-secondary/10">Simple. Fast. Yours.</motion.div>
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-text-primary tracking-tight">Get your loan in 3 easy steps</motion.h2>
           </motion.div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {[
-              { num: "1", title: "Apply Online", desc: "Provide basic details and snap a selfie. Have a Node code? Enter it to speed things up.", icon: "📝", color: "bg-[#FAFAFA]" },
-              { num: "2", title: "Get Approved", desc: "Our smart system reviews your request in minutes. No paperwork needed.", icon: "🚀", color: "bg-[#FAFAFA]" },
-              { num: "3", title: "Receive Cash", desc: "Funds land instantly in your MTN, Telecel, or AT Mobile Money wallet.", icon: "💸", color: "bg-[#FAFAFA]" },
+              { num: "1", title: "Apply Online", desc: "Provide basic details and snap a selfie. Have a Node code? Enter it to speed things up.", icon: "📝" },
+              { num: "2", title: "Get Approved", desc: "Our smart system reviews your request in minutes. No paperwork needed.", icon: "🚀" },
+              { num: "3", title: "Receive Cash", desc: "Funds land instantly in your MTN, Telecel, or AT Mobile Money wallet.", icon: "💸" },
             ].map((s) => (
-              <motion.div key={s.num} variants={fadeUp} className={`${s.color} rounded-[3rem] p-10 lg:p-12 text-center shadow-lg shadow-black/5 relative overflow-hidden group`}>
-                <div className="absolute top-0 right-0 p-8 text-8xl font-heading font-black text-black/[0.03] group-hover:scale-110 transition-transform duration-500 pointer-events-none -mt-4 -mr-4">{s.num}</div>
-                <div className="text-6xl mb-8">{s.icon}</div>
-                <h3 className="text-2xl font-heading font-black text-[#1A1A1A] mb-4 relative z-10">{s.title}</h3>
-                <p className="text-[#6A6A6A] text-lg leading-relaxed relative z-10">{s.desc}</p>
+              <motion.div key={s.num} variants={fadeUp} className="bg-surface rounded-2xl lg:rounded-3xl p-8 lg:p-10 text-center border border-border/50 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group relative overflow-hidden">
+                <div className="absolute top-4 right-6 text-6xl font-heading font-black text-text-primary/[0.03] pointer-events-none">{s.num}</div>
+                <div className="text-5xl mb-6">{s.icon}</div>
+                <h3 className="text-xl font-heading font-bold text-text-primary mb-3">{s.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </motion.div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <Link to="/#apply">
-              <Button size="lg" className="bg-primary hover:bg-primary-hover text-white rounded-full px-12 py-8 text-xl font-bold shadow-xl shadow-primary/30 transition-all hover:-translate-y-1">
-                Apply Now <ArrowRight className="ml-2" size={24} />
+              <Button size="lg" className="bg-primary hover:bg-primary-hover text-primary-foreground rounded-full px-10 py-7 text-lg font-bold shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5">
+                Apply Now <ArrowRight className="ml-2" size={20} />
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* LOAN DETAILS SECTION */}
-      <section className="py-24 lg:py-32 bg-[#FAFAFA] border-y border-black/5">
+      {/* ===== LOAN DETAILS ===== */}
+      <section className="py-20 lg:py-28 bg-surface">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16 lg:mb-20">
-             <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-4xl md:text-5xl font-heading font-extrabold text-[#1A1A1A] mb-6 tracking-tight">
-               Fast, Flexible, Affordable.
-             </motion.h2>
-             <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-lg text-[#6A6A6A] leading-relaxed max-w-2xl mx-auto">
-               We've designed our loans to be as transparent as possible. Choose your term, know your interest, and get funded instantly.
-             </motion.p>
+          <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-text-primary mb-4 tracking-tight">
+              Fast, Flexible, Affordable.
+            </motion.h2>
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-base text-text-secondary leading-relaxed max-w-xl mx-auto">
+              Transparent loans designed around you. Choose your term, know your interest, and get funded instantly.
+            </motion.p>
           </div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-             <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-center min-h-[300px]">
-               <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center text-primary mb-8"><TrendingUp size={40} /></div>
-               <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">0.5% Daily</h3>
-               <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed">Pay only for the days you borrow. No hidden fees, no application costs.</p>
-             </motion.div>
-             <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col justify-center min-h-[300px]">
-               <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8"><Clock size={40} /></div>
-               <h3 className="text-3xl font-heading font-black mb-4">Flexible Terms</h3>
-               <p className="text-white/90 text-lg font-medium leading-relaxed">Repay in 1, 5, 10, 14, or 30 days. You're in complete control.</p>
-             </motion.div>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <motion.div variants={fadeUp} className="bg-surface-elevated rounded-2xl lg:rounded-3xl p-8 lg:p-10 shadow-sm border border-border/50">
+              <div className="bg-primary/8 w-14 h-14 rounded-2xl flex items-center justify-center text-primary mb-6"><TrendingUp size={28} /></div>
+              <h3 className="text-2xl font-heading font-bold text-text-primary mb-3">0.5% Daily</h3>
+              <p className="text-text-secondary text-sm leading-relaxed">Pay only for the days you borrow. No hidden fees, no application costs.</p>
+            </motion.div>
+            <motion.div variants={fadeUp} className="bg-primary text-primary-foreground rounded-2xl lg:rounded-3xl p-8 lg:p-10 shadow-lg shadow-primary/20">
+              <div className="bg-white/15 w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-6"><Clock size={28} /></div>
+              <h3 className="text-2xl font-heading font-bold mb-3">Flexible Terms</h3>
+              <p className="text-white/85 text-sm leading-relaxed">Repay in 1, 5, 10, 14, or 30 days. You're in complete control.</p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* WHO WE SERVE */}
-      <section className="py-24 lg:py-32 bg-background">
+      {/* ===== WHO WE SERVE ===== */}
+      <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-32 md:mb-40">
-            <motion.div variants={fadeUp} className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Real People. Real Impact.</motion.div>
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-8">Built for everyday Ghanaians</motion.h2>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-24 md:mb-32">
+            <motion.div variants={fadeUp} className="inline-block bg-primary/8 text-primary font-bold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase text-xs border border-primary/10">Real People. Real Impact.</motion.div>
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-text-primary tracking-tight mb-6">Built for everyday Ghanaians</motion.h2>
             <motion.div variants={fadeUp}>
-              <Link to="/who-we-serve" className="inline-flex items-center text-secondary font-bold hover:text-secondary/80 transition-colors text-lg">
-                View all our champions <ArrowRight className="ml-2" size={20} />
+              <Link to="/who-we-serve" className="inline-flex items-center text-secondary font-bold hover:text-secondary/80 transition-colors text-sm">
+                View all our champions <ArrowRight className="ml-1.5" size={16} />
               </Link>
             </motion.div>
           </motion.div>
           
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-32">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-28">
             {personas.map((p) => (
-              <motion.div key={p.name} variants={fadeUp} className="relative bg-white border border-black/5 rounded-[3rem] p-8 md:p-10 pt-28 md:pt-36 shadow-xl shadow-black/5 hover:-translate-y-2 transition-transform duration-300 text-center">
-                <div className="absolute -top-24 md:-top-28 left-1/2 -translate-x-1/2">
-                  <div className="w-48 h-48 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-primary to-secondary shadow-2xl shadow-primary/20">
-                    <img 
-                      src={p.image} 
-                      alt={p.name} 
-                      className="w-full h-full rounded-full object-cover border-[6px] border-white"
-                    />
+              <motion.div key={p.name} variants={fadeUp} className="relative bg-surface-elevated border border-border/50 rounded-2xl lg:rounded-3xl p-6 md:p-8 pt-24 md:pt-28 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-center">
+                <div className="absolute -top-20 md:-top-24 left-1/2 -translate-x-1/2">
+                  <div className="w-40 h-40 md:w-48 md:h-48 rounded-full p-1.5 bg-gradient-to-tr from-primary to-secondary shadow-lg shadow-primary/15">
+                    <img src={p.image} alt={p.name} className="w-full h-full rounded-full object-cover border-4 border-surface-elevated" />
                   </div>
                 </div>
-                <h3 className="font-heading font-black text-3xl text-[#1A1A1A] mb-2">{p.name}</h3>
-                <p className="inline-block bg-[#FAFAFA] text-[#6A6A6A] text-sm font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">{p.role}</p>
-                <p className="text-[#4A4A4A] text-lg leading-relaxed">{p.story}</p>
+                <h3 className="font-heading font-bold text-2xl text-text-primary mb-1">{p.name}</h3>
+                <p className="inline-block bg-surface text-text-muted text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">{p.role}</p>
+                <p className="text-text-secondary text-sm leading-relaxed">{p.story}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* NODES & CONNECTIONS SECTION */}
-      <section className="py-24 lg:py-32 bg-[#1A1A1A] text-white">
+      {/* ===== NODES & CONNECTIONS ===== */}
+      <section className="py-20 lg:py-28 bg-overlay text-primary-foreground">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              <motion.div variants={fadeUp} className="inline-block bg-white/10 text-white font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Grow Together</motion.div>
-              <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-10 leading-tight">
-                The Power of Trust — <span className="text-primary block mt-2">Our Node system.</span>
+              <motion.div variants={fadeUp} className="inline-block bg-white/8 text-white/70 font-bold px-4 py-1.5 rounded-full mb-5 tracking-wide uppercase text-xs border border-white/10">Grow Together</motion.div>
+              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold mb-8 leading-tight">
+                The Power of Trust — <span className="text-primary block mt-1">Our Node system.</span>
               </motion.h2>
-              <motion.div variants={fadeUp} className="space-y-6">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8">
-                  <h4 className="font-heading font-black text-2xl text-primary mb-3">Node 🌟</h4>
-                  <p className="text-lg opacity-80 leading-relaxed">A trusted Agenda Money customer with a clean repayment history. Nodes recommend people in their network to unlock faster approvals.</p>
+              <motion.div variants={fadeUp} className="space-y-4">
+                <div className="bg-white/5 border border-white/8 rounded-2xl p-6">
+                  <h4 className="font-heading font-bold text-lg text-primary mb-2">Node 🌟</h4>
+                  <p className="text-sm opacity-75 leading-relaxed">A trusted Agenda Money customer with a clean repayment history. Nodes recommend people in their network to unlock faster approvals.</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8">
-                  <h4 className="font-heading font-black text-2xl text-secondary mb-3">Connection 🤝</h4>
-                  <p className="text-lg opacity-80 leading-relaxed">Anyone in a Node's network. Using a Node's code speeds up your application and boosts trust immediately.</p>
+                <div className="bg-white/5 border border-white/8 rounded-2xl p-6">
+                  <h4 className="font-heading font-bold text-lg text-secondary mb-2">Connection 🤝</h4>
+                  <p className="text-sm opacity-75 leading-relaxed">Anyone in a Node's network. Using a Node's code speeds up your application and boosts trust immediately.</p>
                 </div>
               </motion.div>
-              <motion.div variants={fadeUp} className="mt-12">
+              <motion.div variants={fadeUp} className="mt-8">
                 <Link to="/#apply">
-                  <Button className="bg-secondary hover:bg-white text-black rounded-full px-10 py-8 font-bold text-xl transition-colors">
-                    Get Your Node Code <ArrowRight className="ml-2" size={24} />
+                  <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full px-8 py-6 font-bold text-base transition-all hover:-translate-y-0.5">
+                    Get Your Node Code <ArrowRight className="ml-2" size={18} />
                   </Button>
                 </Link>
               </motion.div>
             </motion.div>
             
-            {/* Visual Node Representation */}
+            {/* Node visualization */}
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex justify-center items-center">
-               <div className="relative w-full max-w-md aspect-square bg-white/5 rounded-full border border-white/10 flex items-center justify-center">
-                 {/* Center Node */}
-                 <div className="w-32 h-32 bg-primary rounded-full shadow-[0_0_60px_rgba(238,27,133,0.4)] flex items-center justify-center font-heading font-black text-2xl relative z-10 border-8 border-[#1A1A1A]">
-                   NODE
-                 </div>
-                 
-                 {/* Orbits & Connections */}
-                 <div className="absolute inset-4 border border-white/10 rounded-full animate-[spin_60s_linear_infinite]">
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-secondary text-[#1A1A1A] font-bold text-xs rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,184,168,0.3)]">CONN</div>
-                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-secondary text-[#1A1A1A] font-bold text-xs rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,184,168,0.3)]">CONN</div>
-                    <div className="absolute top-1/2 -left-8 -translate-y-1/2 w-16 h-16 bg-secondary text-[#1A1A1A] font-bold text-xs rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,184,168,0.3)]">CONN</div>
-                    <div className="absolute top-1/2 -right-8 -translate-y-1/2 w-16 h-16 bg-secondary text-[#1A1A1A] font-bold text-xs rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,184,168,0.3)]">CONN</div>
-                 </div>
-               </div>
+              <div className="relative w-full max-w-sm aspect-square bg-white/[0.03] rounded-full border border-white/8 flex items-center justify-center">
+                <div className="w-24 h-24 bg-primary rounded-full shadow-[0_0_40px_rgba(238,27,133,0.3)] flex items-center justify-center font-heading font-black text-lg relative z-10 border-4 border-overlay">
+                  NODE
+                </div>
+                <div className="absolute inset-6 border border-white/8 rounded-full animate-[spin_60s_linear_infinite]">
+                  {["-top-6 left-1/2 -translate-x-1/2", "-bottom-6 left-1/2 -translate-x-1/2", "top-1/2 -left-6 -translate-y-1/2", "top-1/2 -right-6 -translate-y-1/2"].map((pos, i) => (
+                    <div key={i} className={`absolute ${pos} w-12 h-12 bg-secondary text-overlay font-bold text-[10px] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,184,168,0.25)]`}>CONN</div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-24 lg:py-32 bg-[#FAFAFA]">
+      {/* ===== TESTIMONIALS ===== */}
+      <section className="py-20 lg:py-28 bg-surface">
         <div className="container mx-auto px-4">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16 lg:mb-20">
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-4">Trusted by thousands</motion.h2>
-            <motion.p variants={fadeUp} className="text-xl text-primary font-bold">Trusted by Ghanaians for fast and reliable financial support.</motion.p>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-12 lg:mb-16">
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-text-primary tracking-tight mb-3">Trusted by thousands</motion.h2>
+            <motion.p variants={fadeUp} className="text-base text-primary font-semibold">Trusted by Ghanaians for fast and reliable financial support.</motion.p>
           </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {testimonials.map((t, i) => (
-              <motion.div key={i} variants={fadeUp} className="bg-white border border-black/5 shadow-xl shadow-black/5 rounded-[2.5rem] p-8 lg:p-10 flex flex-col justify-between h-full">
+              <motion.div key={i} variants={fadeUp} className="bg-surface-elevated border border-border/50 shadow-sm rounded-2xl p-6 lg:p-7 flex flex-col justify-between h-full hover:shadow-md transition-shadow">
                 <div>
-                  <div className="flex gap-1 mb-6">{[...Array(5)].map((_, j) => <Star key={j} size={20} className="text-yellow-400 fill-yellow-400" />)}</div>
-                  <p className="text-lg lg:text-xl font-medium leading-relaxed text-[#1A1A1A] mb-8">"{t.quote}"</p>
+                  <div className="flex gap-0.5 mb-4">{[...Array(5)].map((_, j) => <Star key={j} size={14} className="text-warning fill-warning" />)}</div>
+                  <p className="text-sm font-medium leading-relaxed text-text-primary mb-6">"{t.quote}"</p>
                 </div>
-                <div className="bg-[#FAFAFA] px-6 py-4 rounded-full inline-block self-start border border-black/5">
-                  <p className="text-sm font-black text-primary uppercase tracking-wide">{t.name}</p>
-                  <p className="text-xs text-[#6A6A6A] font-bold mt-1">{t.loc}</p>
+                <div className="bg-surface px-4 py-2.5 rounded-full inline-block self-start border border-border/50">
+                  <p className="text-xs font-bold text-primary">{t.name}</p>
+                  <p className="text-[10px] text-text-muted font-medium">{t.loc}</p>
                 </div>
               </motion.div>
             ))}
@@ -324,61 +315,53 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA SECTION & FORM */}
-      <section className="py-16 lg:py-32 bg-primary relative overflow-hidden px-2 lg:px-8">
-        {/* Abstract background shapes */}
-        <div className="absolute top-0 right-0 w-full h-full">
-           <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[140%] bg-white/[0.04] rounded-full blur-[80px] origin-center -rotate-12 pointer-events-none"></div>
-           <div className="absolute bottom-[-20%] left-[-10%] w-[50%] h-[120%] bg-black/[0.04] rounded-full blur-[80px] origin-center rotate-45 pointer-events-none"></div>
+      {/* ===== CTA & APPLY FORM ===== */}
+      <section className="py-12 lg:py-24 bg-primary relative overflow-hidden px-3 lg:px-6">
+        <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
+          <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[130%] bg-white/[0.03] rounded-full blur-[60px] -rotate-12" />
         </div>
 
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-8 items-center bg-white rounded-[2.5rem] lg:rounded-[4rem] p-6 lg:p-16 shadow-2xl mx-2 lg:mx-0">
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-6 items-center bg-surface-elevated rounded-2xl lg:rounded-3xl p-5 lg:p-12 shadow-xl">
             
-            {/* CTA Text */}
-            <div className="lg:col-span-3 lg:pr-12 text-center lg:text-left">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] mb-6 lg:mb-8 leading-tight lg:leading-[1.1]">
-                Ready to apply? <br/><span className="text-primary lg:block">We're ready to fund.</span>
+            <div className="lg:col-span-3 lg:pr-8 text-center lg:text-left">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-extrabold text-text-primary mb-4 lg:mb-6 leading-tight">
+                Ready to apply? <br /><span className="text-primary">We're ready to fund.</span>
               </h2>
-              <p className="text-lg lg:text-xl text-[#6A6A6A] mb-8 lg:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                It takes minutes. No collateral, no branch visit, no wahala. 
-                Instant disbursement to MTN, Telecel, and AirtelTigo.
+              <p className="text-sm lg:text-base text-text-secondary mb-6 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                It takes minutes. No collateral, no branch visit, no wahala. Instant disbursement to MTN, Telecel, and AirtelTigo.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link to="/contact">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-black/10 text-[#1A1A1A] rounded-full px-8 lg:px-10 py-6 lg:py-8 text-lg font-bold hover:bg-[#FAFAFA] transition-all">
-                    Contact Support
-                  </Button>
-                </Link>
-              </div>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-2 border-border text-text-primary rounded-full px-8 py-6 text-base font-semibold hover:bg-surface transition-all">
+                  Contact Support
+                </Button>
+              </Link>
             </div>
 
-            {/* Apply Form */}
-            <div id="apply" className="lg:col-span-2 bg-[#FAFAFA] rounded-[2rem] lg:rounded-[2.5rem] p-6 lg:p-10 border border-black/5 shadow-inner">
-              <h3 className="text-2xl font-heading font-black text-[#1A1A1A] mb-2">Loan Enquiry</h3>
-              <p className="text-[#6A6A6A] font-medium mb-6 lg:mb-8 text-sm lg:text-base">Fill to express interest.</p>
+            <div id="apply" className="lg:col-span-2 bg-surface rounded-2xl p-5 lg:p-8 border border-border/50">
+              <h3 className="text-xl font-heading font-bold text-text-primary mb-1">Loan Enquiry</h3>
+              <p className="text-text-muted text-xs font-medium mb-5">Fill to express interest.</p>
               
-              <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert("Thanks! We'll be in touch."); }}>
-                <input type="text" required placeholder="Full Name" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow" />
-                <input type="tel" required placeholder="Phone Number" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow" />
-                <input type="text" placeholder="Node Code (Optional)" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow" />
+              <form className="space-y-3" onSubmit={(e) => { e.preventDefault(); alert("Thanks! We'll be in touch."); }}>
+                <input type="text" required placeholder="Full Name" className="w-full rounded-xl border border-border/50 bg-surface-elevated px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all" />
+                <input type="tel" required placeholder="Phone Number" className="w-full rounded-xl border border-border/50 bg-surface-elevated px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all" />
+                <input type="text" placeholder="Node Code (Optional)" className="w-full rounded-xl border border-border/50 bg-surface-elevated px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all" />
                 <div className="relative">
-                  <select className="appearance-none w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow text-[#1A1A1A] cursor-pointer">
+                  <select className="appearance-none w-full rounded-xl border border-border/50 bg-surface-elevated px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all cursor-pointer text-text-primary">
                     <option value="">Select Amount</option>
                     <option value="50-300">GHS 50 – 300</option>
                     <option value="300-500">GHS 300 – 500</option>
                     <option value="500-2000">GHS 500 – 2,000</option>
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-primary">
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+                    <svg className="fill-current h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                   </div>
                 </div>
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white rounded-[1.25rem] lg:rounded-[1.5rem] py-6 lg:py-8 text-lg lg:text-xl font-bold shadow-xl shadow-primary/30 transition-transform hover:-translate-y-1 mt-2 lg:mt-4">
-                  Submit Enquiry <ArrowRight className="ml-2 w-5 h-5 lg:w-6 lg:h-6" />
+                <Button type="submit" className="w-full bg-primary hover:bg-primary-hover text-primary-foreground rounded-xl py-6 text-base font-bold shadow-md shadow-primary/20 transition-all hover:-translate-y-0.5 mt-1">
+                  Submit Enquiry <ArrowRight className="ml-2" size={18} />
                 </Button>
               </form>
             </div>
-
           </div>
         </div>
       </section>
