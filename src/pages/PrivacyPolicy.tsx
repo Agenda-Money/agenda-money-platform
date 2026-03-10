@@ -50,13 +50,13 @@ const PrivacyPolicy = () => (
         className="container mx-auto max-w-3xl"
       >
         <motion.p variants={fadeUp} className="text-[#4A4A4A] text-lg leading-relaxed mb-12 p-6 bg-primary/5 border border-primary/10 rounded-2xl">
-          Agenda Money Limited ("Agenda Money", "we", "our", or "us") is committed to protecting your personal information. This Privacy Policy describes how we collect, use, share, and safeguard your data when you use our digital lending platform, website, or mobile application.
+          Agenda Money ("Agenda Money", "we", "our", or "us") is committed to protecting your personal information. This Privacy Policy describes how we collect, use, share, and safeguard your data when you use our digital lending platform, website, or mobile application.
         </motion.p>
 
         <Section title="1. Information We Collect">
           <p>We collect the following categories of personal information to assess your creditworthiness and deliver our services:</p>
           <ul className="list-disc pl-6 space-y-2 mt-3">
-            <li><strong>Identity Information:</strong> Full name, date of birth, national ID (Ghana Card) number, and photograph.</li>
+            <li><strong>Identity Information:</strong> Full name, date of birth, National ID number, and photograph.</li>
             <li><strong>Contact Information:</strong> Phone number, email address, and residential address.</li>
             <li><strong>Financial Information:</strong> Mobile money wallet details, income information, and repayment history.</li>
             <li><strong>Device & Usage Data:</strong> IP address, device identifiers, browser type, and app usage data.</li>
@@ -71,7 +71,7 @@ const PrivacyPolicy = () => (
             <li>To disburse funds and collect repayments via mobile money.</li>
             <li>To verify your identity and prevent fraud.</li>
             <li>To communicate with you about your account, upcoming payments, and promotions.</li>
-            <li>To comply with applicable laws, regulations, and regulatory reporting obligations (including MCAG requirements).</li>
+            <li>To comply with applicable laws, regulations, and regulatory reporting obligations.</li>
             <li>To improve our products, services, and user experience.</li>
           </ul>
         </Section>
@@ -80,7 +80,7 @@ const PrivacyPolicy = () => (
           <p>We process your data based on:</p>
           <ul className="list-disc pl-6 space-y-2 mt-3">
             <li><strong>Contract performance:</strong> Processing necessary to provide loan services you have requested.</li>
-            <li><strong>Legal obligation:</strong> Compliance with Ghanaian lending laws and MCAG regulations.</li>
+            <li><strong>Legal obligation:</strong> Compliance with applicable lending laws and regulations.</li>
             <li><strong>Legitimate interests:</strong> Fraud prevention, credit risk assessment, and service improvement.</li>
             <li><strong>Consent:</strong> Where you have expressly agreed to specific uses of your data.</li>
           </ul>
@@ -91,14 +91,14 @@ const PrivacyPolicy = () => (
           <ul className="list-disc pl-6 space-y-2 mt-3">
             <li><strong>Mobile Money Operators:</strong> MTN MoMo, Telecel Cash, and AT Money for disbursement and repayment processing.</li>
             <li><strong>Credit Bureaus:</strong> For credit reporting and identity verification, as required by law.</li>
-            <li><strong>Regulatory Bodies:</strong> The Micro-Credit Association of Ghana (MCAG), Bank of Ghana, and other applicable regulators.</li>
+            <li><strong>Regulatory Bodies:</strong> Applicable financial regulators and law enforcement agencies as required by law.</li>
             <li><strong>Service Providers:</strong> Trusted third-party vendors who help us operate our platform, bound by confidentiality agreements.</li>
             <li><strong>Law Enforcement:</strong> Where required by valid legal process or to protect our rights.</li>
           </ul>
         </Section>
 
         <Section title="5. Data Retention">
-          <p>We retain your personal data for as long as necessary to fulfill the purposes for which it was collected, including satisfying legal, accounting, or reporting requirements. For active customers, data is retained for the duration of the lending relationship and for a minimum of 6 years thereafter, in accordance with Ghanaian financial regulations.</p>
+          <p>We retain your personal data for as long as necessary to fulfill the purposes for which it was collected, including satisfying legal, accounting, or reporting requirements. For active customers, data is retained for the duration of the lending relationship and for a minimum of 6 years thereafter, in accordance with applicable financial regulations.</p>
         </Section>
 
         <Section title="6. Data Security">
@@ -128,9 +128,8 @@ const PrivacyPolicy = () => (
         <Section title="10. Contact Us">
           <p>For any questions about this Privacy Policy or how we handle your data, please contact:</p>
           <div className="mt-4 bg-[#FAFAFA] border border-black/5 rounded-2xl p-6 space-y-2">
-            <p><strong>Agenda Money Limited</strong></p>
+            <p><strong>Agenda Money</strong></p>
             <p>Email: <a href="mailto:support@agendamoney.com" className="text-primary font-bold hover:underline">support@agendamoney.com</a></p>
-            <p>Registered Micro Credit Institution under the Micro-Credit Association of Ghana (MCAG)</p>
           </div>
         </Section>
       </motion.div>

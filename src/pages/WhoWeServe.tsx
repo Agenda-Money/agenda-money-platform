@@ -17,7 +17,7 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 // Full list of personas for this page (excluding the 3 on Home to avoid duplication if desired, or showing all. Let's show the remaining 5 as requested)
 const personas = [
-  { name: "Aku", role: "Market Trader", story: "A single mother of three who relies on Agenda Money for emergencies and weekly restocking.", image: akuImg, pos: "center top" },
+  { name: "Aku", role: "Market Trader", story: "A single mother of three who relies on Agenda Money for emergencies and weekly restocking of her shop.", image: akuImg, pos: "center top" },
   { name: "Ali", role: "Carpenter", story: "Relies on Agenda Money for quick capital when large lumber orders arrive, keeping deadlines on track.", image: aliImg, pos: "center top" },
   { name: "Mr. Amuzu", role: "Parent", story: "Funds school supplies for his son Kojo through Agenda Money — nurturing tomorrow's leaders today.", image: mrAmuzuImg, pos: "center top" },
   { name: "Beatrice", role: "Seamstress", story: "Uses Agenda Money to buy fabrics and grow her loyal clientele — one stitch at a time.", image: beatriceImg, pos: "left top" },
@@ -32,7 +32,7 @@ const WhoWeServe = () => (
     <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-primary text-primary-foreground overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl mx-2 lg:mx-8 mt-4">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={backboneImg} alt="Backbone of Ghana" className="w-full h-full object-cover opacity-50" loading="lazy" />
+        <img src={backboneImg} alt="Backbone of Africa" className="w-full h-full object-cover opacity-50" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent"></div>
       </div>
 
@@ -50,17 +50,6 @@ const WhoWeServe = () => (
           </motion.h1>
           <motion.p variants={fadeUp} className="text-xl opacity-90 leading-relaxed max-w-2xl mx-auto">
             Across Sub-Saharan Africa, the informal sector employs over 85% of the workforce — yet contributes only 41% of GDP. We're here to change that narrative.
-          </motion.p>
-          <motion.p variants={fadeUp} className="mt-4 text-sm text-white/50 max-w-xl mx-auto">
-            Source:{" "}
-            <a
-              href="https://news.un.org/en/story/2018/04/1008612"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-white/80 transition-colors"
-            >
-              ILO — Women and Men in the Informal Economy (2018), via UN News
-            </a>
           </motion.p>
         </motion.div>
       </div>
@@ -120,7 +109,7 @@ const WhoWeServe = () => (
               Closing the <br/><span className="text-secondary font-black">$5 Billion</span> <br/>Credit Gap.
             </motion.h2>
             <motion.p variants={fadeUp} className="text-lg lg:text-xl text-[#6A6A6A] leading-relaxed mb-10">
-              The SME credit gap in Sub-Saharan Africa exceeds US$330 billion. In Ghana alone, that gap is over US$5 billion. Agenda Money is here to close it — one sustainable micro-loan at a time.
+              The SME credit gap in Sub-Saharan Africa exceeds US$330 billion. Agenda Money is here to close it — one sustainable micro-loan at a time.
             </motion.p>
             <motion.div variants={fadeUp}>
               <Link to="/#apply">
@@ -142,15 +131,15 @@ const WhoWeServe = () => (
                    <TrendingUp size={40} />
                  </div>
                  <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Financial Inclusion</h3>
-                 <p className="text-[#6A6A6A] text-lg leading-relaxed flex-grow">We provide capital to ambitious Ghanaians who are locked out of the traditional banking system due to lack of collateral or formal histories.</p>
+                 <p className="text-[#6A6A6A] text-lg leading-relaxed flex-grow">We provide capital to ambitious individuals who are locked out of the traditional banking system due to lack of collateral or formal histories.</p>
                </motion.div>
 
                <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
                  <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8">
                    <HandCoins size={40} />
                  </div>
-                 <h3 className="text-3xl font-heading font-black mb-4">Pan-African Access</h3>
-                 <p className="text-white/90 text-lg leading-relaxed flex-grow">Headquartered in Accra, Ghana; we are building Africa's most accessible digital credit platform — one micro-loan at a time, with no distance, no paperwork, no barriers.</p>
+                 <h3 className="text-3xl font-heading font-black mb-4">Pan African Access</h3>
+                 <p className="text-white/90 text-lg leading-relaxed flex-grow">We are building Africa's most accessible digital credit platform. One microloan at a time. No paperwork, no collateral, no long queues... no barriers.</p>
                </motion.div>
              </div>
           </motion.div>

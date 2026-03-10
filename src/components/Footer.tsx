@@ -47,7 +47,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-white/70 text-base lg:text-lg leading-relaxed mb-8 max-w-sm font-medium">
-              We're redefining credit accessibility in Africa. Fast, fair, and completely digital micro-loans for the backbone of our economy.
+              We're redefining access to credit in Africa. Fast, fair, and completely digital micro-loans for the backbone of our economy.
             </p>
             <div className="flex gap-3">
               {socialLinks.map(({ Icon, href }, i) => (
@@ -143,13 +143,7 @@ const Footer = () => {
         <div className="pt-12 border-t border-white/10 flex flex-col items-center justify-between gap-10 lg:flex-row lg:gap-8">
           <div className="flex flex-col items-center lg:items-start gap-4 lg:gap-2">
             <p className="text-white/80 text-xs font-medium tracking-wide text-center lg:text-left">
-              © 2025 Agenda Money Limited. <span className="text-primary font-bold">Registered Micro Credit Institution.</span>
-            </p>
-            <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest text-center lg:text-left">
-              Operating under the rules &amp; regulations of the Micro-Credit Association of Ghana (MCAG)
-            </p>
-            <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest text-center lg:text-left">
-              G.I.A.C Portfolio Business
+              © 2025 Agenda Money.
             </p>
           </div>
 

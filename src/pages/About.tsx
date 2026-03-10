@@ -26,7 +26,7 @@ const About = () => (
               <span className="text-white">Agenda Money.</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-xl text-white/70 leading-relaxed mb-10 max-w-lg font-medium">
-              We're on a mission to empower individuals and micro-businesses by providing affordable and easily accessible digital financial services — credit first.
+              We're on a mission to empower individuals and micro-entrepreneurs with a special focus on the unbanked and underserved by providing affordable and easily accessible digital financial services - credit first.
             </motion.p>
 
           </motion.div>
@@ -49,7 +49,7 @@ const About = () => (
               </div>
               <div>
                 <p className="font-heading font-black text-xl lg:text-2xl tracking-tighter">2030 Vision</p>
-                <p className="text-[10px] lg:text-sm font-bold opacity-60">1M Active Customers</p>
+                <p className="text-[10px] lg:text-sm font-bold opacity-60">1M Active Africans</p>
               </div>
             </div>
           </motion.div>
@@ -70,11 +70,10 @@ const About = () => (
                <Target size={40} />
              </motion.div>
              <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[#1A1A1A] mb-10 tracking-tight leading-[1.1]">
-               Our North Star <br/>
-               <span className="text-primary italic">is Impact.</span>
+               Our North Star is <span className="text-primary italic">Impact.</span>
              </motion.h2>
              <motion.p variants={fadeUp} className="text-2xl md:text-3xl lg:text-4xl text-[#1A1A1A] leading-[1.3] font-medium italic border-l-4 border-secondary pl-8">
-               "To build and manage a loan book of <span className="text-primary font-black">$5 million</span> for <span className="text-[#1A1A1A] font-black underline decoration-secondary decoration-8 underline-offset-8">100,000 active customers</span> by 2030."
+               "To build and manage a loan book of <span className="text-primary font-black">$10 Million</span> for <span className="text-[#1A1A1A] font-black underline decoration-secondary decoration-8 underline-offset-8">a Million Africans</span> by 2030." - <span className="text-primary">We call it empowerment</span>
              </motion.p>
            </div>
            
@@ -83,7 +82,7 @@ const About = () => (
                 <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#BABABA]">2030 Vision</div>
                 <div className="text-[5.5rem] font-heading font-black text-primary leading-none">1M</div>
                 <div className="w-8 h-[2px] bg-primary/30 rounded-full"></div>
-                <div className="text-sm font-black uppercase tracking-[0.2em] text-[#8A8A8A]">Active Customers</div>
+                <div className="text-sm font-black uppercase tracking-[0.2em] text-[#8A8A8A]">A Million Africans</div>
               </div>
            </motion.div>
          </motion.div>

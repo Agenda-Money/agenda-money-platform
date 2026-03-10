@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Zap, Smartphone, Shield, CheckCircle, ArrowRight, ArrowUp, Users, TrendingUp, Clock, Star } from "lucide-react";
+import { ArrowRight, Users, CheckCircle, Smartphone, TrendingUp, Clock, Banknote, Zap, Shield, HelpCircle, ChevronDown, CheckCircle2, Star } from "lucide-react";
 import customerLoanImg from "@/assets/customer-loan.webp";
 import adizaImg from "@/assets/adizs.jpg";
 import alexImg from "@/assets/alex.jpg";
 import kofiImg from "@/assets/kofi.jpg";
 import iphone3Img from "@/assets/iPhone 3_.webp";
-import nodeConImg from "@/assets/node-con.png";
+import nodeConImg from "@/assets/node-con2i.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -41,14 +41,14 @@ const Index = () => {
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="lg:w-1/2 text-left z-10">
               <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold tracking-wide uppercase mb-8">
-                <Zap size={18} /> Instant Loans in Ghana
+                <Zap size={18} /> Instant Loans in Africa
               </motion.div>
               <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-[1.05] mb-6 tracking-tight text-[#1A1A1A]">
                 Giving credit <br/>
                 <span className="text-primary">where it's due.</span>
               </motion.h1>
               <motion.p variants={fadeUp} className="text-xl opacity-80 mb-10 leading-relaxed max-w-lg text-[#4A4A4A]">
-                Fast, simple, affordable micro-loans for individuals and small businesses. No collateral. Just cash when you need it.
+                Fast, simple, affordable micro-loans for individuals and small businesses. No collateral required. Just cash when you need it.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link to="/#apply">
@@ -110,13 +110,13 @@ const Index = () => {
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> No Collateral Required
               </span>
               <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Instant MoMo Payouts
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Instant MoMo Disbursements
               </span>
               <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> 0.5% Daily Interest
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> Transparent Pricing
               </span>
               <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Serving All of Ghana
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Serving All of Africa
               </span>
             </div>
           ))}
@@ -134,7 +134,7 @@ const Index = () => {
                 Emergency cash. <br/>Working capital. <br/><span className="text-secondary">Real impact.</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="text-lg opacity-90 leading-relaxed mb-10 max-w-lg">
-                Agenda Money is an online micro-loan platform built for individuals and micro-entrepreneurs who need fast, affordable financial support — without the typical bank queues, paperwork, or collateral.
+                Agenda Money is an online micro-loan platform built for individuals and micro-entrepreneurs who need fast, affordable financial support — without the need to meet the extensive loan requirements of traditional banks.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
                 {["No Collateral", "Paperless", "Cashless", "Branchless", "24/7 Access", "Nationwide"].map((p) => (
@@ -206,17 +206,17 @@ const Index = () => {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
              <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-center min-h-[300px]">
                <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center text-primary mb-8"><TrendingUp size={40} /></div>
-               <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">0.5% Daily Rate</h3>
-               <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed">Interest is calculated and applied daily. Earlier repayment reduces your cost of borrowing.</p>
+                <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Transparent Pricing</h3>
+                <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed">Interest is calculated and applied daily. Earlier repayment reduces your cost of borrowing.</p>
              </motion.div>
              <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col justify-center min-h-[300px]">
                <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8"><Clock size={40} /></div>
                <h3 className="text-3xl font-heading font-black mb-4">Flexible Terms</h3>
-               <p className="text-white/90 text-lg font-medium leading-relaxed">Repay in 1, 5, 10, or 14 days. You're in complete control.</p>
+                <p className="text-white/90 text-lg font-medium leading-relaxed">Repay in 1, 5, 10, 14, or 30 days. You're in complete control.</p>
              </motion.div>
              <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-center min-h-[300px]">
-               <div className="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center text-secondary mb-8"><ArrowUp size={40} /></div>
-               <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Flat Fees</h3>
+                <div className="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center text-secondary mb-8"><Banknote size={40} /></div>
+                <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Flat Fees</h3>
                <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed">You pay a fixed processing fee no matter the amount you borrow. Your cost of borrowing reduces as you unlock higher loan amounts.</p>
              </motion.div>
           </motion.div>
@@ -293,14 +293,24 @@ const Index = () => {
                 The Power of Trust — <span className="text-primary block mt-2">Our Node system.</span>
               </motion.h2>
               <motion.div variants={fadeUp} className="space-y-6">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8">
-                  <h4 className="font-heading font-black text-2xl text-primary mb-3">Node 🌟</h4>
-                  <p className="text-lg opacity-80 leading-relaxed">A trusted Agenda Money customer with a verified repayment record. Nodes hold a unique code and unlock higher loan limits, lower rates, and priority processing — while extending access to everyone in their network.</p>
-                </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8">
-                  <h4 className="font-heading font-black text-2xl text-secondary mb-3">Connection 🤝</h4>
-                  <p className="text-lg opacity-80 leading-relaxed">A borrower who enters through a Node's referral code. Connections get a fast-tracked application, immediate trust uplift, and access to Agenda Money's full loan range — no guarantors, no collateral.</p>
-                </div>
+                <motion.div 
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 transition-all hover:bg-white/10 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 group"
+                >
+                  <h4 className="font-heading font-black text-2xl text-primary mb-3 flex items-center gap-2">
+                    Node 🌟
+                  </h4>
+                  <p className="text-lg opacity-80 leading-relaxed group-hover:opacity-100 transition-opacity">A verified Agenda Money customer with an assigned node code and unrestricted access to our loan aplication platform - Nodes are allowed to extend invites to friends and family to access loans from us</p>
+                </motion.div>
+                <motion.div 
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 transition-all hover:bg-white/10 hover:border-secondary/50 hover:shadow-2xl hover:shadow-secondary/10 group"
+                >
+                  <h4 className="font-heading font-black text-2xl text-secondary mb-3 flex items-center gap-2">
+                    Connections 🤝
+                  </h4>
+                  <p className="text-lg opacity-80 leading-relaxed group-hover:opacity-100 transition-opacity">People and businesses within a Node's network but yet to be verified by Agenda Money. They can only access loans through the endorsement of a Node. Connections automatically become Nodes after successfully closing 5 loans with us</p>
+                </motion.div>
               </motion.div>
               <motion.div variants={fadeUp} className="mt-12">
                 <Link to="/#apply">
@@ -321,9 +331,15 @@ const Index = () => {
               <motion.img
                 src={nodeConImg}
                 alt="Node and Connections diagram"
-                className="w-full max-w-md rounded-3xl mix-blend-screen"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="w-full max-w-md rounded-3xl mix-blend-screen shadow-2xl brightness-110 drop-shadow-[0_0_30px_rgba(0,184,169,0.3)]"
+                animate={{ 
+                  y: [0, -15, 0],
+                }}
+                transition={{ 
+                  duration: 6, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
               />
             </motion.div>
           </div>
@@ -416,11 +432,11 @@ const Index = () => {
                 </div>
                 <label className="flex items-start gap-3 bg-white rounded-[1.25rem] px-5 py-4 shadow-sm cursor-pointer group">
                   <input type="checkbox" required className="mt-0.5 w-5 h-5 rounded accent-primary cursor-pointer flex-shrink-0" />
-                  <span className="text-sm text-[#4A4A4A] font-medium leading-snug">I have a valid Ghana Card</span>
+                  <span className="text-sm text-[#4A4A4A] font-medium leading-snug">I have a valid National ID</span>
                 </label>
                 <label className="flex items-start gap-3 bg-white rounded-[1.25rem] px-5 py-4 shadow-sm cursor-pointer group">
                   <input type="checkbox" required className="mt-0.5 w-5 h-5 rounded accent-primary cursor-pointer flex-shrink-0" />
-                  <span className="text-sm text-[#4A4A4A] font-medium leading-snug">I am a Ghanaian, 18 years &amp; above</span>
+                  <span className="text-sm text-[#4A4A4A] font-medium leading-snug">I am 18 years &amp; above</span>
                 </label>
                 <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white rounded-[1.25rem] lg:rounded-[1.5rem] py-6 lg:py-8 text-lg lg:text-xl font-bold shadow-xl shadow-primary/30 transition-transform hover:-translate-y-1 mt-2 lg:mt-4">
                   Submit Enquiry <ArrowRight className="ml-2 w-5 h-5 lg:w-6 lg:h-6" />
