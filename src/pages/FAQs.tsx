@@ -15,8 +15,8 @@ const faqSections = [
   {
     title: "Eligibility & Requirements",
     items: [
-      { q: "Who qualifies for a loan?", a: "Any Ghanaian national who is 18 years and above, holds a valid Ghana Card, and has the ability and willingness to repay loans." },
-      { q: "What information is needed to apply?", a: "Personal details, a copy of your Ghana Card, a selfie, your loan request details, and a valid Node code." },
+      { q: "Who qualifies for a loan?", a: "Anyone who is 18 years and above, holds a valid National ID, and has the ability and willingness to repay loans." },
+      { q: "What information is needed to apply?", a: "Personal details, a copy of your National ID, a selfie, your loan request details, and a valid Node code." },
     ],
   },
   {
@@ -30,24 +30,24 @@ const faqSections = [
   {
     title: "Loan Details",
     items: [
-      { q: "How much can I borrow?", a: "Applicants can access between GHS 50 and GHS 2,000 depending on their qualification and repayment history." },
-      { q: "What are the loan durations?", a: "1, 5, 10, and 14 days. You only pay interest for the days you are indebted." },
-      { q: "What is the interest rate?", a: "0.5% per day. E.g., 3.5% for 7 days, 7% for 14 days." },
-      { q: "What happens if I repay late?", a: "A penal interest of 2% per day applies on any overdue amount." },
-      { q: "What happens if I don't repay?", a: "After all recovery measures are exhausted, the borrower is blacklisted and cannot access new loans. The credit record is shared with Ghana's Credit Bureau. Connections within the defaulter's network may also be negatively affected." },
+      { q: "How much can I borrow?", a: "First-time applicants can access between GHS 50 and GHS 300. As you build a positive repayment history, your eligible amount increases up to GHS 2,000." },
+      { q: "What are the loan durations?", a: "1, 5, 10, 14, and 30 days. Our flexibile terms allow you to choose what works best for your needs." },
+      { q: "What is the interest rate?", a: "We offer transparent, flat-rate pricing. You will see the total repayment amount clearly before you accept any loan. No hidden charges." },
+      { q: "What happens if I repay late?", a: "A late fee applies on any overdue amount. We encourage timely repayment to maintain your credit health and unlock higher limits." },
+      { q: "What happens if I don't repay?", a: "After all recovery measures are exhausted, the borrower is blacklisted and cannot access new loans. The credit record is shared with relevant credit bureaus. Connections within the defaulter's network may also be negatively affected." },
     ],
   },
   {
     title: "Repayment",
     items: [
-      { q: "How do I repay my loan?", a: "Via Mobile Money (MTN, Telecel, or AT) to Agenda Money's dedicated MoMo number, using your first name or Node code as reference. Direct debit is also available." },
+      { q: "How do I repay my loan?", a: "Through our digital platform or our dedicated USSD code." },
     ],
   },
   {
     title: "Application Process",
     items: [
-      { q: "How do I apply?", a: "Online via our application link. Nodes can apply anytime. Connections require a Node code from their network." },
-      { q: "How long does approval take?", a: "Minutes." },
+      { q: "How do I apply?", a: "Online via our digital platform. Nodes can apply anytime. Connections require a Node code from their network." },
+      { q: "How long does disbursement take?", a: "Disbursements are instant upon approval." },
 
     ],
   },

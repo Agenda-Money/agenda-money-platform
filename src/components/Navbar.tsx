@@ -190,16 +190,7 @@ const Navbar = () => {
                     {l.label}
                   </Link>
                 ))}
-                {/* Careers */}
-                <Link
-                  to="/careers"
-                  onClick={() => setMobileOpen(false)}
-                  className={`block w-full px-4 py-3 rounded-xl text-lg font-heading font-semibold transition-all duration-200 ${
-                    location.pathname === "/careers" ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted hover:text-primary"
-                  }`}
-                >
-                  Careers
-                </Link>
+
               </div>
 
               {/* Action Button */}

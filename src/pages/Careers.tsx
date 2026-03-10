@@ -31,8 +31,8 @@ const Careers = () => (
             Join the Team
           </motion.div>
           <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-heading font-extrabold mb-6 lg:mb-8 leading-[1.05] tracking-tight text-white drop-shadow-lg">
-            Build the future of{" "}
-            <span className="text-primary italic">African finance.</span>
+            Be a game changer, <br/>
+            <span className="text-primary italic">Challenge the status quo.</span>
           </motion.h1>
           <motion.p variants={fadeUp} className="text-xl text-white/90 leading-relaxed max-w-2xl mx-auto font-medium drop-shadow">
             We're on a mission to put credit in the hands of every hardworking African. If that excites you, you're in the right place.

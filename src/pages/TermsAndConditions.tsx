@@ -50,14 +50,14 @@ const TermsAndConditions = () => (
         className="container mx-auto max-w-3xl"
       >
         <motion.p variants={fadeUp} className="text-[#4A4A4A] text-lg leading-relaxed mb-12 p-6 bg-secondary/5 border border-secondary/10 rounded-2xl">
-          These Terms and Conditions ("Terms") govern your access to and use of the Agenda Money Limited ("Agenda Money", "we", "us", "our") digital lending platform, website, and mobile application. By applying for a loan or using our services, you agree to be bound by these Terms.
+          These Terms and Conditions ("Terms") govern your access to and use of the Agenda Money ("Agenda Money", "we", "us", "our") digital lending platform, website, and mobile application. By applying for a loan or using our services, you agree to be bound by these Terms.
         </motion.p>
 
         <Section title="1. Eligibility">
           <p>To apply for a loan with Agenda Money, you must:</p>
           <ul className="list-disc pl-6 space-y-2 mt-3">
-            <li>Be a Ghanaian citizen or legal resident aged 18 years or older.</li>
-            <li>Possess a valid Ghana Card or other approved national identification.</li>
+            <li>Be an individual or legal resident aged 18 years or older.</li>
+            <li>Possess a valid National ID or other approved identification.</li>
             <li>Have an active mobile money account (MTN MoMo, Telecel Cash, or AT Money).</li>
             <li>Have a verifiable income source or business activity.</li>
             <li>Not be subject to any legal prohibitions on borrowing.</li>
@@ -72,7 +72,7 @@ const TermsAndConditions = () => (
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Loan Amount:</strong> Available loan limits are determined by your credit profile and repayment history with Agenda Money.</li>
             <li><strong>Tenure:</strong> Loan durations vary by product and will be clearly stated in your loan agreement.</li>
-            <li><strong>Interest Rate:</strong> Interest rates are disclosed upfront before you accept any loan offer. Rates are competitive and comply with MCAG guidelines.</li>
+            <li><strong>Interest Rate:</strong> Interest rates are disclosed upfront before you accept any loan offer. Rates are competitive and transparent.</li>
             <li><strong>Disbursement:</strong> Approved funds are disbursed directly to your registered mobile money account, typically within minutes of approval.</li>
           </ul>
         </Section>
@@ -86,13 +86,13 @@ const TermsAndConditions = () => (
           <ul className="list-disc pl-6 space-y-2 mt-3">
             <li>Late fees and additional interest charges may apply as outlined in your loan agreement.</li>
             <li>Your default may be reported to credit bureaus, negatively affecting your credit score.</li>
-            <li>Agenda Money reserves the right to engage collection processes in accordance with Ghanaian law.</li>
+            <li>Agenda Money reserves the right to engage collection processes in accordance with applicable law.</li>
             <li>Legal action may be pursued for unresolved defaults.</li>
           </ul>
         </Section>
 
         <Section title="6. Early Repayment">
-          <p>You may repay your loan in full before the due date. Early repayment may reduce the total interest payable. Contact us at <a href="mailto:support@agendamoney.com" className="text-secondary font-bold hover:underline">support@agendamoney.com</a> to arrange early repayment.</p>
+          <p>You may repay your loan in full before the due date. Early repayment may reduce the total interest payable.</p>
         </Section>
 
         <Section title="7. Fees & Charges">
@@ -110,7 +110,7 @@ const TermsAndConditions = () => (
         </Section>
 
         <Section title="9. Intellectual Property">
-          <p>All content, design, trademarks, and materials on the Agenda Money platform are the exclusive property of Agenda Money Limited. You may not copy, reproduce, or distribute any content without our express written permission.</p>
+          <p>All content, design, trademarks, and materials on the Agenda Money platform are the exclusive property of Agenda Money. You may not copy, reproduce, or distribute any content without our express written permission.</p>
         </Section>
 
         <Section title="10. Limitation of Liability">
@@ -118,7 +118,7 @@ const TermsAndConditions = () => (
         </Section>
 
         <Section title="11. Governing Law">
-          <p>These Terms are governed by and construed in accordance with the laws of the Republic of Ghana. Any disputes shall be subject to the exclusive jurisdiction of the courts of Ghana.</p>
+          <p>These Terms are governed by and construed in accordance with applicable laws. Any disputes shall be subject to the exclusive jurisdiction of the competent courts.</p>
         </Section>
 
         <Section title="12. Amendments">
@@ -128,9 +128,8 @@ const TermsAndConditions = () => (
         <Section title="13. Contact Us">
           <p>For questions about these Terms, contact us:</p>
           <div className="mt-4 bg-[#FAFAFA] border border-black/5 rounded-2xl p-6 space-y-2">
-            <p><strong>Agenda Money Limited</strong></p>
+            <p><strong>Agenda Money</strong></p>
             <p>Email: <a href="mailto:support@agendamoney.com" className="text-secondary font-bold hover:underline">support@agendamoney.com</a></p>
-            <p>Registered Micro Credit Institution under the Micro-Credit Association of Ghana (MCAG)</p>
           </div>
         </Section>
       </motion.div>
