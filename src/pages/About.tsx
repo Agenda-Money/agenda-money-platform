@@ -12,7 +12,7 @@ const About = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
     
     {/* Hero Section */}
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#1A1A1A] text-white overflow-hidden rounded-b-[4rem] lg:rounded-b-[6rem] shadow-2xl mx-4 lg:mx-8 mt-4">
+    <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-[#1A1A1A] text-white overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-2xl mx-2 lg:mx-8 mt-4">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary opacity-10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -28,13 +28,7 @@ const About = () => (
             <motion.p variants={fadeUp} className="text-xl text-white/70 leading-relaxed mb-10 max-w-lg font-medium">
               We're on a mission to empower individuals and micro-businesses by providing affordable and easily accessible digital financial services — credit first.
             </motion.p>
-            <motion.div variants={fadeUp}>
-              <Link to="/#apply">
-                <Button size="lg" className="bg-secondary hover:bg-white text-black rounded-full px-12 py-8 text-xl font-bold transition-all shadow-xl shadow-secondary/20 hover:-translate-y-1">
-                  Get Started <ArrowRight className="ml-2" size={24} />
-                </Button>
-              </Link>
-            </motion.div>
+
           </motion.div>
 
           <motion.div 
@@ -43,19 +37,19 @@ const About = () => (
             transition={{ duration: 0.8 }} 
             className="lg:w-1/2 w-full relative"
           >
-            <div className="relative rounded-[4rem] overflow-hidden aspect-[4/3] shadow-2xl border-8 border-white/5">
+            <div className="relative rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden aspect-[4/3] shadow-2xl border-4 lg:border-8 border-white/5">
               <img src={aboutImg} alt="Agenda Money Team" className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent"></div>
             </div>
             
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 lg:-bottom-8 -left-2 lg:-left-8 bg-white p-4 lg:p-8 rounded-[2rem] lg:rounded-[3rem] shadow-2xl border border-black/5 flex items-center gap-4 lg:gap-6 text-black">
+            {/* Floating Badge — hidden on mobile to prevent clipping */}
+            <div className="hidden lg:flex absolute -bottom-8 -left-8 bg-white p-6 lg:p-8 rounded-[2.5rem] lg:rounded-[3rem] shadow-2xl border border-black/5 items-center gap-4 lg:gap-6 text-black">
               <div className="bg-primary/20 p-3 lg:p-5 rounded-xl lg:rounded-2xl text-primary">
                 <TrendingUp size={24} className="lg:w-8 lg:h-8" />
               </div>
               <div>
                 <p className="font-heading font-black text-xl lg:text-2xl tracking-tighter">2030 Vision</p>
-                <p className="text-[10px] lg:text-sm font-bold opacity-60">100K Active Customers</p>
+                <p className="text-[10px] lg:text-sm font-bold opacity-60">1M Active Customers</p>
               </div>
             </div>
           </motion.div>
@@ -64,7 +58,7 @@ const About = () => (
     </section>
 
     {/* Vision Section */}
-    <section className="py-32 bg-accent relative overflow-hidden rounded-[4rem] lg:rounded-[6rem] mx-4 lg:mx-8 my-12 shadow-inner">
+    <section className="py-16 lg:py-32 bg-accent relative overflow-hidden rounded-[3rem] lg:rounded-[6rem] mx-2 lg:mx-8 my-8 lg:my-12 shadow-inner">
        <div className="absolute top-0 left-0 w-full h-full">
          <div className="absolute top-[-20%] right-[-10%] w-[40%] h-[100%] bg-primary opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
        </div>
@@ -85,9 +79,11 @@ const About = () => (
            </div>
            
            <motion.div variants={fadeUp} className="lg:col-span-4 hidden lg:block">
-              <div className="bg-white p-10 rounded-[3rem] shadow-2xl border border-black/5 rotate-3 hover:rotate-0 transition-transform duration-500">
-                <div className="text-7xl font-heading font-black text-primary mb-2">100K</div>
-                <div className="text-sm font-black uppercase tracking-[0.2em] text-[#8A8A8A]">Target Customers</div>
+              <div className="bg-white px-10 py-10 rounded-[3rem] shadow-2xl border border-black/5 rotate-3 hover:rotate-0 transition-transform duration-500 flex flex-col gap-3">
+                <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#BABABA]">2030 Vision</div>
+                <div className="text-[5.5rem] font-heading font-black text-primary leading-none">1M</div>
+                <div className="w-8 h-[2px] bg-primary/30 rounded-full"></div>
+                <div className="text-sm font-black uppercase tracking-[0.2em] text-[#8A8A8A]">Active Customers</div>
               </div>
            </motion.div>
          </motion.div>
@@ -95,7 +91,7 @@ const About = () => (
     </section>
 
     {/* Philosophy (De-AIed Values) */}
-    <section className="py-32 bg-background relative px-4 lg:px-8">
+    <section className="py-16 lg:py-32 bg-background relative px-4 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-12">
@@ -106,7 +102,7 @@ const About = () => (
             
             <div className="space-y-10">
               {[
-                { icon: Users, title: "Community at the Core", desc: "We don't just lend; we build networks. Every loan is an investment in a Ghanaian's future.", color: "bg-primary" },
+                { icon: Users, title: "Community at the Core", desc: "We don't just lend; we build networks. Every loan is an investment in an African's future.", color: "bg-primary" },
                 { icon: Zap, title: "Digital-First Simplicity", desc: "Financial services shouldn't be a chore. We strip away the paperwork and focus on speed.", color: "bg-secondary" },
                 { icon: Shield, title: "Unwavering Integrity", desc: "Transparency is our currency. We operate with radical honesty in every transaction.", color: "bg-black" }
               ].map((item, i) => (
@@ -123,31 +119,34 @@ const About = () => (
             </div>
           </motion.div>
           
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }} 
-            whileInView={{ opacity: 1, x: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="relative"
           >
             <div className="bg-secondary/5 rounded-[4rem] p-12 lg:p-16 border border-secondary/10 relative overflow-hidden group">
                <div className="absolute top-0 right-0 w-64 h-64 bg-secondary opacity-20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
-               
+
                <div className="relative z-10 space-y-8">
                   <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-secondary shadow-lg">
                     <Target size={32} />
                   </div>
                   <h3 className="text-3xl font-heading font-black text-[#1A1A1A]">Deep Innovation.</h3>
                   <p className="text-xl text-[#4A4A4A] leading-relaxed font-medium">
-                    We're not just digitizing existing processes. We're rethinking how finance works for the backbone of Ghana from the ground up.
+                    For the real economy of Africa, from the ground up.
                   </p>
-                  <ul className="space-y-4 pt-6 text-sm font-black uppercase tracking-widest text-[#8A8A8A]">
+                  <p className="text-base text-[#6A6A6A] leading-relaxed">
+                    We believe access to credit is a fundamental right, not a privilege. That's why we've rebuilt the lending experience from scratch — removing every barrier between a hardworking African and the capital they need to thrive. No branch visits. No paperwork. No waiting.
+                  </p>
+                  <ul className="space-y-4 pt-2 text-sm font-black uppercase tracking-widest text-[#8A8A8A]">
                     <li className="flex items-center gap-4"><span className="w-2 h-2 bg-primary rounded-full"></span> Zero Paperwork</li>
                     <li className="flex items-center gap-4"><span className="w-2 h-2 bg-secondary rounded-full"></span> 2-Minute Approvals</li>
-                    <li className="flex items-center gap-4"><span className="w-2 h-2 bg-black rounded-full"></span> Nationwide Reach</li>
+                    <li className="flex items-center gap-4"><span className="w-2 h-2 bg-black rounded-full"></span> 100% Digital</li>
                   </ul>
                </div>
             </div>
-            
+
             {/* Decorative Pulse */}
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary rounded-full blur-3xl opacity-20 animate-pulse"></div>
           </motion.div>
@@ -155,43 +154,7 @@ const About = () => (
       </div>
     </section>
 
-    {/* Affiliations */}
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6 text-center">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-          <motion.h3 variants={fadeUp} className="text-xs font-black uppercase tracking-[0.3em] text-[#8A8A8A] mb-10">Memberships & Affiliations</motion.h3>
-          <motion.div variants={fadeUp} className="flex justify-center gap-6 flex-wrap">
-            <div className="bg-[#FAFAFA] border border-black/5 rounded-3xl px-12 py-6 font-heading font-black text-xl text-[#1A1A1A] shadow-xl shadow-black/[0.02] hover:scale-105 transition-transform">
-              MCAG <span className="text-primary">Member</span>
-            </div>
-            <div className="bg-[#FAFAFA] border border-black/5 rounded-3xl px-12 py-6 font-heading font-black text-xl text-[#1A1A1A] shadow-xl shadow-black/[0.02] hover:scale-105 transition-transform">
-              G.I.A.C. <span className="text-secondary">Portfolio</span>
-            </div>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
 
-    {/* Big CTA */}
-    <section className="py-32 bg-primary relative overflow-hidden rounded-[4rem] lg:rounded-[6rem] mx-4 lg:mx-8 mb-12 shadow-2xl shadow-primary/30 text-white group">
-       <div className="absolute inset-0 bg-[#0F0F0F] opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
-       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-       
-       <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-            <Heart className="mx-auto mb-10 text-white opacity-60 animate-pulse" size={60} />
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black mb-12 tracking-tighter leading-tight">
-              Join our growing <br/>
-              <span className="text-secondary italic">financial community.</span>
-            </h2>
-            <Link to="/#apply">
-              <Button size="lg" className="bg-white hover:bg-secondary text-primary hover:text-white rounded-full px-16 py-10 text-2xl font-black shadow-2xl transition-all hover:scale-110">
-                Apply Now <ArrowRight className="ml-4" size={32} />
-              </Button>
-            </Link>
-          </motion.div>
-       </div>
-    </section>
 
   </div>
 );

@@ -10,7 +10,6 @@ const faqSections = [
     items: [
       { q: "What is Agenda Money?", a: "Agenda Money is an online micro-loan product designed to support individuals and SMEs in times of need." },
       { q: "When did Agenda Money start?", a: "We have been operating since June 2024." },
-      { q: "Is Agenda Money registered?", a: "Yes. Agenda Money Limited is a member of the Micro Credit Association of Ghana (MCAG)." },
     ],
   },
   {
@@ -25,14 +24,14 @@ const faqSections = [
     items: [
       { q: "Who is a Node?", a: "Nodes are individuals or businesses profiled by Agenda Money as low-risk customers. They can recommend people in their network using their unique Node code and can apply for loans without restriction." },
       { q: "Who is a Connection?", a: "Connections are people or businesses within a Node's network. They can only apply for a loan using a Node's code." },
-      { q: "How do I become a Node?", a: "Connections who successfully repay 5 loans automatically become Nodes. You can also call us on 0558587833 for assessment and registration via other routes." },
+      { q: "How do I become a Node?", a: "Connections who successfully repay 5 loans automatically become Nodes. You can also apply to become a Node directly by filling out our expression of interest form.", link: { label: "Apply Here", to: "/#apply" } },
     ],
   },
   {
     title: "Loan Details",
     items: [
       { q: "How much can I borrow?", a: "Applicants can access between GHS 50 and GHS 2,000 depending on their qualification and repayment history." },
-      { q: "What are the loan durations?", a: "1, 5, 10, 14, and 30 days. You only pay interest for the days you are indebted." },
+      { q: "What are the loan durations?", a: "1, 5, 10, and 14 days. You only pay interest for the days you are indebted." },
       { q: "What is the interest rate?", a: "0.5% per day. E.g., 3.5% for 7 days, 7% for 14 days." },
       { q: "What happens if I repay late?", a: "A penal interest of 2% per day applies on any overdue amount." },
       { q: "What happens if I don't repay?", a: "After all recovery measures are exhausted, the borrower is blacklisted and cannot access new loans. The credit record is shared with Ghana's Credit Bureau. Connections within the defaulter's network may also be negatively affected." },
@@ -49,10 +48,10 @@ const faqSections = [
     items: [
       { q: "How do I apply?", a: "Online via our application link. Nodes can apply anytime. Connections require a Node code from their network." },
       { q: "How long does approval take?", a: "Minutes." },
-      { q: "Is the process entirely online?", a: "Yes. No branch visit, no queues, no paperwork." },
+
     ],
   },
-];
+] as { title: string; items: { q: string; a: string; link?: { label: string; to: string } }[] }[];
 
 import faqImg from "@/assets/ato-aikins-8X_PEkUdsQ4-unsplash.jpg";
 
@@ -63,7 +62,7 @@ const FAQs = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
     
     {/* Hero Section */}
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-secondary text-secondary-foreground overflow-hidden rounded-b-[4rem] lg:rounded-b-[6rem] shadow-2xl mx-4 lg:mx-8 mt-4 mb-20">
+    <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-secondary text-secondary-foreground overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-2xl mx-2 lg:mx-8 mt-4 mb-12 lg:mb-20">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -72,7 +71,7 @@ const FAQs = () => (
             <motion.div variants={fadeUp} className="inline-block bg-white/20 backdrop-blur-md text-white font-bold px-6 py-3 rounded-full mb-8 tracking-wide text-sm uppercase">
               Support Center
             </motion.div>
-            <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-8 leading-[1.05] tracking-tight text-white">
+            <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-heading font-extrabold mb-6 lg:mb-8 leading-[1.05] tracking-tight text-white">
               Have <br/>
               <span className="text-primary italic">Questions?</span>
             </motion.h1>
@@ -85,9 +84,9 @@ const FAQs = () => (
             initial={{ opacity: 0, scale: 0.95 }} 
             animate={{ opacity: 1, scale: 1 }} 
             transition={{ duration: 0.8 }} 
-            className="lg:w-1/2 w-full"
+            className="lg:w-1/2 w-full hidden lg:block"
           >
-            <div className="relative rounded-[4rem] overflow-hidden aspect-[4/3] shadow-2xl border-8 border-white/10">
+            <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[4/3] shadow-2xl border-4 lg:border-8 border-white/10">
               <img src={faqImg} alt="Agenda Money Support" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-tr from-secondary/60 via-transparent to-transparent"></div>
             </div>
@@ -97,9 +96,9 @@ const FAQs = () => (
     </section>
 
     {/* FAQ List - Bespoke Category Layout */}
-    <section className="py-24 bg-background px-4 lg:px-8">
+    <section className="py-10 lg:py-24 bg-background px-2 lg:px-8">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 overflow-visible">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-24 overflow-visible">
           
           {/* Sidebar / Category Quick Links */}
           <div className="lg:col-span-3 lg:sticky lg:top-32 h-fit space-y-8 hidden lg:block">
@@ -121,19 +120,19 @@ const FAQs = () => (
           </div>
 
           {/* Main FAQ Content */}
-          <div className="lg:col-span-9 space-y-24">
+          <div className="lg:col-span-9 space-y-16 lg:space-y-24">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
               {faqSections.map((section, sectionIdx) => (
                 <div key={section.title} id={section.title.replace(/\s+/g, '-').toLowerCase()} className="mb-24 last:mb-0">
-                  <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+                  <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 lg:mb-12 gap-4">
                     <div>
-                      <motion.div variants={fadeUp} className="w-12 h-1 bg-secondary mb-6"></motion.div>
-                      <motion.h3 variants={fadeUp} className="text-3xl lg:text-4xl font-heading font-black text-[#1A1A1A] tracking-tight">
+                      <motion.div variants={fadeUp} className="w-12 h-1 bg-secondary mb-4 lg:mb-6"></motion.div>
+                      <motion.h3 variants={fadeUp} className="text-2xl lg:text-4xl font-heading font-black text-[#1A1A1A] tracking-tight">
                         {section.title.split(' ')[0]} <br/>
                         <span className="text-primary italic">{section.title.split(' ').slice(1).join(' ')}</span>
                       </motion.h3>
                     </div>
-                    <motion.div variants={fadeUp} className="text-xs font-black uppercase tracking-[0.2em] text-[#8A8A8A] bg-[#FAFAFA] px-6 py-3 rounded-full border border-black/5">
+                    <motion.div variants={fadeUp} className="text-xs font-black uppercase tracking-[0.2em] text-[#8A8A8A] bg-[#FAFAFA] px-4 lg:px-6 py-2 lg:py-3 rounded-full border border-black/5 self-start sm:self-auto">
                       Section 0{sectionIdx + 1}
                     </motion.div>
                   </div>
@@ -143,15 +142,22 @@ const FAQs = () => (
                       <motion.div key={i} variants={fadeUp}>
                         <AccordionItem 
                           value={`${section.title}-${i}`} 
-                          className="border border-black/5 rounded-[2.5rem] px-10 bg-white shadow-xl shadow-black/[0.02] hover:border-secondary/30 transition-all data-[state=open]:border-primary data-[state=open]:shadow-primary/5 group"
+                          className="border border-black/5 rounded-[1.5rem] lg:rounded-[2.5rem] px-5 lg:px-10 bg-white shadow-xl shadow-black/[0.02] hover:border-secondary/30 transition-all data-[state=open]:border-primary data-[state=open]:shadow-primary/5 group"
                         >
-                          <AccordionTrigger className="text-xl font-heading font-black text-[#1A1A1A] hover:no-underline py-8 text-left group-data-[state=open]:text-primary transition-colors leading-snug">
+                          <AccordionTrigger className="text-base lg:text-xl font-heading font-black text-[#1A1A1A] hover:no-underline py-6 lg:py-8 text-left group-data-[state=open]:text-primary transition-colors leading-snug">
                             {item.q}
                           </AccordionTrigger>
-                          <AccordionContent className="text-lg text-[#6A6A6A] pb-10 leading-relaxed font-medium">
-                            <div className="pt-8 border-t border-black/5 flex gap-6 italic">
+                          <AccordionContent className="text-base lg:text-lg text-[#6A6A6A] pb-6 lg:pb-10 leading-relaxed font-medium">
+                            <div className="pt-6 lg:pt-8 border-t border-black/5 flex gap-4 lg:gap-6 italic">
                                <div className="w-1.5 h-auto bg-secondary rounded-full opacity-50 shrink-0"></div>
-                               {item.a}
+                               <div>
+                                 {item.a}
+                                 {item.link && (
+                                   <Link to={item.link.to} className="block mt-3 not-italic text-primary font-black text-sm hover:underline">
+                                     → {item.link.label}
+                                   </Link>
+                                 )}
+                               </div>
                             </div>
                           </AccordionContent>
                         </AccordionItem>

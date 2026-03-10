@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Zap, Smartphone, Shield, CheckCircle, ArrowRight, ArrowUp, Users, TrendingUp, Clock, Star } from "lucide-react";
-import heroAccra from "@/assets/hero-accra.jpg";
+import customerLoanImg from "@/assets/customer-loan.webp";
 import adizaImg from "@/assets/adizs.jpg";
 import alexImg from "@/assets/alex.jpg";
 import kofiImg from "@/assets/kofi.jpg";
 import iphone3Img from "@/assets/iPhone 3_.webp";
+import nodeConImg from "@/assets/node-con.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -18,9 +19,9 @@ const stagger = {
 };
 
 const personas = [
-  { name: "Adiza", role: "Hairstylist", story: "Uses AM loans to buy hair kits for her clients while saving toward her own salon.", image: adizaImg },
-  { name: "Alex", role: "Taxi Driver", story: "Accesses quick loans to buy fuel and lubricants to keep his taxi running daily.", image: alexImg },
-  { name: "Kofi", role: "Poultry Farmer", story: "Funds his farm feed purchases through AM to keep his 500-crate-a-day operation going.", image: kofiImg },
+  { name: "Adiza", role: "Hairstylist", story: "Uses Agenda Money loans to buy hair kits for her clients while saving toward her own salon.", image: adizaImg, pos: "center top" },
+  { name: "Alex", role: "Taxi Driver", story: "Accesses quick loans to buy fuel and lubricants to keep his taxi running daily.", image: alexImg, pos: "center top" },
+  { name: "Kofi", role: "Poultry Farmer", story: "Funds his farm feed purchases through Agenda Money to keep his 500-crate-a-day operation going.", image: kofiImg, pos: "right center" },
 ];
 
 const testimonials = [
@@ -65,12 +66,12 @@ const Index = () => {
             
             <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.8 }} className="lg:w-1/2 w-full relative">
                <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[4/3] lg:aspect-square shadow-2xl">
-                 <img src={heroAccra} alt="Accra" className="w-full h-full object-cover" loading="lazy" />
+                 <img src={customerLoanImg} alt="Customer Loan" className="w-full h-full object-cover" loading="lazy" />
                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent mix-blend-multiply"></div>
                </div>
                
                {/* Floating Badges */}
-               <div className="absolute -bottom-6 lg:-bottom-8 -left-2 lg:-left-12 bg-white p-3 lg:p-6 rounded-2xl lg:rounded-[2rem] shadow-2xl border border-black/5 flex items-center gap-3 lg:gap-5">
+        <div className="absolute -bottom-4 lg:-bottom-8 -left-2 lg:-left-12 bg-white p-3 lg:p-6 rounded-2xl lg:rounded-[2rem] shadow-2xl border border-black/5 flex items-center gap-3 lg:gap-5">
                  <div className="bg-secondary/20 p-2 lg:p-4 rounded-full text-secondary">
                    <Smartphone size={20} className="lg:w-7 lg:h-7" />
                  </div>
@@ -80,7 +81,7 @@ const Index = () => {
                  </div>
                </div>
 
-               <div className="absolute -top-6 lg:-top-8 -right-2 lg:-right-8 bg-white p-3 lg:p-5 rounded-2xl lg:rounded-[2rem] shadow-2xl border border-black/5 flex items-center gap-2 lg:gap-4">
+               <div className="absolute -top-4 lg:-top-8 -right-2 lg:-right-8 bg-white p-3 lg:p-5 rounded-2xl lg:rounded-[2rem] shadow-2xl border border-black/5 flex items-center gap-2 lg:gap-4">
                  <div className="bg-primary/20 p-2 lg:p-3 rounded-full text-primary">
                    <CheckCircle size={18} className="lg:w-6 lg:h-6" />
                  </div>
@@ -124,7 +125,7 @@ const Index = () => {
 
 
       {/* WHAT IS AGENDA MONEY */}
-      <section className="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden rounded-[3rem] lg:rounded-[5rem] mx-4 lg:mx-8 shadow-2xl shadow-primary/30 mt-8 mb-24 lg:mb-32">
+      <section className="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden rounded-[3rem] lg:rounded-[5rem] mx-4 lg:mx-8 shadow-2xl shadow-primary/30 mt-8 mb-10 lg:mb-14">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -133,7 +134,7 @@ const Index = () => {
                 Emergency cash. <br/>Working capital. <br/><span className="text-secondary">Real impact.</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="text-lg opacity-90 leading-relaxed mb-10 max-w-lg">
-                Agenda Money is an online micro-loan platform built for Ghanaians who need fast, affordable financial support — without the bank queues, paperwork, or collateral. 
+                Agenda Money is an online micro-loan platform built for individuals and micro-entrepreneurs who need fast, affordable financial support — without the typical bank queues, paperwork, or collateral.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
                 {["No Collateral", "Paperless", "Cashless", "Branchless", "24/7 Access", "Nationwide"].map((p) => (
@@ -158,7 +159,7 @@ const Index = () => {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="py-24 lg:py-32 bg-background">
+      <section className="py-12 lg:py-20 bg-background">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16 lg:mb-20">
             <motion.div variants={fadeUp} className="inline-block bg-secondary/10 text-secondary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Simple. Fast. Yours.</motion.div>
@@ -167,7 +168,7 @@ const Index = () => {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
             {[
-              { num: "1", title: "Apply Online", desc: "Provide basic details and snap a selfie. Have a Node code? Enter it to speed things up.", icon: "📝", color: "bg-[#FAFAFA]" },
+              { num: "1", title: "Apply Online", desc: "Provide basic information, add a Node code and snap a selfie.", icon: "📝", color: "bg-[#FAFAFA]" },
               { num: "2", title: "Get Approved", desc: "Our smart system reviews your request in minutes. No paperwork needed.", icon: "🚀", color: "bg-[#FAFAFA]" },
               { num: "3", title: "Receive Cash", desc: "Funds land instantly in your MTN, Telecel, or AT Mobile Money wallet.", icon: "💸", color: "bg-[#FAFAFA]" },
             ].map((s) => (
@@ -202,49 +203,80 @@ const Index = () => {
              </motion.p>
           </div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
              <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-center min-h-[300px]">
                <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center text-primary mb-8"><TrendingUp size={40} /></div>
-               <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">0.5% Daily</h3>
-               <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed">Pay only for the days you borrow. No hidden fees, no application costs.</p>
+               <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">0.5% Daily Rate</h3>
+               <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed">Interest is calculated and applied daily. Earlier repayment reduces your cost of borrowing.</p>
              </motion.div>
              <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col justify-center min-h-[300px]">
                <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8"><Clock size={40} /></div>
                <h3 className="text-3xl font-heading font-black mb-4">Flexible Terms</h3>
-               <p className="text-white/90 text-lg font-medium leading-relaxed">Repay in 1, 5, 10, 14, or 30 days. You're in complete control.</p>
+               <p className="text-white/90 text-lg font-medium leading-relaxed">Repay in 1, 5, 10, or 14 days. You're in complete control.</p>
+             </motion.div>
+             <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-center min-h-[300px]">
+               <div className="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center text-secondary mb-8"><ArrowUp size={40} /></div>
+               <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Flat Fees</h3>
+               <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed">You pay a fixed processing fee no matter the amount you borrow. Your cost of borrowing reduces as you unlock higher loan amounts.</p>
              </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* WHO WE SERVE */}
-      <section className="py-24 lg:py-32 bg-background">
+      <section className="py-16 lg:py-32 bg-background">
         <div className="container mx-auto px-4">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-32 md:mb-40">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-12 lg:mb-16">
             <motion.div variants={fadeUp} className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Real People. Real Impact.</motion.div>
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-8">Built for everyday Ghanaians</motion.h2>
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-8">Built for everyday People</motion.h2>
             <motion.div variants={fadeUp}>
               <Link to="/who-we-serve" className="inline-flex items-center text-secondary font-bold hover:text-secondary/80 transition-colors text-lg">
-                View all our champions <ArrowRight className="ml-2" size={20} />
+                View stories from our champions <ArrowRight className="ml-2" size={20} />
               </Link>
             </motion.div>
           </motion.div>
           
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-32">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {personas.map((p) => (
-              <motion.div key={p.name} variants={fadeUp} className="relative bg-white border border-black/5 rounded-[3rem] p-8 md:p-10 pt-28 md:pt-36 shadow-xl shadow-black/5 hover:-translate-y-2 transition-transform duration-300 text-center">
-                <div className="absolute -top-24 md:-top-28 left-1/2 -translate-x-1/2">
-                  <div className="w-48 h-48 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-primary to-secondary shadow-2xl shadow-primary/20">
-                    <img 
-                      src={p.image} 
-                      alt={p.name} 
-                      className="w-full h-full rounded-full object-cover border-[6px] border-white"
-                    />
-                  </div>
+              <motion.div
+                key={p.name}
+                variants={fadeUp}
+                className="group relative rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden shadow-2xl shadow-black/15 hover:-translate-y-3 transition-transform duration-500 cursor-pointer"
+                style={{ aspectRatio: '3/4' }}
+              >
+                {/* Full-bleed image with zoom */}
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                  style={{ objectPosition: p.pos }}
+                />
+
+                {/* Multi-stop gradient — deep at bottom, clear at top */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+
+                {/* Subtle colour tint on hover */}
+                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
+
+                {/* Top role badge */}
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1.5 bg-black/30 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-white/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
+                    {p.role}
+                  </span>
                 </div>
-                <h3 className="font-heading font-black text-3xl text-[#1A1A1A] mb-2">{p.name}</h3>
-                <p className="inline-block bg-[#FAFAFA] text-[#6A6A6A] text-sm font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">{p.role}</p>
-                <p className="text-[#4A4A4A] text-lg leading-relaxed">{p.story}</p>
+
+                {/* Bottom content */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                  <div className="overflow-hidden">
+                    <h3 className="font-heading font-black text-2xl lg:text-3xl text-white mb-1 leading-tight drop-shadow-lg">{p.name}</h3>
+                    <div className="w-10 h-[3px] bg-primary rounded-full mb-3 group-hover:w-20 transition-all duration-500" />
+                  </div>
+                  <p className="text-white/75 text-sm font-medium leading-relaxed line-clamp-3">{p.story}</p>
+                </div>
+
+                {/* Hover glow border */}
+                <div className="absolute inset-0 rounded-[2rem] lg:rounded-[2.5rem] ring-0 group-hover:ring-2 group-hover:ring-primary/70 transition-all duration-500 pointer-events-none" />
               </motion.div>
             ))}
           </motion.div>
@@ -252,7 +284,7 @@ const Index = () => {
       </section>
 
       {/* NODES & CONNECTIONS SECTION */}
-      <section className="py-24 lg:py-32 bg-[#1A1A1A] text-white">
+      <section className="py-16 lg:py-32 bg-[#1A1A1A] text-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
@@ -263,11 +295,11 @@ const Index = () => {
               <motion.div variants={fadeUp} className="space-y-6">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8">
                   <h4 className="font-heading font-black text-2xl text-primary mb-3">Node 🌟</h4>
-                  <p className="text-lg opacity-80 leading-relaxed">A trusted Agenda Money customer with a clean repayment history. Nodes recommend people in their network to unlock faster approvals.</p>
+                  <p className="text-lg opacity-80 leading-relaxed">A trusted Agenda Money customer with a verified repayment record. Nodes hold a unique code and unlock higher loan limits, lower rates, and priority processing — while extending access to everyone in their network.</p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8">
                   <h4 className="font-heading font-black text-2xl text-secondary mb-3">Connection 🤝</h4>
-                  <p className="text-lg opacity-80 leading-relaxed">Anyone in a Node's network. Using a Node's code speeds up your application and boosts trust immediately.</p>
+                  <p className="text-lg opacity-80 leading-relaxed">A borrower who enters through a Node's referral code. Connections get a fast-tracked application, immediate trust uplift, and access to Agenda Money's full loan range — no guarantors, no collateral.</p>
                 </div>
               </motion.div>
               <motion.div variants={fadeUp} className="mt-12">
@@ -279,33 +311,30 @@ const Index = () => {
               </motion.div>
             </motion.div>
             
-            {/* Visual Node Representation */}
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="flex justify-center items-center">
-               <div className="relative w-full max-w-md aspect-square bg-white/5 rounded-full border border-white/10 flex items-center justify-center">
-                 {/* Center Node */}
-                 <div className="w-32 h-32 bg-primary rounded-full shadow-[0_0_60px_rgba(238,27,133,0.4)] flex items-center justify-center font-heading font-black text-2xl relative z-10 border-8 border-[#1A1A1A]">
-                   NODE
-                 </div>
-                 
-                 {/* Orbits & Connections */}
-                 <div className="absolute inset-4 border border-white/10 rounded-full animate-[spin_60s_linear_infinite]">
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-secondary text-[#1A1A1A] font-bold text-xs rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,184,168,0.3)]">CONN</div>
-                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-secondary text-[#1A1A1A] font-bold text-xs rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,184,168,0.3)]">CONN</div>
-                    <div className="absolute top-1/2 -left-8 -translate-y-1/2 w-16 h-16 bg-secondary text-[#1A1A1A] font-bold text-xs rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,184,168,0.3)]">CONN</div>
-                    <div className="absolute top-1/2 -right-8 -translate-y-1/2 w-16 h-16 bg-secondary text-[#1A1A1A] font-bold text-xs rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,184,168,0.3)]">CONN</div>
-                 </div>
-               </div>
+            {/* node-con animated image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="flex justify-center items-center"
+            >
+              <motion.img
+                src={nodeConImg}
+                alt="Node and Connections diagram"
+                className="w-full max-w-md rounded-3xl mix-blend-screen"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-24 lg:py-32 bg-[#FAFAFA]">
+      <section className="py-16 lg:py-32 bg-[#FAFAFA]">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16 lg:mb-20">
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-4">Trusted by thousands</motion.h2>
-            <motion.p variants={fadeUp} className="text-xl text-primary font-bold">Trusted by Ghanaians for fast and reliable financial support.</motion.p>
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-4">Trusted by thousands for fast, fair, and reliable financial support.</motion.h2>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((t, i) => (
@@ -360,19 +389,39 @@ const Index = () => {
               
               <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert("Thanks! We'll be in touch."); }}>
                 <input type="text" required placeholder="Full Name" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow" />
-                <input type="tel" required placeholder="Phone Number" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow" />
-                <input type="text" placeholder="Node Code (Optional)" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow" />
+                <input type="tel" required placeholder="Mobile Number" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow" />
                 <div className="relative">
-                  <select className="appearance-none w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow text-[#1A1A1A] cursor-pointer">
-                    <option value="">Select Amount</option>
-                    <option value="50-300">GHS 50 – 300</option>
-                    <option value="300-500">GHS 300 – 500</option>
-                    <option value="500-2000">GHS 500 – 2,000</option>
+                  <select required className="appearance-none w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow text-[#6A6A6A] cursor-pointer">
+                    <option value="">Select Region</option>
+                    <option>Greater Accra</option>
+                    <option>Ashanti</option>
+                    <option>Western</option>
+                    <option>Western North</option>
+                    <option>Central</option>
+                    <option>Eastern</option>
+                    <option>Volta</option>
+                    <option>Oti</option>
+                    <option>Bono</option>
+                    <option>Bono East</option>
+                    <option>Ahafo</option>
+                    <option>Northern</option>
+                    <option>Savannah</option>
+                    <option>North East</option>
+                    <option>Upper East</option>
+                    <option>Upper West</option>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-primary">
                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                   </div>
                 </div>
+                <label className="flex items-start gap-3 bg-white rounded-[1.25rem] px-5 py-4 shadow-sm cursor-pointer group">
+                  <input type="checkbox" required className="mt-0.5 w-5 h-5 rounded accent-primary cursor-pointer flex-shrink-0" />
+                  <span className="text-sm text-[#4A4A4A] font-medium leading-snug">I have a valid Ghana Card</span>
+                </label>
+                <label className="flex items-start gap-3 bg-white rounded-[1.25rem] px-5 py-4 shadow-sm cursor-pointer group">
+                  <input type="checkbox" required className="mt-0.5 w-5 h-5 rounded accent-primary cursor-pointer flex-shrink-0" />
+                  <span className="text-sm text-[#4A4A4A] font-medium leading-snug">I am a Ghanaian, 18 years &amp; above</span>
+                </label>
                 <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white rounded-[1.25rem] lg:rounded-[1.5rem] py-6 lg:py-8 text-lg lg:text-xl font-bold shadow-xl shadow-primary/30 transition-transform hover:-translate-y-1 mt-2 lg:mt-4">
                   Submit Enquiry <ArrowRight className="ml-2 w-5 h-5 lg:w-6 lg:h-6" />
                 </Button>

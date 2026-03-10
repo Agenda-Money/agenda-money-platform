@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, TrendingUp, HandCoins } from "lucide-react";
 
 import beatriceImg from "@/assets/beatrice.jpg";
-import osmanImg from "@/assets/osman.jpg";
-import akuImg from "@/assets/aku.jpg";
+import osmanImg from "@/assets/osman.png";
+import akuImg from "@/assets/Aku.jpeg";
 import owusuImg from "@/assets/owusu.jpg";
-import mrAmuzuImg from "@/assets/mr amuzu.jpg";
+import fanmilkImg from "@/assets/fanmilk.jpg";
+import mrAmuzuImg from "@/assets/mr amuzu.webp";
 import aliImg from "@/assets/ali-received.webp";
 import backboneImg from "@/assets/backbone.webp";
 
@@ -16,19 +17,19 @@ const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
 // Full list of personas for this page (excluding the 3 on Home to avoid duplication if desired, or showing all. Let's show the remaining 5 as requested)
 const personas = [
-  { name: "Beatrice", role: "Seamstress", story: "Fresh out of dressmaking school, Beatrice uses Agenda Money to buy fabrics and accessories. She's already built a loyal customer base in her community.", image: beatriceImg },
-  { name: "Osman", role: "MoMo Agent", story: "Osman's Mobile Money business depends on having enough float. AM loans keep his e-cash topped up so he never has to turn customers away.", image: osmanImg },
-  { name: "Aku", role: "Market Trader", story: "A single mother of three, Aku relies on AM loans for medical emergencies and to restock her market stall with provisions every week.", image: akuImg },
-  { name: "Owusu", role: "Fan Milk Seller", story: "Riding in the hot sun all day is not fun for Owusu the Fan Milk seller but he’s not giving up on his dream to rent a studio flat this year. He uses AM loans to augment his working capital while saving for his accommodation.", image: owusuImg },
-  { name: "Mr. Amuzu", role: "Parent", story: "Mr. Amuzu relies on AM loans to buy stationery for his son Kojo, a pupil of Awoyo L/A primary school. Kojo dreams of being a pilot one day and flying his family around the world.", image: mrAmuzuImg },
-  { name: "Ali", role: "Carpenter", story: "Ali runs a busy carpentry shop. When large lumber orders come in, he depends on Agenda Money for quick, hassle-free capital. These loans ensure he always has the materials to meet his deadlines on time.", image: aliImg },
+  { name: "Aku", role: "Market Trader", story: "A single mother of three who relies on Agenda Money for emergencies and weekly restocking.", image: akuImg, pos: "center top" },
+  { name: "Ali", role: "Carpenter", story: "Relies on Agenda Money for quick capital when large lumber orders arrive, keeping deadlines on track.", image: aliImg, pos: "center top" },
+  { name: "Mr. Amuzu", role: "Parent", story: "Funds school supplies for his son Kojo through Agenda Money — nurturing tomorrow's leaders today.", image: mrAmuzuImg, pos: "center top" },
+  { name: "Beatrice", role: "Seamstress", story: "Uses Agenda Money to buy fabrics and grow her loyal clientele — one stitch at a time.", image: beatriceImg, pos: "left top" },
+  { name: "Osman", role: "MoMo Agent", story: "Keeps his Mobile Money float topped up with Agenda Money loans so no customer is ever turned away.", image: osmanImg, pos: "center top" },
+  { name: "Owusu", role: "Fan Milk Seller", story: "Supplements his working capital with Agenda Money loans while saving toward his own accommodation.", image: fanmilkImg, pos: "center top" },
 ];
 
 const WhoWeServe = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
     
     {/* HERO SECTION */}
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-primary text-primary-foreground overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl mx-4 lg:mx-8 mt-4">
+    <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-primary text-primary-foreground overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl mx-2 lg:mx-8 mt-4">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={backboneImg} alt="Backbone of Ghana" className="w-full h-full object-cover opacity-50" loading="lazy" />
@@ -43,12 +44,23 @@ const WhoWeServe = () => (
           <motion.div variants={fadeUp} className="inline-block bg-white/20 backdrop-blur-md text-white font-bold px-6 py-3 rounded-full mb-8 tracking-wide text-sm uppercase">
             Real Stories. Real Impact.
           </motion.div>
-          <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-8 leading-[1.1] tracking-tight">
+          <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-6 lg:mb-8 leading-[1.1] tracking-tight">
             Empowering the <br/>
-            <span className="text-secondary">Backbone</span> of Ghana
+            <span className="text-secondary">Backbone</span> of Africa
           </motion.h1>
           <motion.p variants={fadeUp} className="text-xl opacity-90 leading-relaxed max-w-2xl mx-auto">
-            Ghana's informal sector employs 80% of the workforce but contributes only 27% to GDP — we're here to change that narrative.
+            Across Sub-Saharan Africa, the informal sector employs over 85% of the workforce — yet contributes only 41% of GDP. We're here to change that narrative.
+          </motion.p>
+          <motion.p variants={fadeUp} className="mt-4 text-sm text-white/50 max-w-xl mx-auto">
+            Source:{" "}
+            <a
+              href="https://news.un.org/en/story/2018/04/1008612"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-white/80 transition-colors"
+            >
+              ILO — Women and Men in the Informal Economy (2018), via UN News
+            </a>
           </motion.p>
         </motion.div>
       </div>
@@ -57,29 +69,39 @@ const WhoWeServe = () => (
     {/* PERSONAS GRID */}
     <section className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-32 md:mb-40">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="text-center mb-12 lg:mb-16">
            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-heading font-extrabold text-[#1A1A1A]">Meet our <span className="text-primary">Champions</span></motion.h2>
         </motion.div>
 
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-32 max-w-7xl mx-auto">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
           {personas.map((p) => (
-            <motion.div key={p.name} variants={fadeUp} className="relative bg-[#FAFAFA] border border-black/5 rounded-[3rem] p-8 md:p-10 pt-28 md:pt-36 shadow-xl shadow-black/5 hover:-translate-y-2 transition-transform duration-300 text-center flex flex-col items-center">
-              <div className="absolute -top-24 md:-top-28 left-1/2 -translate-x-1/2">
-                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full p-2 bg-gradient-to-tr from-primary to-secondary shadow-2xl shadow-primary/20">
-                  <img 
-                    src={p.image} 
-                    alt={p.name} 
-                    className="w-full h-full rounded-full object-cover border-[6px] border-white"
-                    loading="lazy"
-                  />
-                </div>
+            <motion.div
+              key={p.name}
+              variants={fadeUp}
+              className="group relative rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden shadow-2xl shadow-black/15 hover:-translate-y-3 transition-transform duration-500 cursor-pointer"
+              style={{ aspectRatio: '3/4' }}
+            >
+              <img
+                src={p.image}
+                alt={p.name}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                style={{ objectPosition: p.pos }}
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
+              <div className="absolute top-4 left-4">
+                <span className="inline-flex items-center gap-1.5 bg-black/30 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-white/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
+                  {p.role}
+                </span>
               </div>
-              <h3 className="font-heading font-black text-3xl text-[#1A1A1A] mb-2">{p.name}</h3>
-              <p className="inline-block bg-white text-secondary font-bold uppercase tracking-wider px-5 py-2 rounded-full mb-6 shadow-sm border border-black/5 text-sm">{p.role}</p>
-              <p className="text-[#6A6A6A] text-lg leading-relaxed flex-grow">{p.story}</p>
-              <div className="mt-8 flex gap-1">
-                {[...Array(5)].map((_, j) => <Star key={j} size={16} className="text-yellow-400 fill-yellow-400" />)}
+              <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                <h3 className="font-heading font-black text-2xl lg:text-3xl text-white mb-1 leading-tight drop-shadow-lg">{p.name}</h3>
+                <div className="w-10 h-[3px] bg-primary rounded-full mb-3 group-hover:w-20 transition-all duration-500" />
+                <p className="text-white/75 text-sm font-medium leading-relaxed line-clamp-3">{p.story}</p>
               </div>
+              <div className="absolute inset-0 rounded-[2rem] lg:rounded-[2.5rem] ring-0 group-hover:ring-2 group-hover:ring-primary/70 transition-all duration-500 pointer-events-none" />
             </motion.div>
           ))}
         </motion.div>
@@ -127,8 +149,8 @@ const WhoWeServe = () => (
                  <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8">
                    <HandCoins size={40} />
                  </div>
-                 <h3 className="text-3xl font-heading font-black mb-4">Nationwide Access</h3>
-                 <p className="text-white/90 text-lg leading-relaxed flex-grow">Based in Accra, we serve all 16 regions of Ghana. Our 100% online platform ensures distance is never a barrier to opportunity.</p>
+                 <h3 className="text-3xl font-heading font-black mb-4">Pan-African Access</h3>
+                 <p className="text-white/90 text-lg leading-relaxed flex-grow">Headquartered in Accra, Ghana; we are building Africa's most accessible digital credit platform — one micro-loan at a time, with no distance, no paperwork, no barriers.</p>
                </motion.div>
              </div>
           </motion.div>

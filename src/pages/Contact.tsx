@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MessageCircle, Facebook, Instagram, Twitter, Linkedin, Send, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MessageCircle, Facebook, Instagram, Twitter, Linkedin, Send } from "lucide-react";
 import { useState } from "react";
 import contactImg from "@/assets/ali-mkumbwa-WUG0QcXVh0k-unsplash.webp";
 
@@ -27,29 +27,14 @@ const Contact = () => {
       color: "bg-secondary/10 text-secondary",
       borderColor: "hover:border-secondary/30"
     },
-    { 
-      icon: MapPin, 
-      title: "Office Location", 
-      value: "Accra, Ghana", 
-      href: "#",
-      color: "bg-emerald-500/10 text-emerald-500",
-      borderColor: "hover:border-emerald-500/30"
-    },
-    { 
-      icon: Clock, 
-      title: "Business Hours", 
-      value: "Mon - Fri, 8am - 5pm", 
-      href: "#",
-      color: "bg-orange-500/10 text-orange-500",
-      borderColor: "hover:border-orange-500/30"
-    }
   ];
+
 
   return (
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#1A1A1A] text-white overflow-hidden rounded-b-[4rem] lg:rounded-b-[6rem] shadow-2xl mx-4 lg:mx-8 mt-4 mb-20">
+      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-[#1A1A1A] text-white overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-2xl mx-2 lg:mx-8 mt-4 mb-12 lg:mb-20">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary opacity-10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary opacity-5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
         
@@ -59,7 +44,7 @@ const Contact = () => {
               <motion.div variants={fadeUp} className="inline-block bg-white/10 backdrop-blur-md text-white font-bold px-6 py-3 rounded-full mb-8 tracking-wide text-sm uppercase">
                 Let's Talk
               </motion.div>
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-8 leading-[1.05] tracking-tight text-white">
+              <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-heading font-extrabold mb-6 lg:mb-8 leading-[1.05] tracking-tight text-white">
                 Get in <br/>
                 <span className="text-primary italic">Touch.</span>
               </motion.h1>
@@ -81,12 +66,12 @@ const Contact = () => {
             </motion.div>
             
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95, rotate: 2 }} 
-              animate={{ opacity: 1, scale: 1, rotate: 0 }} 
+              initial={{ opacity: 0, scale: 0.95 }} 
+              animate={{ opacity: 1, scale: 1 }} 
               transition={{ duration: 0.8 }} 
-              className="relative w-full"
+              className="relative w-full hidden lg:block"
             >
-              <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[16/10] lg:aspect-[4/5] shadow-2xl border-4 lg:border-8 border-white/5">
+              <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[4/5] shadow-2xl border-4 lg:border-8 border-white/5">
                 <img src={contactImg} alt="Contact Agenda Money" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent"></div>
               </div>
@@ -95,7 +80,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-16 lg:py-24 bg-background px-4 lg:px-8">
+      <section className="py-12 lg:py-24 bg-background px-4 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             
@@ -174,7 +159,7 @@ const Contact = () => {
                           <option value="">Select a topic</option>
                           <option>General Enquiry</option>
                           <option>Loan Support</option>
-                          <option>Node Partner Enquiry</option>
+                          <option>Node Code Inquiry</option>
                           <option>Other</option>
                         </select>
                       </div>
