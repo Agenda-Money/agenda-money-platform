@@ -1,17 +1,21 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+
 
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "How It Works", to: "/how-it-works" },
   { label: "Who We Serve", to: "/who-we-serve" },
+  { label: "Careers", to: "/careers" },
   { label: "About Us", to: "/about" },
   { label: "FAQs", to: "/faqs" },
   { label: "Contact", to: "/contact" },
 ];
+
+// Links that sit inside the glow zone
+const glowLinkLabels = new Set(["How It Works", "Who We Serve", "Careers", "About Us", "FAQs", "Contact"]);
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,6 +35,38 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Inject keyframes once */}
+      <style>{`
+        @keyframes navGlowShift {
+          0%   { background-position: 0% 50%; }
+          50%  { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        @keyframes navGlowPulse {
+          0%, 100% { opacity: 0.55; transform: scale(1); }
+          50%       { opacity: 0.75; transform: scale(1.08); }
+        }
+        .nav-glow-blob {
+          position: absolute;
+          inset: -12px -8px;
+          border-radius: 9999px;
+          background: linear-gradient(
+            120deg,
+            #00b8a9 0%,
+            #a855f7 35%,
+            #ee1b85 65%,
+            #00b8a9 100%
+          );
+          background-size: 260% 260%;
+          animation:
+            navGlowShift 5s ease infinite,
+            navGlowPulse 5s ease-in-out infinite;
+          filter: blur(22px);
+          pointer-events: none;
+          z-index: 0;
+        }
+      `}</style>
+
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           showSolid
@@ -39,32 +75,56 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="bg-white p-2 rounded-2xl shadow-sm border border-black/5">
-              <img src="/logo.png" alt="Agenda Money Logo" className="h-10 lg:h-12 w-auto rounded-xl" />
+            <div className="bg-white p-2 rounded-2xl shadow-sm border border-black/5 overflow-hidden">
+              <img src="/logo.png" alt="Agenda Money Logo" className="h-10 lg:h-12 w-auto rounded-xl scale-[1.3] lg:scale-100 origin-center" />
             </div>
           </Link>
 
+          {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className={`text-sm font-bold transition-colors hover:text-primary text-[#1A1A1A] ${location.pathname === l.to ? "text-primary" : ""}`}
-              >
-                {l.label}
+            {/* Left links — clean, no glow */}
+            {navLinks
+              .filter((l) => !glowLinkLabels.has(l.label))
+              .map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className={`text-sm font-bold transition-colors hover:text-primary text-[#1A1A1A] ${location.pathname === l.to ? "text-primary" : ""}`}
+                >
+                  {l.label}
+                </Link>
+              ))}
+
+            {/* Right group — wrapped in the glow zone */}
+            <div className="relative flex items-center gap-6 pl-2">
+              {/* Animated glow blob */}
+              <div className="nav-glow-blob" aria-hidden="true" />
+
+              {/* Glow-zone links */}
+              {navLinks
+                .filter((l) => glowLinkLabels.has(l.label))
+                .map((l) => (
+                  <Link
+                    key={l.to}
+                    to={l.to}
+                    className={`relative z-10 text-sm font-bold transition-colors hover:text-primary text-[#1A1A1A] ${location.pathname === l.to ? "text-primary" : ""}`}
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+
+              {/* Apply Now button — also inside glow zone */}
+              <Link to="/#apply" className="relative z-10">
+                <Button className="bg-primary hover:bg-primary-hover text-primary-foreground rounded-full px-8 py-6 text-base font-bold shadow-lg shadow-primary/20">
+                  Apply Now
+                </Button>
               </Link>
-            ))}
+            </div>
           </div>
 
-          <div className="hidden lg:block">
-            <Link to="/#apply">
-              <Button className="bg-primary hover:bg-primary-hover text-primary-foreground rounded-full px-8 py-6 text-base font-bold shadow-lg shadow-primary/20">
-                Apply Now
-              </Button>
-            </Link>
-          </div>
-
+          {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden w-12 h-12 flex flex-col items-center justify-center gap-1.5 z-[70] relative focus:outline-none"
@@ -107,11 +167,10 @@ const Navbar = () => {
               transition={{ type: "spring", damping: 30, stiffness: 300, mass: 0.8 }}
               className="fixed top-0 right-0 h-full w-[85%] max-w-[340px] bg-white z-[65] flex flex-col pt-24 px-6 shadow-2xl"
             >
-              
               {/* Logo inside drawer */}
               <div className="mb-12 pl-4">
-                <div className="bg-white p-2 rounded-2xl shadow-sm border border-black/5 inline-block">
-                  <img src="/logo.png" alt="Agenda Money Logo" className="h-10 w-auto rounded-xl" />
+                <div className="bg-white p-2 rounded-2xl shadow-sm border border-black/5 inline-block overflow-hidden">
+                  <img src="/logo.png" alt="Agenda Money Logo" className="h-10 w-auto rounded-xl scale-[1.3] origin-center" />
                 </div>
               </div>
 
@@ -124,13 +183,23 @@ const Navbar = () => {
                     onClick={() => setMobileOpen(false)}
                     className={`block w-full px-4 py-3 rounded-xl text-lg font-heading font-semibold transition-all duration-200
                       ${location.pathname === l.to
-                        ? "bg-primary/10 text-primary" 
+                        ? "bg-primary/10 text-primary"
                         : "text-foreground hover:bg-muted hover:text-primary"
                       }`}
                   >
                     {l.label}
                   </Link>
                 ))}
+                {/* Careers */}
+                <Link
+                  to="/careers"
+                  onClick={() => setMobileOpen(false)}
+                  className={`block w-full px-4 py-3 rounded-xl text-lg font-heading font-semibold transition-all duration-200 ${
+                    location.pathname === "/careers" ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted hover:text-primary"
+                  }`}
+                >
+                  Careers
+                </Link>
               </div>
 
               {/* Action Button */}
@@ -145,6 +214,8 @@ const Navbar = () => {
           </>
         )}
       </AnimatePresence>
+
+
     </>
   );
 };

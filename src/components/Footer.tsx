@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, Mail, Phone, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, Phone } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,12 +15,10 @@ const Footer = () => {
     company: [
       { label: "About Us", to: "/about" },
       { label: "Contact", to: "/contact" },
-      { label: "Careers", to: "#" },
     ],
     legal: [
-      { label: "Privacy Policy", to: "#" },
-      { label: "Terms & Conditions", to: "#" },
-      { label: "Cookie Policy", to: "#" },
+      { label: "Privacy Policy", to: "/privacy-policy" },
+      { label: "Terms & Conditions", to: "/terms-and-conditions" },
     ]
   };
 
@@ -48,8 +46,8 @@ const Footer = () => {
                 Agenda<span className="text-primary italic">Money.</span>
               </span>
             </Link>
-            <p className="text-white/50 text-base lg:text-lg leading-relaxed mb-8 max-w-sm font-medium">
-              We're redefining credit accessibility in Ghana. Fast, fair, and completely digital micro-loans for the backbone of our economy.
+            <p className="text-white/70 text-base lg:text-lg leading-relaxed mb-8 max-w-sm font-medium">
+              We're redefining credit accessibility in Africa. Fast, fair, and completely digital micro-loans for the backbone of our economy.
             </p>
             <div className="flex gap-3">
               {socialLinks.map(({ Icon, href }, i) => (
@@ -64,10 +62,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Navigation & Company - Unified Column on Desktop, Split on Mobile */}
-          <div className="lg:col-span-4 grid grid-cols-2 gap-8 lg:contents">
+          {/* Navigation & Company & Legal */}
+          <div className="lg:col-span-4 grid grid-cols-3 gap-4 lg:contents">
             <div>
-              <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-6 lg:mb-8">Navigation</h4>
+              <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Navigation</h4>
               <ul className="space-y-3 lg:space-y-4">
                 {footerLinks.quick.map((link) => (
                   <li key={link.label}>
@@ -81,9 +79,29 @@ const Footer = () => {
             </div>
 
             <div>
-              <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-6 lg:mb-8">Company</h4>
+              <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Company</h4>
               <ul className="space-y-3 lg:space-y-4">
                 {footerLinks.company.map((link) => (
+                  <li key={link.label}>
+                    <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
+                      <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+                <li key="careers">
+                  <Link to="/careers" className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
+                    <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
+                    Careers
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Legal</h4>
+              <ul className="space-y-3 lg:space-y-4">
+                {footerLinks.legal.map((link) => (
                   <li key={link.label}>
                     <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
                       <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
@@ -124,11 +142,14 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/10 flex flex-col items-center justify-between gap-10 lg:flex-row lg:gap-8">
           <div className="flex flex-col items-center lg:items-start gap-4 lg:gap-2">
-            <p className="text-white/30 text-xs font-medium tracking-wide text-center lg:text-left">
-              © {currentYear} Agenda Money Limited. Registered Micro Credit Institution.
+            <p className="text-white/80 text-xs font-medium tracking-wide text-center lg:text-left">
+              © 2025 Agenda Money Limited. <span className="text-primary font-bold">Registered Micro Credit Institution.</span>
             </p>
-            <p className="text-white/20 text-[10px] font-bold uppercase tracking-widest text-center lg:text-left">
-              Member of the Micro Credit Association of Ghana (MCAG)
+            <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest text-center lg:text-left">
+              Operating under the rules &amp; regulations of the Micro-Credit Association of Ghana (MCAG)
+            </p>
+            <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest text-center lg:text-left">
+              G.I.A.C Portfolio Business
             </p>
           </div>
 
@@ -152,13 +173,14 @@ const Footer = () => {
 
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
             {footerLinks.legal.map((link) => (
-              <Link key={link.label} to={link.to} className="text-[10px] font-bold uppercase tracking-widest text-white/30 hover:text-white transition-colors">
+              <Link key={link.label} to={link.to} className="text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white transition-colors">
                 {link.label}
               </Link>
             ))}
           </div>
         </div>
       </div>
+
     </footer>
   );
 };

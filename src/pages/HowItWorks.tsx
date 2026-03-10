@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, CheckCircle, Smartphone, TrendingUp, Shield, Zap, HandCoins } from "lucide-react";
-import getLoanImg from "@/assets/get-loan.webp";
+import getLoanImg from "@/assets/get-loan-opt.webp";
 import customerLoanImg from "@/assets/customer-loan.webp";
+import testimonyClientImg from "@/assets/testimony-client.png";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
 
 const steps = [
-  { num: "01", title: "Get a Node Code", desc: "Connect with a trusted Agenda Money Node. Their unique code is your gateway to rapid loan access.", icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
+  { num: "01", title: "Get a Node Code", desc: (<>Connect with us using a Node code. This unique code is your passport to instant loan access. <a href="/#apply" className="text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors">How do I get a Node code?</a></>), icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
   { num: "02", title: "Quick Application", desc: "Our 100% digital process takes minutes. Just your details, Ghana Card, and a selfie.", icon: Smartphone, color: "text-primary", bg: "bg-primary/10" },
   { num: "03", title: "Real-Time Review", desc: "Our intelligent engine reviews your application instantly. No paperwork, no queues, no stress.", icon: Zap, color: "text-amber-500", bg: "bg-amber-500/10" },
   { num: "04", title: "Instant Payout", desc: "Funds hit your MoMo wallet (MTN, Telecel, or AT) immediately upon approval — 24/7.", icon: HandCoins, color: "text-emerald-500", bg: "bg-emerald-500/10" },
@@ -19,7 +20,7 @@ const HowItWorks = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
     
     {/* REFINED LIGHT HERO */}
-    <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-[#FAFAFA] overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-sm border-b border-black/5 mx-2 lg:mx-8 mt-4 mb-12 lg:mb-20">
+    <section className="relative pt-24 pb-16 lg:pt-36 lg:pb-24 bg-[#FAFAFA] overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-sm border-b border-black/5 mx-2 lg:mx-8 mt-4 mb-12 lg:mb-20">
       <div className="absolute top-0 right-0 w-[400px] lg:w-[800px] h-[400px] lg:h-[800px] bg-primary opacity-5 rounded-full blur-[60px] lg:blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -32,9 +33,10 @@ const HowItWorks = () => (
               Get your money <br/>
               <span className="text-primary italic">in minutes.</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-lg lg:text-xl text-[#6A6A6A] leading-relaxed max-w-xl mb-8 lg:mb-10 font-medium">
-              We've dismantled the traditional banking hurdles. No visits, no paperwork — just the financial support you need, exactly when you need it.
-            </motion.p>
+            <motion.div variants={fadeUp} className="text-lg lg:text-xl text-[#6A6A6A] leading-relaxed max-w-xl mb-8 lg:mb-10 font-medium space-y-4">
+              <p>We leverage the power of your social network — connections and trust lines — to bring you the financial support you deserve.</p>
+              <p>We have drastically reduced the traditional banking hurdles: no branch visits, no long queues, no paperwork, no collateral — just the financial support you need, exactly when you need it.</p>
+            </motion.div>
             <motion.div variants={fadeUp}>
               <Link to="/#apply">
                 <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white rounded-full px-8 lg:px-12 py-6 lg:py-8 text-lg lg:text-xl font-bold transition-all shadow-xl shadow-primary/20 hover:-translate-y-1 group">
@@ -44,20 +46,25 @@ const HowItWorks = () => (
             </motion.div>
           </motion.div>
           
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95, rotate: 2 }} 
-            animate={{ opacity: 1, scale: 1, rotate: 0 }} 
-            transition={{ duration: 0.8 }} 
-            className="lg:w-1/2 w-full relative"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="hidden lg:block lg:w-1/2 w-full relative"
           >
-            <div className="relative rounded-[2rem] lg:rounded-[4rem] overflow-hidden aspect-[16/10] lg:aspect-[4/5] shadow-2xl border-2 lg:border-8 border-white">
-              <img src={getLoanImg} alt="Get a loan instantly" className="w-full h-full object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-              
-              {/* Floating Success Badge - Responsive Scaling */}
-              <div className="absolute bottom-4 right-4 lg:bottom-8 lg:right-8 bg-[#25D366] text-white p-3 lg:p-6 rounded-2xl lg:rounded-3xl shadow-2xl flex items-center gap-2 lg:gap-4 animate-bounce-slow">
-                <div className="bg-white/20 p-1.5 lg:p-2 rounded-lg"><CheckCircle size={18} className="lg:w-6 lg:h-6" /></div>
-                <div className="font-bold tracking-tight text-xs lg:text-base whitespace-nowrap">GHS 500 Received</div>
+            <div className="relative rounded-[4rem] overflow-hidden aspect-[3/4] shadow-2xl border-8 border-white">
+              <img src={getLoanImg} alt="Get a loan instantly" className="w-full h-full object-cover object-center" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+              {/* Floating stat pill — bottom left */}
+              <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-xl flex items-center gap-4 border border-black/5">
+                <div className="bg-primary/10 w-10 h-10 rounded-xl flex items-center justify-center text-primary shrink-0">
+                  <CheckCircle size={20} />
+                </div>
+                <div>
+                  <p className="font-heading font-black text-[#1A1A1A] text-sm leading-tight">Approved in minutes</p>
+                  <p className="text-[#6A6A6A] text-xs font-medium">No paperwork. No queues.</p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -66,7 +73,7 @@ const HowItWorks = () => (
     </section>
 
     {/* THE JOURNEY - SPLIT LAYOUT REFINED */}
-    <section className="py-16 lg:py-40 bg-background relative z-20">
+    <section className="pt-6 pb-16 lg:py-40 bg-background relative z-20">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 max-w-7xl mx-auto items-stretch">
           
@@ -77,13 +84,8 @@ const HowItWorks = () => (
             viewport={{ once: true, margin: "-50px" }} 
             className="relative flex flex-col"
           >
-            <div className="relative rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden flex-grow shadow-2xl group min-h-[400px] lg:min-h-[500px]">
-              <img src={customerLoanImg} alt="Agenda Money customer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
-              <div className="absolute inset-0 bg-primary/5 mix-blend-overlay"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            </div>
-
-            <div className="bg-[#FAFAFA] border border-black/5 rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-10 shadow-xl shadow-black/[0.02] relative -mt-12 lg:-mt-16 z-10 mx-4 lg:mx-8">
+            {/* Testimony card — above the image */}
+            <div className="bg-[#FAFAFA] border border-black/5 rounded-[2rem] lg:rounded-[3rem] p-6 lg:p-10 shadow-xl shadow-black/[0.02] relative mb-6 lg:mb-8 z-10">
               <p className="text-[#1A1A1A] text-xl md:text-2xl lg:text-3xl font-heading font-black leading-tight mb-4 lg:mb-6 italic">
                 "I applied from my shop while serving customers. The cash arrived before I even finished packing their goods."
               </p>
@@ -92,6 +94,12 @@ const HowItWorks = () => (
                    Financial Freedom
                  </div>
               </div>
+            </div>
+
+            <div className="relative rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden flex-grow shadow-2xl group min-h-[400px] lg:min-h-[500px]">
+              <img src={testimonyClientImg} alt="Agenda Money customer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+              <div className="absolute inset-0 bg-primary/5 mix-blend-overlay"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             </div>
           </motion.div>
 
@@ -148,9 +156,9 @@ const HowItWorks = () => (
           
           <div className="grid md:grid-cols-3 gap-6 lg:gap-12 mb-16 lg:mb-24 text-left">
             {[
-              { title: "Higher Limits", desc: "Repay on time to automatically boost your limit up to GHS 2,000.", icon: TrendingUp, accent: "bg-blue-500/10 text-blue-500", delay: 0 },
+              { title: "Higher Limits", desc: "Repay your loan on time to automatically boost your limit up to GHS 2,000.", icon: TrendingUp, accent: "bg-blue-500/10 text-blue-500", delay: 0 },
               { title: "Lower Rates", desc: "Your interest rate decreases as your credit health improves over time.", icon: Shield, accent: "bg-secondary/10 text-secondary", delay: 0.1 },
-              { title: "Node Status", desc: "Successfully repay 5 loans to unlock Node status and its benefits.", icon: Users, accent: "bg-primary/10 text-primary", delay: 0.2 }
+              { title: "Node Status", desc: "New to Agenda Money? Successfully close 5 loans to unlock Node status and start enjoying exclusive benefits.", icon: Users, accent: "bg-primary/10 text-primary", delay: 0.2 }
             ].map((item, i) => (
               <motion.div 
                 key={i} 

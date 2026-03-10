@@ -11,8 +11,13 @@ import FAQs from "./pages/FAQs";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import CookiePolicy from "./pages/CookiePolicy";
+import Careers from "./pages/Careers";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
 
 const queryClient = new QueryClient();
 
@@ -40,10 +45,15 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/who-we-serve" element={<WhoWeServe />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="*" element={<NotFound />} />
+
           </Routes>
         </Layout>
       </BrowserRouter>
