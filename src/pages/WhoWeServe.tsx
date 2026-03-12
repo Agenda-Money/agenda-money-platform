@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, TrendingUp, HandCoins } from "lucide-react";
 
-import beatriceImg from "@/assets/beatrice.jpg";
+import beatriceImg from "@/assets/beatrice.webp";
 import osmanImg from "@/assets/osman.png";
-import akuImg from "@/assets/Aku.jpeg";
+import akuImg from "@/assets/aku.webp";
 import owusuImg from "@/assets/owusu.jpg";
 import fanmilkImg from "@/assets/fanmilk.jpg";
 import mrAmuzuImg from "@/assets/mr amuzu.webp";
 import aliImg from "@/assets/ali-received.webp";
 import backboneImg from "@/assets/backbone.webp";
+import { InclusionIcon, AfricaIcon } from "@/components/icons";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
@@ -20,7 +21,7 @@ const personas = [
   { name: "Aku", role: "Market Trader", story: "A single mother of three who relies on Agenda Money for emergencies and weekly restocking of her shop.", image: akuImg, pos: "center top" },
   { name: "Ali", role: "Carpenter", story: "Relies on Agenda Money for quick capital when large lumber orders arrive, keeping deadlines on track.", image: aliImg, pos: "center top" },
   { name: "Mr. Amuzu", role: "Parent", story: "Funds school supplies for his son Kojo through Agenda Money — nurturing tomorrow's leaders today.", image: mrAmuzuImg, pos: "center top" },
-  { name: "Beatrice", role: "Seamstress", story: "Uses Agenda Money to buy fabrics and grow her loyal clientele — one stitch at a time.", image: beatriceImg, pos: "left top" },
+  { name: "Beatrice", role: "Seamstress", story: "Uses Agenda Money to buy fabrics and grow her loyal clientele — one stitch at a time.", image: beatriceImg, pos: "70% top" },
   { name: "Osman", role: "MoMo Agent", story: "Keeps his Mobile Money float topped up with Agenda Money loans so no customer is ever turned away.", image: osmanImg, pos: "center top" },
   { name: "Owusu", role: "Fan Milk Seller", story: "Supplements his working capital with Agenda Money loans while saving toward his own accommodation.", image: fanmilkImg, pos: "center top" },
 ];
@@ -29,7 +30,7 @@ const WhoWeServe = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
     
     {/* HERO SECTION */}
-    <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-primary text-primary-foreground overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl mx-2 lg:mx-8 mt-4">
+    <section className="relative pt-24 pb-12 lg:pt-48 lg:pb-32 bg-[#FAFAFA] overflow-hidden rounded-b-[3rem] lg:rounded-b-[4rem] shadow-sm border-b border-black/5 mx-2 lg:mx-8 mt-4 mb-4 lg:mb-6">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={backboneImg} alt="Backbone of Africa" className="w-full h-full object-cover opacity-50" loading="lazy" />
@@ -106,10 +107,10 @@ const WhoWeServe = () => (
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="lg:col-span-4 lg:pr-12">
             <motion.div variants={fadeUp} className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">The Gap</motion.div>
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-[#1A1A1A] leading-[1.1] tracking-tight mb-8">
-              Closing the <br/><span className="text-secondary font-black">$5 Billion</span> <br/>Credit Gap.
+              Closing the <br/><span className="text-secondary font-black">$5 Billion</span> <br/>Credit Gap
             </motion.h2>
             <motion.p variants={fadeUp} className="text-lg lg:text-xl text-[#6A6A6A] leading-relaxed mb-10">
-              The SME credit gap in Sub-Saharan Africa exceeds US$330 billion. Agenda Money is here to close it — one sustainable micro-loan at a time.
+              The SME credit gap in Sub-Saharan Africa exceeds US$330 billion. Agenda Money is here to close it — one sustainable microloan at a time.
             </motion.p>
             <motion.div variants={fadeUp}>
               <Link to="/#apply">
@@ -128,7 +129,7 @@ const WhoWeServe = () => (
              <div className="grid md:grid-cols-2 gap-8 relative">
                <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-2xl shadow-black/5 border border-black/5 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
                  <div className="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center text-secondary mb-8">
-                   <TrendingUp size={40} />
+                   <InclusionIcon size={40} />
                  </div>
                  <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Financial Inclusion</h3>
                  <p className="text-[#6A6A6A] text-lg leading-relaxed flex-grow">We provide capital to ambitious individuals who are locked out of the traditional banking system due to lack of collateral or formal histories.</p>
@@ -136,7 +137,7 @@ const WhoWeServe = () => (
 
                <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
                  <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8">
-                   <HandCoins size={40} />
+                   <AfricaIcon size={40} />
                  </div>
                  <h3 className="text-3xl font-heading font-black mb-4">Pan African Access</h3>
                  <p className="text-white/90 text-lg leading-relaxed flex-grow">We are building Africa's most accessible digital credit platform. One microloan at a time. No paperwork, no collateral, no long queues... no barriers.</p>

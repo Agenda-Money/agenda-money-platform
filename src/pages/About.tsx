@@ -12,7 +12,7 @@ const About = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
     
     {/* Hero Section */}
-    <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 bg-[#1A1A1A] text-white overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-2xl mx-2 lg:mx-8 mt-4">
+    <section className="relative pt-24 pb-12 lg:pt-48 lg:pb-32 bg-[#1A1A1A] text-white overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-2xl mx-2 lg:mx-8 mt-4">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary opacity-10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -23,7 +23,7 @@ const About = () => (
             </motion.div>
             <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-8 leading-[1.05] tracking-tight">
               <span className="text-primary italic">We are</span> <br/>
-              <span className="text-white">Agenda Money.</span>
+              <span className="text-white">Agenda Money</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-xl text-white/70 leading-relaxed mb-10 max-w-lg font-medium">
               We're on a mission to empower individuals and micro-entrepreneurs with a special focus on the unbanked and underserved by providing affordable and easily accessible digital financial services - credit first.
@@ -43,12 +43,12 @@ const About = () => (
             </div>
             
             {/* Floating Badge — hidden on mobile to prevent clipping */}
-            <div className="hidden lg:flex absolute -bottom-8 -left-8 bg-white p-6 lg:p-8 rounded-[2.5rem] lg:rounded-[3rem] shadow-2xl border border-black/5 items-center gap-4 lg:gap-6 text-black">
+            <div className="flex absolute -bottom-4 -left-4 bg-white p-4 lg:p-8 rounded-[2rem] lg:rounded-[3rem] shadow-2xl border border-black/5 items-center gap-3 lg:gap-6 text-black z-20">
               <div className="bg-primary/20 p-3 lg:p-5 rounded-xl lg:rounded-2xl text-primary">
-                <TrendingUp size={24} className="lg:w-8 lg:h-8" />
+                <TrendingUp size={20} className="lg:w-8 lg:h-8" />
               </div>
               <div>
-                <p className="font-heading font-black text-xl lg:text-2xl tracking-tighter">2030 Vision</p>
+                <p className="font-heading font-black text-lg lg:text-2xl tracking-tighter">2030 Vision</p>
                 <p className="text-[10px] lg:text-sm font-bold opacity-60">1M Active Africans</p>
               </div>
             </div>
@@ -58,7 +58,7 @@ const About = () => (
     </section>
 
     {/* Vision Section */}
-    <section className="py-16 lg:py-32 bg-accent relative overflow-hidden rounded-[3rem] lg:rounded-[6rem] mx-2 lg:mx-8 my-8 lg:my-12 shadow-inner">
+    <section className="py-12 lg:py-32 bg-accent relative overflow-hidden rounded-[3rem] lg:rounded-[6rem] mx-2 lg:mx-8 my-8 lg:my-12 shadow-inner">
        <div className="absolute top-0 left-0 w-full h-full">
          <div className="absolute top-[-20%] right-[-10%] w-[40%] h-[100%] bg-primary opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
        </div>
@@ -66,11 +66,11 @@ const About = () => (
        <div className="container mx-auto px-6 max-w-5xl relative z-10">
          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid lg:grid-cols-12 gap-16 items-center">
            <div className="lg:col-span-8">
-             <motion.div variants={fadeUp} className="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center text-primary mb-10">
+             <motion.div variants={fadeUp} className="w-20 h-20 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-[2rem] flex items-center justify-center text-primary mb-10 shadow-inner ring-4 ring-primary/5 transition-transform hover:rotate-6 duration-500">
                <Target size={40} />
              </motion.div>
              <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[#1A1A1A] mb-10 tracking-tight leading-[1.1]">
-               Our North Star is <span className="text-primary italic">Impact.</span>
+               Our North Star is <span className="text-primary italic">Impact</span>
              </motion.h2>
              <motion.p variants={fadeUp} className="text-2xl md:text-3xl lg:text-4xl text-[#1A1A1A] leading-[1.3] font-medium italic border-l-4 border-secondary pl-8">
                "To build and manage a loan book of <span className="text-primary font-black">$10 Million</span> for <span className="text-[#1A1A1A] font-black underline decoration-secondary decoration-8 underline-offset-8">a Million Africans</span> by 2030." - <span className="text-primary">We call it empowerment</span>
@@ -90,12 +90,12 @@ const About = () => (
     </section>
 
     {/* Philosophy (De-AIed Values) */}
-    <section className="py-16 lg:py-32 bg-background relative px-4 lg:px-8">
+    <section className="py-12 lg:py-32 bg-background relative px-4 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-12">
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-heading font-black text-[#1A1A1A] tracking-tight leading-[1.1]">
-              The Agenda <br/>
+              Agenda Money <br/>
               <span className="text-primary italic">Philosophy.</span>
             </motion.h2>
             
@@ -131,12 +131,9 @@ const About = () => (
                   <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-secondary shadow-lg">
                     <Target size={32} />
                   </div>
-                  <h3 className="text-3xl font-heading font-black text-[#1A1A1A]">Deep Innovation.</h3>
+                  <h3 className="text-3xl font-heading font-black text-[#1A1A1A]">Deep Innovation</h3>
                   <p className="text-xl text-[#4A4A4A] leading-relaxed font-medium">
-                    For the real economy of Africa, from the ground up.
-                  </p>
-                  <p className="text-base text-[#6A6A6A] leading-relaxed">
-                    We believe access to credit is a fundamental right, not a privilege. That's why we've rebuilt the lending experience from scratch — removing every barrier between a hardworking African and the capital they need to thrive. No branch visits. No paperwork. No waiting.
+                    We're not just digitizing existing processes; we're rethinking how finance works for the real economy of Africa, from the ground up. We believe access to credit is a fundamental right, not a privilege. That's why we've rebuilt the lending experience from scratch — removing every barrier between a hardworking African and the capital they need to thrive.
                   </p>
                   <ul className="space-y-4 pt-2 text-sm font-black uppercase tracking-widest text-[#8A8A8A]">
                     <li className="flex items-center gap-4"><span className="w-2 h-2 bg-primary rounded-full"></span> Zero Paperwork</li>

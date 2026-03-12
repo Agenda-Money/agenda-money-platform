@@ -10,7 +10,7 @@ const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, tra
 const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
 
 const steps = [
-  { num: "01", title: "Get a Node Code", desc: (<>Connect with us using a Node code. This unique code is your passport to instant loan access. <a href="/#apply" className="text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors">How do I get a Node code?</a></>), icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
+  { num: "01", title: "Get a Node Code", desc: (<>Connect with us using a Node code. This unique code is your passport to instant loan access.<br/><a href="/#apply" className="inline-block mt-2 text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors">How do I get a Node code?</a></>), icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
   { num: "02", title: "Quick Application", desc: "Our 100% digital process takes minutes. Just your personal details, ID card, and a selfie.", icon: Smartphone, color: "text-primary", bg: "bg-primary/10" },
   { num: "03", title: "Real-Time Review", desc: "Our intelligent engine reviews your application instantly. No paperwork, no queues, no stress.", icon: Zap, color: "text-amber-500", bg: "bg-amber-500/10" },
   { num: "04", title: "Instant Disbursement", desc: "Funds hit your MoMo wallet (MTN, Telecel, or AT) immediately upon approval — 24/7.", icon: HandCoins, color: "text-emerald-500", bg: "bg-emerald-500/10" },
@@ -20,7 +20,7 @@ const HowItWorks = () => (
   <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
     
     {/* REFINED LIGHT HERO */}
-    <section className="relative pt-24 pb-16 lg:pt-36 lg:pb-24 bg-[#FAFAFA] overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-sm border-b border-black/5 mx-2 lg:mx-8 mt-4 mb-12 lg:mb-20">
+    <section className="relative pt-24 pb-12 lg:pt-36 lg:pb-16 bg-[#FAFAFA] overflow-hidden rounded-b-[3rem] lg:rounded-b-[4rem] shadow-sm border-b border-black/5 mx-2 lg:mx-8 mt-4 mb-4 lg:mb-6">
       <div className="absolute top-0 right-0 w-[400px] lg:w-[800px] h-[400px] lg:h-[800px] bg-primary opacity-5 rounded-full blur-[60px] lg:blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -73,9 +73,9 @@ const HowItWorks = () => (
     </section>
 
     {/* THE JOURNEY - SPLIT LAYOUT REFINED */}
-    <section className="pt-6 pb-16 lg:py-40 bg-background relative z-20">
+    <section className="pt-2 pb-12 lg:pt-8 lg:pb-24 bg-background relative z-20">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 max-w-7xl mx-auto items-stretch">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 max-w-7xl mx-auto items-stretch">
           
           {/* Left: Immersive Image & Testimonial */}
           <motion.div 
@@ -137,7 +137,7 @@ const HowItWorks = () => (
     </section>
 
     {/* GROWTH PATH SECTION - REFINED IMMERSIVE LIGHT THEME */}
-    <section className="py-20 lg:py-32 bg-[#F8F8F8] border-y border-black/5 rounded-[3rem] lg:rounded-[6rem] mx-2 lg:mx-8 mb-12 lg:mb-20 relative overflow-hidden text-[#1A1A1A]">
+    <section className="py-16 lg:py-32 bg-[#F8F8F8] border-y border-black/5 rounded-[3rem] lg:rounded-[6rem] mx-2 lg:mx-8 mb-8 lg:mb-20 relative overflow-hidden text-[#1A1A1A]">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-[400px] lg:w-[800px] h-[400px] lg:h-[800px] bg-primary opacity-5 rounded-full blur-[80px] lg:blur-[120px] translate-x-1/4 -translate-y-1/4 pointer-events-none animate-pulse-slow"></div>
       <div className="absolute bottom-0 left-0 w-[300px] lg:w-[600px] h-[300px] lg:h-[600px] bg-secondary opacity-5 rounded-full blur-[60px] lg:blur-[100px] -translate-x-1/4 translate-y-1/4 pointer-events-none animate-pulse-slow delay-700"></div>

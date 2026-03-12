@@ -37,7 +37,7 @@ const Footer = () => {
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-secondary opacity-[0.02] rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16 lg:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16 lg:mb-20">
           
           {/* Brand & Mission */}
           <div className="lg:col-span-4">
@@ -62,79 +62,75 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Navigation & Company & Legal */}
-          <div className="lg:col-span-4 grid grid-cols-3 gap-4 lg:contents">
-            <div>
-              <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Navigation</h4>
-              <ul className="space-y-3 lg:space-y-4">
-                {footerLinks.quick.map((link) => (
-                  <li key={link.label}>
-                    <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
-                      <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Company</h4>
-              <ul className="space-y-3 lg:space-y-4">
-                {footerLinks.company.map((link) => (
-                  <li key={link.label}>
-                    <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
-                      <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-                <li key="careers">
-                  <Link to="/careers" className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
+          {/* Navigation */}
+          <div className="lg:col-span-2 md:col-span-1">
+            <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Navigation</h4>
+            <ul className="space-y-3 lg:space-y-4">
+              {[
+                { label: "Home", to: "/" },
+                { label: "How It Works", to: "/how-it-works" },
+                { label: "Who We Serve", to: "/who-we-serve" },
+                { label: "FAQs", to: "/faqs" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
                     <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
-                    Careers
+                    {link.label}
                   </Link>
                 </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Legal</h4>
-              <ul className="space-y-3 lg:space-y-4">
-                {footerLinks.legal.map((link) => (
-                  <li key={link.label}>
-                    <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
-                      <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="lg:col-span-4">
-            <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-6 lg:mb-8">Connect With Us</h4>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6">
-              <a href="mailto:support@agendamoney.com" className="flex items-center gap-4 group p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/20 transition-all">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                  <Mail size={18} />
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Email Support</p>
-                  <p className="text-sm font-bold">support@agendamoney.com</p>
-                </div>
-              </a>
-              <a href="tel:0558587833" className="flex items-center gap-4 group p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-secondary/20 transition-all">
-                <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
-                  <Phone size={18} />
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Call Center</p>
-                  <p className="text-sm font-bold">0558587833</p>
-                </div>
-              </a>
+          {/* Company */}
+          <div className="lg:col-span-2 md:col-span-1">
+            <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Company</h4>
+            <ul className="space-y-3 lg:space-y-4">
+              {[
+                { label: "About Us", to: "/about" },
+                { label: "Contact", to: "/contact" },
+                { label: "Careers", to: "/careers" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
+                    <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="lg:col-span-2 md:col-span-1">
+            <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Legal</h4>
+            <ul className="space-y-3 lg:space-y-4">
+              {[
+                { label: "Privacy Policy", to: "/privacy-policy" },
+                { label: "Terms & Conditions", to: "/terms-and-conditions" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
+                    <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Connect With Us */}
+          <div className="lg:col-span-2 md:col-span-1">
+            <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Connect With Us</h4>
+            <div className="space-y-4">
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Email Support</p>
+                <a href="mailto:support@agendamoney.com" className="text-sm font-bold hover:text-primary transition-colors">support@agendamoney.com</a>
+              </div>
+              <div className="pt-2">
+                <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Call Center</p>
+                <a href="tel:0558587833" className="text-sm font-bold hover:text-secondary transition-colors">0558587833</a>
+              </div>
             </div>
           </div>
         </div>
@@ -144,6 +140,9 @@ const Footer = () => {
           <div className="flex flex-col items-center lg:items-start gap-4 lg:gap-2">
             <p className="text-white/80 text-xs font-medium tracking-wide text-center lg:text-left">
               © 2025 Agenda Money.
+            </p>
+            <p className="text-primary text-[10px] font-black uppercase tracking-[0.2em] mt-2 text-center lg:text-left">
+              G.I.A.C. portfolio company
             </p>
           </div>
 

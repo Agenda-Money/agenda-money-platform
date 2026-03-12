@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MessageCircle, Facebook, Instagram, Twitter, Linkedin, Send } from "lucide-react";
 import { useState } from "react";
-import contactImg from "@/assets/ali-mkumbwa-WUG0QcXVh0k-unsplash.webp";
+import contactImg from "@/assets/contact-us.webp";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
@@ -72,7 +72,7 @@ const Contact = () => {
               className="relative w-full hidden lg:block"
             >
               <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[4/5] shadow-2xl border-4 lg:border-8 border-white/5">
-                <img src={contactImg} alt="Contact Agenda Money" className="w-full h-full object-cover" />
+                <img src={contactImg} alt="Contact Agenda Money" className="w-full h-full object-cover" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 via-transparent to-transparent"></div>
               </div>
             </motion.div>
