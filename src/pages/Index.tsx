@@ -37,9 +37,9 @@ const Index = () => {
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
       {/* HERO SECTION */}
-      <section className="relative pt-16 pb-8 lg:pt-48 lg:pb-32 overflow-hidden bg-[#FAFAFA]">
+      <section className="relative pt-12 pb-4 lg:pt-32 lg:pb-20 overflow-hidden bg-[#FAFAFA]">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-20">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="lg:w-1/2 text-left z-10">
               <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold tracking-wide uppercase mb-8">
                 <Zap size={18} /> Instant Loans in Africa
@@ -52,7 +52,7 @@ const Index = () => {
                 Fast, simple, affordable micro-loans for individuals and small businesses.<br/>
                 No deposits, No collateral - just cash when you need it.
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mb-10">
+              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mb-0 lg:mb-10">
                 <Link to="/#apply">
                   <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full px-12 py-8 text-xl font-bold shadow-xl shadow-secondary/20 transition-all hover:-translate-y-1">
                     Apply Now <ArrowRight className="ml-2" size={24} />
@@ -66,39 +66,45 @@ const Index = () => {
               </motion.div>
             </motion.div>
             
-            <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.8 }} className="lg:w-1/2 w-full relative">
-               <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[4/3] lg:aspect-square shadow-2xl">
-                 <img src={customerLoanImg} alt="Customer Loan" className="w-full h-full object-cover" loading="lazy" />
-                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent mix-blend-multiply"></div>
-               </div>
-               
-               {/* Floating Badges */}
-        <div className="absolute -bottom-4 lg:-bottom-8 -left-2 lg:-left-12 bg-white p-3 lg:p-6 rounded-2xl lg:rounded-[2rem] shadow-2xl border border-black/5 flex items-center gap-3 lg:gap-5">
-                 <div className="bg-secondary/20 p-2 lg:p-4 rounded-full text-secondary">
-                   <Smartphone size={20} className="lg:w-7 lg:h-7" />
-                 </div>
-                 <div>
-                   <p className="font-heading font-bold text-base lg:text-xl text-[#1A1A1A]">100% Mobile</p>
-                   <p className="text-[10px] lg:text-sm text-[#4A4A4A] font-medium">Apply from anywhere</p>
-                 </div>
-               </div>
+            {/* HERO IMAGE CONTAINER */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }} 
+              animate={{ opacity: 1, scale: 1, y: 0 }} 
+              transition={{ duration: 0.8 }} 
+              className="lg:w-1/2 w-full relative mb-12 lg:mb-0" // Reduced mb-20 to mb-12 for tighter fit with ticker
+            >
+              <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[4/3] lg:aspect-square shadow-2xl">
+                <img src={customerLoanImg} alt="Customer Loan" className="w-full h-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent mix-blend-multiply"></div>
+              </div>
+              
+              {/* Floating Badges - Optimized for Mobile Visibility & Desktop Tightness */}
+              <div className="absolute -bottom-6 lg:-bottom-8 -left-2 lg:-left-12 bg-white p-3 lg:p-3 rounded-2xl lg:rounded-[2rem] shadow-2xl border border-black/5 flex items-center gap-3 lg:gap-3 scale-[0.85] lg:scale-100 origin-bottom-left z-20">
+                <div className="bg-secondary/20 p-2 lg:p-2.5 rounded-full text-secondary">
+                  <Smartphone size={18} className="lg:w-6 lg:h-6" />
+                </div>
+                <div>
+                  <p className="font-heading font-bold text-sm lg:text-lg text-[#1A1A1A]">100% Mobile</p>
+                  <p className="text-[10px] lg:text-xs text-[#4A4A4A] font-medium leading-none">Apply from anywhere</p>
+                </div>
+              </div>
 
-               <div className="absolute -top-4 lg:-top-8 -right-2 lg:-right-8 bg-white p-3 lg:p-5 rounded-2xl lg:rounded-[2rem] shadow-2xl border border-black/5 flex items-center gap-2 lg:gap-4">
-                 <div className="bg-primary/20 p-2 lg:p-3 rounded-full text-primary">
-                   <CheckCircle size={18} className="lg:w-6 lg:h-6" />
-                 </div>
-                 <div>
-                   <p className="font-heading font-bold text-sm lg:text-lg text-[#1A1A1A]">Approved in</p>
-                   <p className="text-primary font-black text-base lg:text-xl">Mins</p>
-                 </div>
-               </div>
+              <div className="absolute -top-4 lg:-top-8 -right-2 lg:-right-8 bg-white p-3 lg:p-2.5 rounded-2xl lg:rounded-[2rem] shadow-2xl border border-black/5 flex items-center gap-3 lg:gap-2.5 scale-[0.85] lg:scale-100 origin-top-right z-20">
+                <div className="bg-primary/20 p-2 lg:p-2 rounded-full text-primary">
+                  <CheckCircle size={16} className="lg:w-5 lg:h-5" />
+                </div>
+                <div>
+                  <p className="font-heading font-bold text-[11px] lg:text-base text-[#1A1A1A] leading-none">Approved in</p>
+                  <p className="text-primary font-black text-sm lg:text-lg leading-tight">Mins</p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* REFINED FULL-WIDTH TICKER */}
-      <div className="bg-[#0A0A0A] text-white py-6 overflow-hidden border-y border-white/5 relative z-20">
+      <div className="bg-[#0A0A0A] text-white py-6 overflow-hidden border-y border-white/5 relative z-20 mt-[-2rem] lg:mt-[-2rem]">
         <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
         <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
         
@@ -369,7 +375,7 @@ const Index = () => {
                 Trusted by thousands,
               </span> 
               <br className="sm:hidden" />
-              <span className="text-primary/70"> for fast fair and reliable </span>
+              <span className="text-primary/70"> for fast, fair and reliable </span>
               <br className="lg:hidden" />
               <span className="text-[#1A1A1A] relative inline-block">
                 financial support

@@ -136,37 +136,37 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/10 flex flex-col items-center justify-between gap-10 lg:flex-row lg:gap-8">
-          <div className="flex flex-col items-center lg:items-start gap-4 lg:gap-2">
-            <p className="text-white/80 text-xs font-medium tracking-wide text-center lg:text-left">
-              © 2025 Agenda Money.
+        <div className="pt-12 border-t border-white/10 flex flex-col items-center justify-center gap-8">
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-white/80 text-xs font-medium tracking-wide text-center">
+              © 2025 Agenda Money Limited. <span className="text-white/80 font-black ml-1">Micro Credit Institution.</span>
             </p>
-            <p className="text-primary text-[10px] font-black uppercase tracking-[0.2em] mt-2 text-center lg:text-left">
-              G.I.A.C. portfolio company
+            <p className="text-white/50 text-[10px] font-bold uppercase tracking-[0.1em] text-center max-w-xl leading-relaxed">
+              OPERATING UNDER THE RULES & REGULATIONS OF THE MICRO-CREDIT ASSOCIATION OF GHANA (MCAC)
+            </p>
+            <p className="text-white/80 text-[10px] font-black uppercase tracking-[0.2em] text-center">
+              G.I.A.C PORTFOLIO COMPANY
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hidden sm:block">Partners</span>
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-                <span className="text-[10px] font-black tracking-tighter">MTN MoMo</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                <span className="text-[10px] font-black tracking-tighter">Telecel Cash</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                <span className="text-[10px] font-black tracking-tighter">AT Money</span>
-              </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-white/40">
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
+              <span className="text-[10px] font-black tracking-tighter uppercase">MTN MoMo</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
+              <span className="text-[10px] font-black tracking-tighter uppercase">Telecel Cash</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
+              <span className="text-[10px] font-black tracking-tighter uppercase">AT Money</span>
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
+          <div className="flex flex-wrap justify-center gap-8 mt-4">
             {footerLinks.legal.map((link) => (
-              <Link key={link.label} to={link.to} className="text-[10px] font-bold uppercase tracking-widest text-white/60 hover:text-white transition-colors">
+              <Link key={link.label} to={link.to} className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors">
                 {link.label}
               </Link>
             ))}
