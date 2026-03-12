@@ -37,7 +37,7 @@ const Index = () => {
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
       {/* HERO SECTION */}
-      <section className="relative pt-12 pb-4 lg:pt-32 lg:pb-20 overflow-hidden bg-[#FAFAFA]">
+      <section className="relative pt-24 pb-4 lg:pt-32 lg:pb-20 overflow-hidden bg-[#FAFAFA]">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-20">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="lg:w-1/2 text-left z-10">
@@ -48,7 +48,7 @@ const Index = () => {
                 Giving credit <br/>
                 <span className="text-primary">where it's due.</span>
               </motion.h1>
-              <motion.p variants={fadeUp} className="text-xl opacity-80 mb-10 leading-relaxed max-w-lg text-[#4A4A4A]">
+              <motion.p variants={fadeUp} className="text-xl opacity-80 mb-10 leading-relaxed max-w-xl text-[#4A4A4A]">
                 Fast, simple, affordable micro-loans for individuals and small businesses.<br/>
                 No deposits, No collateral - just cash when you need it.
               </motion.p>
@@ -104,7 +104,7 @@ const Index = () => {
       </section>
 
       {/* REFINED FULL-WIDTH TICKER */}
-      <div className="bg-[#0A0A0A] text-white py-6 overflow-hidden border-y border-white/5 relative z-20 mt-[-2rem] lg:mt-[-2rem]">
+      <div className="bg-[#0A0A0A] text-white py-6 overflow-hidden border-y border-white/5 relative z-20 mt-[-2rem] lg:mt-0">
         <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
         <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none"></div>
         
@@ -136,7 +136,7 @@ const Index = () => {
 
 
       {/* WHAT IS AGENDA MONEY */}
-      <section className="py-20 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden rounded-[3rem] lg:rounded-[5rem] mx-4 lg:mx-8 shadow-2xl shadow-primary/30 mt-0 mb-4 lg:mb-14">
+      <section className="py-20 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden rounded-[3rem] lg:rounded-[5rem] mx-4 lg:mx-8 shadow-2xl shadow-primary/30 mt-12 lg:mt-20 mb-4 lg:mb-14">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -423,7 +423,7 @@ const Index = () => {
               </h2>
               <p className="text-lg lg:text-xl text-[#6A6A6A] mb-8 lg:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
                 It takes minutes. No collateral, no branch visit, no wahala. 
-                Instant disbursement to MTN, Telecel, and AirtelTigo.
+                Instant disbursement to MTN, Telecel, and AT.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link to="/contact">

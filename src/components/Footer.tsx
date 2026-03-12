@@ -139,7 +139,7 @@ const Footer = () => {
         <div className="pt-12 border-t border-white/10 flex flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center gap-4">
             <p className="text-white/80 text-xs font-medium tracking-wide text-center">
-              © 2025 Agenda Money Limited. <span className="text-white/80 font-black ml-1">Micro Credit Institution.</span>
+              © 2025 Agenda Money Limited. <span className="text-white/80 font-black ml-1"></span>
             </p>
             <p className="text-white/50 text-[10px] font-bold uppercase tracking-[0.1em] text-center max-w-xl leading-relaxed">
               OPERATING UNDER THE RULES & REGULATIONS OF THE MICRO-CREDIT ASSOCIATION OF GHANA (MCAC)
@@ -164,13 +164,6 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 mt-4">
-            {footerLinks.legal.map((link) => (
-              <Link key={link.label} to={link.to} className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors">
-                {link.label}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
 

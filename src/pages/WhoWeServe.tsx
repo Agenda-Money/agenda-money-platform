@@ -135,13 +135,13 @@ const WhoWeServe = () => (
                  <p className="text-[#6A6A6A] text-lg leading-relaxed flex-grow">We provide capital to ambitious individuals who are locked out of the traditional banking system due to lack of collateral or formal histories.</p>
                </motion.div>
 
-               <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
-                 <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8">
-                   <AfricaIcon size={40} />
-                 </div>
-                 <h3 className="text-3xl font-heading font-black mb-4">Pan African Access</h3>
-                 <p className="text-white/90 text-lg leading-relaxed flex-grow">We are building Africa's most accessible digital credit platform. One microloan at a time. No paperwork, no collateral, no long queues... no barriers.</p>
-               </motion.div>
+                <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">
+                  <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8">
+                    <AfricaIcon size={40} />
+                  </div>
+                  <h3 className="text-3xl font-heading font-black mb-4">Pan African Access</h3>
+                  <p className="text-white/90 text-lg leading-relaxed flex-grow">Headquartered in Ghana, we are building Africa’s most accessible digital lending platform to give credit where it’s due. Our goal is to empower the REAL economy to realize its true potential</p>
+                </motion.div>
              </div>
           </motion.div>
 
