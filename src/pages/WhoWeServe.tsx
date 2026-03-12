@@ -140,7 +140,7 @@ const WhoWeServe = () => (
                     <AfricaIcon size={40} />
                   </div>
                   <h3 className="text-3xl font-heading font-black mb-4">Pan African Access</h3>
-                  <p className="text-white/90 text-lg leading-relaxed flex-grow">Headquartered in Ghana, we are building Africa’s most accessible digital lending platform to give credit where it’s due. Our goal is to empower the REAL economy to realize its true potential</p>
+                  <p className="text-white/90 text-lg leading-relaxed flex-grow">Headquartered in Ghana, we are building Africa’s most accessible digital lending platform to give credit where it’s due. Our goal is to empower the REAL economy of Africa to realize its true potential</p>
                 </motion.div>
              </div>
           </motion.div>
