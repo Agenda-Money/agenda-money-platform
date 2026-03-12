@@ -1,6 +1,6 @@
-# Agenda Money Platform
+# Agenda Money
 
-This is the Agenda Money Platform frontend.
+This is the Agenda Money frontend.
 
 ## Technologies
 
