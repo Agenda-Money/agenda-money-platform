@@ -31,9 +31,9 @@ const faqSections = [
     title: "Loan Details",
     items: [
       { q: "How much can I borrow?", a: "First-time applicants can access between GHS 50 and GHS 300. As you build a positive repayment history, your eligible amount increases up to GHS 2,000." },
-      { q: "What are the loan durations?", a: "1, 5, 10, 14, and 30 days. Our flexibile terms allow you to choose what works best for your needs." },
-      { q: "What is the interest rate?", a: "We offer transparent, flat-rate pricing. You will see the total repayment amount clearly before you accept any loan. No hidden charges." },
-      { q: "What happens if I repay late?", a: "A late fee applies on any overdue amount. We encourage timely repayment to maintain your credit health and unlock higher limits." },
+      { q: "What are the loan durations?", a: "1, 5, 10, 14 and 30 days. Our flexibile terms allow you to choose what works best for your needs." },
+      { q: "What is the interest rate?", a: "Transparent, flat-rate pricing at 0.5% per day. For example, if you borrow GHS 300 for 14 days, your total repayment is GHS 321. No hidden charges." },
+      { q: "What happens if I repay late?", a: "A late fee applies on any overdue amount. This includes a one-time late fee and a daily penal interest charge. We encourage timely repayment to maintain your credit health and unlock higher limits." },
       { q: "What happens if I don't repay?", a: "After all recovery measures are exhausted, the borrower is blacklisted and cannot access new loans. The credit record is shared with relevant credit bureaus. Connections within the defaulter's network may also be negatively affected." },
     ],
   },
@@ -87,7 +87,7 @@ const FAQs = () => (
             className="lg:w-1/2 w-full hidden lg:block"
           >
             <div className="relative rounded-[3rem] lg:rounded-[4rem] overflow-hidden aspect-[4/3] shadow-2xl border-4 lg:border-8 border-white/10">
-              <img src={faqImg} alt="Agenda Money Support" className="w-full h-full object-cover" />
+              <img src={faqImg} alt="Agenda Money Support" className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-tr from-secondary/60 via-transparent to-transparent"></div>
             </div>
           </motion.div>

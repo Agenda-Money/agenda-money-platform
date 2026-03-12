@@ -49,8 +49,11 @@ const TermsAndConditions = () => (
         variants={stagger}
         className="container mx-auto max-w-3xl"
       >
+        <motion.p variants={fadeUp} className="text-[#4A4A4A] text-lg leading-relaxed mb-6 font-bold uppercase tracking-[0.1em]">
+          Agenda Money is a product of Charles AM
+        </motion.p>
         <motion.p variants={fadeUp} className="text-[#4A4A4A] text-lg leading-relaxed mb-12 p-6 bg-secondary/5 border border-secondary/10 rounded-2xl">
-          These Terms and Conditions ("Terms") govern your access to and use of the Agenda Money ("Agenda Money", "we", "us", "our") digital lending platform, website, and mobile application. By applying for a loan or using our services, you agree to be bound by these Terms.
+          These Terms and Conditions ("Terms") govern your access to and use of the Agenda Money ("Agenda Money", "we", "us" and "our") digital lending platform, website and mobile application. By applying for a loan or using our services, you agree to be bound by these Terms.
         </motion.p>
 
         <Section title="1. Eligibility">

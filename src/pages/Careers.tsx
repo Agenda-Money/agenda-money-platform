@@ -19,7 +19,7 @@ const Careers = () => (
     <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 text-white overflow-hidden rounded-b-[3rem] lg:rounded-b-[6rem] shadow-2xl mx-2 lg:mx-8 mt-4">
       {/* Background image + strong dark overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={careersHeroImg} alt="" className="w-full h-full object-cover" />
+        <img src={careersHeroImg} alt="" className="w-full h-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-[#0F0F0F]/85" />
       </div>
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary opacity-10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none z-0" />

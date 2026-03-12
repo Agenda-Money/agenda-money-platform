@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, CheckCircle, Smartphone, TrendingUp, Clock, Banknote, Zap, Shield, HelpCircle, ChevronDown, CheckCircle2, Star } from "lucide-react";
 import customerLoanImg from "@/assets/customer-loan.webp";
-import adizaImg from "@/assets/adizs.jpg";
-import alexImg from "@/assets/alex.jpg";
+import adizaImg from "@/assets/adiza.webp";
+import alexImg from "@/assets/alex.webp";
 import kofiImg from "@/assets/kofi.jpg";
 import iphone3Img from "@/assets/iPhone 3_.webp";
 import nodeConImg from "@/assets/node-con2i.png";
+import { PricingIcon, FlexibleTermsIcon } from "@/components/icons";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -36,19 +37,20 @@ const Index = () => {
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-[#FAFAFA]">
+      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-[#FAFAFA]">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="lg:w-1/2 text-left z-10">
               <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-sm font-bold tracking-wide uppercase mb-8">
                 <Zap size={18} /> Instant Loans in Africa
               </motion.div>
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-[1.05] mb-6 tracking-tight text-[#1A1A1A]">
+              <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-[1.05] mb-6 tracking-tight text-[#1A1A1A]">
                 Giving credit <br/>
                 <span className="text-primary">where it's due.</span>
               </motion.h1>
               <motion.p variants={fadeUp} className="text-xl opacity-80 mb-10 leading-relaxed max-w-lg text-[#4A4A4A]">
-                Fast, simple, affordable micro-loans for individuals and small businesses. No collateral required. Just cash when you need it.
+                Fast, simple, affordable micro-loans for individuals and small businesses.<br/>
+                No deposits, No collateral - just cash when you need it.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link to="/#apply">
@@ -107,7 +109,10 @@ const Index = () => {
                 <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> GHS 50 - 2,000 Available
               </span>
               <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> No Collateral Required
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> No Deposit
+              </span>
+              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> No Collateral Required
               </span>
               <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Instant MoMo Disbursements
@@ -134,10 +139,10 @@ const Index = () => {
                 Emergency cash. <br/>Working capital. <br/><span className="text-secondary">Real impact.</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="text-lg opacity-90 leading-relaxed mb-10 max-w-lg">
-                Agenda Money is an online micro-loan platform built for individuals and micro-entrepreneurs who need fast, affordable financial support — without the need to meet the extensive loan requirements of traditional banks.
+                Agenda Money is an online micro-loan platform built for individuals and micro-entrepreneurs who need fast and affordable financial support without the need to meet the extensive loan requirements of traditional banks.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
-                {["No Collateral", "Paperless", "Cashless", "Branchless", "24/7 Access", "Nationwide"].map((p) => (
+                {["No Deposit", "No Collateral", "Paperless", "Cashless", "Branchless", "24/7 Access"].map((p) => (
                   <span key={p} className="bg-white/20 backdrop-blur-md text-white font-bold px-6 py-3 rounded-full text-sm tracking-wide">
                     {p}
                   </span>
@@ -192,11 +197,11 @@ const Index = () => {
       </section>
 
       {/* LOAN DETAILS SECTION */}
-      <section className="py-24 lg:py-32 bg-[#FAFAFA] border-y border-black/5">
+      <section className="py-16 lg:py-32 bg-[#FAFAFA] border-y border-black/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16 lg:mb-20">
              <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-4xl md:text-5xl font-heading font-extrabold text-[#1A1A1A] mb-6 tracking-tight">
-               Fast, Flexible, Affordable.
+               Fast, Flexible and Affordable
              </motion.h2>
              <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-lg text-[#6A6A6A] leading-relaxed max-w-2xl mx-auto">
                We've designed our loans to be as transparent as possible. Choose your term, know your interest, and get funded instantly.
@@ -204,31 +209,31 @@ const Index = () => {
           </div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-             <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-center min-h-[300px]">
-               <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center text-primary mb-8"><TrendingUp size={40} /></div>
-                <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Transparent Pricing</h3>
-                <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed">Interest is calculated and applied daily. Earlier repayment reduces your cost of borrowing.</p>
+             <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-start h-full min-h-[340px]">
+               <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center text-primary mb-8 shrink-0"><PricingIcon size={40} /></div>
+                <h3 className="text-2xl lg:text-3xl font-heading font-black text-[#1A1A1A] mb-4 shrink-0">Transparent Pricing</h3>
+                <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed flex-grow">Interest is calculated and applied daily. Early repayment reduces your cost of borrowing.</p>
              </motion.div>
-             <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col justify-center min-h-[300px]">
-               <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8"><Clock size={40} /></div>
-               <h3 className="text-3xl font-heading font-black mb-4">Flexible Terms</h3>
-                <p className="text-white/90 text-lg font-medium leading-relaxed">Repay in 1, 5, 10, 14, or 30 days. You're in complete control.</p>
+             <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col justify-start h-full min-h-[340px]">
+               <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8 shrink-0"><FlexibleTermsIcon size={40} /></div>
+               <h3 className="text-2xl lg:text-3xl font-heading font-black mb-4 shrink-0">Flexible Terms</h3>
+                <p className="text-white/90 text-lg font-medium leading-relaxed flex-grow">Repay in 1, 5, 10, 14 or 30 days. You're in complete control.</p>
              </motion.div>
-             <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-center min-h-[300px]">
-                <div className="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center text-secondary mb-8"><Banknote size={40} /></div>
-                <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Flat Fees</h3>
-               <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed">You pay a fixed processing fee no matter the amount you borrow. Your cost of borrowing reduces as you unlock higher loan amounts.</p>
+             <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-start h-full min-h-[340px]">
+                <div className="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center text-secondary mb-8 shrink-0"><Banknote size={40} /></div>
+                <h3 className="text-2xl lg:text-3xl font-heading font-black text-[#1A1A1A] mb-4 shrink-0">Flat Fees</h3>
+               <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed flex-grow">You pay a fixed processing fee no matter the amount you borrow. Your cost of borrowing reduces as you unlock higher loan amounts.</p>
              </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* WHO WE SERVE */}
-      <section className="py-16 lg:py-32 bg-background">
+      <section className="py-12 lg:py-32 bg-background">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-12 lg:mb-16">
-            <motion.div variants={fadeUp} className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Real People. Real Impact.</motion.div>
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-8">Built for everyday People</motion.h2>
+            <motion.div variants={fadeUp} className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Real People Real Impact</motion.div>
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-8">Built for everyday people</motion.h2>
             <motion.div variants={fadeUp}>
               <Link to="/who-we-serve" className="inline-flex items-center text-secondary font-bold hover:text-secondary/80 transition-colors text-lg">
                 View stories from our champions <ArrowRight className="ml-2" size={20} />
@@ -326,7 +331,7 @@ const Index = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex justify-center items-center"
+              className="flex flex-col items-center justify-center gap-8"
             >
               <motion.img
                 src={nodeConImg}
@@ -341,6 +346,9 @@ const Index = () => {
                   ease: "easeInOut" 
                 }}
               />
+              <motion.p variants={fadeUp} className="text-white/60 text-sm font-medium italic text-center max-w-xs">
+                Unlocking the power of your social graph to offer you the financial support you need.
+              </motion.p>
             </motion.div>
           </div>
         </div>
@@ -350,7 +358,7 @@ const Index = () => {
       <section className="py-16 lg:py-32 bg-[#FAFAFA]">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16 lg:mb-20">
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-4">Trusted by thousands for fast, fair, and reliable financial support.</motion.h2>
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-primary tracking-tight mb-4">Trusted by thousands, for fast fair and reliable <span className="text-[#1A1A1A]">financial support</span></motion.h2>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((t, i) => (
