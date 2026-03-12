@@ -124,18 +124,18 @@ const About = () => (
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-secondary/5 rounded-[4rem] p-12 lg:p-16 border border-secondary/10 relative overflow-hidden group">
+            <div className="bg-secondary/5 rounded-[2.5rem] lg:rounded-[4rem] p-4 lg:p-16 border border-secondary/10 relative overflow-hidden group">
                <div className="absolute top-0 right-0 w-64 h-64 bg-secondary opacity-20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
 
-               <div className="relative z-10 space-y-8">
-                  <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-secondary shadow-lg">
-                    <Target size={32} />
+               <div className="relative z-10 space-y-6 lg:space-y-8">
+                  <div className="w-14 h-14 lg:w-16 lg:h-16 bg-white rounded-2xl flex items-center justify-center text-secondary shadow-lg">
+                    <Target size={28} className="lg:w-8 lg:h-8" />
                   </div>
-                  <h3 className="text-3xl font-heading font-black text-[#1A1A1A]">Deep Innovation</h3>
-                  <p className="text-xl text-[#4A4A4A] leading-relaxed font-medium">
-                    We're not just digitizing existing processes; we're rethinking how finance works for the real economy of Africa, from the ground up. We believe access to credit is a fundamental right, not a privilege. That's why we've rebuilt the lending experience from scratch — removing every barrier between a hardworking African and the capital they need to thrive.
+                  <h3 className="text-2xl lg:text-3xl font-heading font-black text-[#1A1A1A]">Deep Innovation</h3>
+                  <p className="text-lg lg:text-xl text-[#4A4A4A] leading-relaxed font-medium">
+                    We're rethinking finance for Africa's real economy from the ground up. We believe credit is a fundamental right, so we've rebuilt the lending experience to remove every barrier between hardworking Africans and the capital they need to thrive.
                   </p>
-                  <ul className="space-y-4 pt-2 text-sm font-black uppercase tracking-widest text-[#8A8A8A]">
+                  <ul className="space-y-3 lg:space-y-4 pt-2 text-[10px] lg:text-sm font-black uppercase tracking-widest text-[#8A8A8A]">
                     <li className="flex items-center gap-4"><span className="w-2 h-2 bg-primary rounded-full"></span> Zero Paperwork</li>
                     <li className="flex items-center gap-4"><span className="w-2 h-2 bg-secondary rounded-full"></span> 2-Minute Approvals</li>
                     <li className="flex items-center gap-4"><span className="w-2 h-2 bg-black rounded-full"></span> 100% Digital</li>

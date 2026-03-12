@@ -37,7 +37,7 @@ const Index = () => {
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
       {/* HERO SECTION */}
-      <section className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-[#FAFAFA]">
+      <section className="relative pt-16 pb-8 lg:pt-48 lg:pb-32 overflow-hidden bg-[#FAFAFA]">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="lg:w-1/2 text-left z-10">
@@ -130,7 +130,7 @@ const Index = () => {
 
 
       {/* WHAT IS AGENDA MONEY */}
-      <section className="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden rounded-[3rem] lg:rounded-[5rem] mx-4 lg:mx-8 shadow-2xl shadow-primary/30 mt-8 mb-10 lg:mb-14">
+      <section className="py-20 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden rounded-[3rem] lg:rounded-[5rem] mx-4 lg:mx-8 shadow-2xl shadow-primary/30 mt-0 mb-4 lg:mb-14">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -164,7 +164,7 @@ const Index = () => {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="py-12 lg:py-20 bg-background">
+      <section className="py-12 lg:py-20 bg-background mt-2">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16 lg:mb-20">
             <motion.div variants={fadeUp} className="inline-block bg-secondary/10 text-secondary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Simple. Fast. Yours.</motion.div>
@@ -358,7 +358,29 @@ const Index = () => {
       <section className="py-16 lg:py-32 bg-[#FAFAFA]">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16 lg:mb-20">
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-primary tracking-tight mb-4">Trusted by thousands, for fast fair and reliable <span className="text-[#1A1A1A]">financial support</span></motion.h2>
+            <motion.h2 
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+              }}
+              className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight mb-4"
+            >
+              <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent animate-gradient-x">
+                Trusted by thousands,
+              </span> 
+              <br className="sm:hidden" />
+              <span className="text-primary/70"> for fast fair and reliable </span>
+              <br className="lg:hidden" />
+              <span className="text-[#1A1A1A] relative inline-block">
+                financial support
+                <motion.div 
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  transition={{ delay: 0.5, duration: 1 }}
+                  className="absolute bottom-1 left-0 h-1.5 bg-secondary/30 rounded-full -z-10"
+                />
+              </span>
+            </motion.h2>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((t, i) => (
@@ -378,7 +400,7 @@ const Index = () => {
       </section>
 
       {/* CTA SECTION & FORM */}
-      <section className="py-16 lg:py-32 bg-primary relative overflow-hidden px-2 lg:px-8">
+      <section className="py-16 lg:py-32 bg-primary relative overflow-hidden px-0 lg:px-8">
         {/* Abstract background shapes */}
         <div className="absolute top-0 right-0 w-full h-full">
            <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[140%] bg-white/[0.04] rounded-full blur-[80px] origin-center -rotate-12 pointer-events-none"></div>
@@ -386,7 +408,7 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-8 items-center bg-white rounded-[2.5rem] lg:rounded-[4rem] p-6 lg:p-16 shadow-2xl mx-2 lg:mx-0">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-8 items-center bg-white rounded-[2.5rem] lg:rounded-[4rem] p-4 lg:p-16 shadow-2xl mx-0 lg:mx-0">
             
             {/* CTA Text */}
             <div className="lg:col-span-3 lg:pr-12 text-center lg:text-left">

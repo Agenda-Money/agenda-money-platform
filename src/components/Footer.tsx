@@ -37,10 +37,10 @@ const Footer = () => {
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-secondary opacity-[0.02] rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16 lg:mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16 lg:mb-20">
           
           {/* Brand & Mission */}
-          <div className="lg:col-span-4">
+          <div className="col-span-2 lg:col-span-4">
             <Link to="/" className="inline-block mb-6 lg:mb-8">
               <span className="text-3xl font-heading font-black tracking-tighter">
                 Agenda<span className="text-primary italic">Money.</span>
@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <div className="lg:col-span-2 md:col-span-1">
+          <div className="col-span-1 lg:col-span-2">
             <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Navigation</h4>
             <ul className="space-y-3 lg:space-y-4">
               {[
@@ -83,7 +83,7 @@ const Footer = () => {
           </div>
 
           {/* Company */}
-          <div className="lg:col-span-2 md:col-span-1">
+          <div className="col-span-1 lg:col-span-2">
             <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Company</h4>
             <ul className="space-y-3 lg:space-y-4">
               {[
@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
 
           {/* Legal */}
-          <div className="lg:col-span-2 md:col-span-1">
+          <div className="col-span-1 lg:col-span-2">
             <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Legal</h4>
             <ul className="space-y-3 lg:space-y-4">
               {[
@@ -120,12 +120,12 @@ const Footer = () => {
           </div>
 
           {/* Connect With Us */}
-          <div className="lg:col-span-2 md:col-span-1">
+          <div className="col-span-1 lg:col-span-2">
             <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Connect With Us</h4>
             <div className="space-y-4">
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Email Support</p>
-                <a href="mailto:support@agendamoney.com" className="text-sm font-bold hover:text-primary transition-colors">support@agendamoney.com</a>
+                <a href="mailto:support@agendamoney.com" className="text-[12px] sm:text-sm font-bold hover:text-primary transition-colors tracking-tight">support@agendamoney.com</a>
               </div>
               <div className="pt-2">
                 <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Call Center</p>
