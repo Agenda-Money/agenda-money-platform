@@ -13,11 +13,11 @@ export const loanEnquirySchema = z.object({
   region: z.string({
     required_error: "Please select a region",
   }).min(1, "Please select a region"),
-  hasValidId: z.literal(true, {
-    errorMap: () => ({ message: "You must have a valid National ID" }),
+  hasValidId: z.boolean().refine(v => v, {
+    message: "You must have a valid National ID",
   }),
-  isAgedEighteenPlus: z.literal(true, {
-    errorMap: () => ({ message: "You must be 18 years or above" }),
+  isAgedEighteenPlus: z.boolean().refine(v => v, {
+    message: "You must be 18 years or above",
   }),
 });
 
@@ -32,8 +32,9 @@ export const supportSchema = z.object({
     .transform((val) => val.replace(/[\s-]/g, ""))
     .pipe(z.string().regex(ghanaPhoneRegex, "Enter a valid phone number")),
   email: z.string().trim().email("Enter a valid email address").optional().or(z.literal("")),
-  subject: z.string()
-    .min(3, "Subject must be at least 3 characters")
+  subject: z.string({
+    required_error: "Please select a topic",
+  }).min(1, "Please select a topic")
     .max(150, "Subject must be at most 150 characters")
     .trim(),
   message: z.string()

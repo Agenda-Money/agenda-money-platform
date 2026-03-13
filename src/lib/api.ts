@@ -18,10 +18,16 @@ export const API_ENDPOINTS = {
   SUPPORT: `${getApiBaseUrl()}/api/site/support`,
 };
 
-export async function postRequest(url: string, payload: any) {
-  // Artificial delay to ensure a smooth transition even with fast backends
-  await new Promise(resolve => setTimeout(resolve, 2000));
+export class ApiError extends Error {
+  status: number;
+  constructor(message: string, status: number) {
+    super(message);
+    this.name = "ApiError";
+    this.status = status;
+  }
+}
 
+export async function postRequest(url: string, payload: Record<string, unknown>) {
   const response = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -31,7 +37,7 @@ export async function postRequest(url: string, payload: any) {
   const result = await response.json();
   
   if (!response.ok) {
-    throw new Error(result.message || "Something went wrong. Please try again.");
+    throw new ApiError(result.message || "Something went wrong. Please try again.", response.status);
   }
   
   return result;

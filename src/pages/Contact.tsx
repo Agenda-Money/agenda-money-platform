@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MessageCircle, Facebook, Instagram, Twitter, Linkedin, Send, ChevronDown } from "lucide-react";
+import { Mail, Phone, MessageCircle, Facebook, Instagram, Twitter, Linkedin, Send, ChevronDown, AlertCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { supportSchema, type SupportValues } from "@/lib/schemas";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { AlertCircle } from "lucide-react";
 import contactImg from "@/assets/contact-us.webp";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
@@ -48,12 +47,13 @@ const Contact = () => {
 
       setSubmitted(true);
       reset();
-    } catch (error: any) {
+    } catch (error) {
       const { toast } = await import('sonner');
-      if (error.status === 429) {
+      const { ApiError } = await import('@/lib/api');
+      if (error instanceof ApiError && error.status === 429) {
         toast.error("Too many submissions, please try again later.");
       } else {
-        toast.error(error.message || "Something went wrong. Please check your details and try again.");
+        toast.error(error instanceof Error ? error.message : "Something went wrong. Please check your details and try again.");
       }
     }
   };
