@@ -132,7 +132,7 @@ const WhoWeServe = () => (
                    <InclusionIcon size={40} />
                  </div>
                  <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Financial Inclusion</h3>
-                 <p className="text-[#6A6A6A] text-lg leading-relaxed flex-grow">We provide capital to ambitious individuals who are locked out of the traditional banking system due to lack of collateral or formal histories.</p>
+                 <p className="text-[#6A6A6A] text-lg leading-relaxed flex-grow">We provide capital to ambitious individuals who are locked out of the traditional banking system due to lack of collateral or financial histories.</p>
                </motion.div>
 
                 <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col relative z-20 hover:-translate-y-2 transition-transform h-full">

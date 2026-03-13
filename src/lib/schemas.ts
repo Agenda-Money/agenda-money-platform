@@ -1,14 +1,14 @@
 import * as z from "zod";
 
-const ghanaPhoneRegex = /^(0|233)\d{8,12}$/;
+const ghanaPhoneRegex = /^0\d{9}$/;
 
 export const loanEnquirySchema = z.object({
   fullName: z.string()
-    .min(2, "Full name must be at least 2 characters")
-    .max(100, "Full name must be at most 100 characters")
-    .trim(),
+    .trim()
+    .min(1, "Please enter your name")
+    .max(100, "Full name must be at most 100 characters"),
   mobileNumber: z.string()
-    .transform((val) => val.replace(/[\s-]/g, ""))
+    .transform((val) => val.replaceAll(/[\s-]/g, ""))
     .pipe(z.string().regex(ghanaPhoneRegex, "Enter a valid phone number")),
   region: z.string({
     required_error: "Please select a region",
@@ -25,11 +25,11 @@ export type LoanEnquiryValues = z.infer<typeof loanEnquirySchema>;
 
 export const supportSchema = z.object({
   fullName: z.string()
-    .min(2, "Full name must be at least 2 characters")
-    .max(100, "Full name must be at most 100 characters")
-    .trim(),
+    .trim()
+    .min(1, "Please enter your name")
+    .max(100, "Full name must be at most 100 characters"),
   phone: z.string()
-    .transform((val) => val.replace(/[\s-]/g, ""))
+    .transform((val) => val.replaceAll(/[\s-]/g, ""))
     .pipe(z.string().regex(ghanaPhoneRegex, "Enter a valid phone number")),
   email: z.string().trim().email("Enter a valid email address").optional().or(z.literal("")),
   subject: z.string()
