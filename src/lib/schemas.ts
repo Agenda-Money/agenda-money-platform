@@ -1,4 +1,5 @@
 import * as z from "zod";
+import { normalizePhone } from "./utils";
 
 const ghanaPhoneRegex = /^0\d{9}$/;
 
@@ -8,8 +9,8 @@ export const loanEnquirySchema = z.object({
     .min(1, "Please enter your name")
     .max(100, "Full name must be at most 100 characters"),
   mobileNumber: z.string()
-    .transform((val) => val.replaceAll(/[\s-]/g, ""))
-    .pipe(z.string().regex(ghanaPhoneRegex, "Enter a valid phone number")),
+    .transform((val) => normalizePhone(val))
+    .pipe(z.string().regex(ghanaPhoneRegex, "Enter a valid Ghanaian phone number (0XXXXXXXXX)")),
   region: z.string({
     required_error: "Please select a region",
   }).min(1, "Please select a region"),
@@ -29,8 +30,8 @@ export const supportSchema = z.object({
     .min(1, "Please enter your name")
     .max(100, "Full name must be at most 100 characters"),
   phone: z.string()
-    .transform((val) => val.replaceAll(/[\s-]/g, ""))
-    .pipe(z.string().regex(ghanaPhoneRegex, "Enter a valid phone number")),
+    .transform((val) => normalizePhone(val))
+    .pipe(z.string().regex(ghanaPhoneRegex, "Enter a valid Ghanaian phone number (0XXXXXXXXX)")),
   email: z.string().trim().email("Enter a valid email address").optional().or(z.literal("")),
   subject: z.string()
     .min(3, "Subject must be at least 3 characters")

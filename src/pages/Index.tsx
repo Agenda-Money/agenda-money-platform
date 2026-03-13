@@ -10,6 +10,7 @@ import { loanEnquirySchema, type LoanEnquiryValues } from "@/lib/schemas";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { sanitizePhoneInput } from "@/lib/utils";
 import customerLoanImg from "@/assets/customer-loan.webp";
 import adizaImg from "@/assets/adiza.webp";
 import alexImg from "@/assets/alex.webp";
@@ -553,10 +554,7 @@ const Index = () => {
                               type="tel" 
                               inputMode="numeric"
                               maxLength={10}
-                              onInput={(e) => {
-                                const target = e.currentTarget;
-                                target.value = target.value.replace(/\D/g, "").slice(0, 10);
-                              }}
+                              onInput={sanitizePhoneInput}
                               placeholder="Mobile Number" 
                               className={`w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all ${errors.mobileNumber ? 'ring-2 ring-red-500/50' : ''}`} 
                             />
