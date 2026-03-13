@@ -22,7 +22,8 @@ const Contact = () => {
     formState: { errors, isSubmitting },
   } = useForm<SupportValues>({
     resolver: zodResolver(supportSchema),
-    mode: "onChange",
+    mode: "onSubmit",
+    reValidateMode: "onBlur",
     defaultValues: {
       fullName: "",
       phone: "",
@@ -209,6 +210,12 @@ const Contact = () => {
                           <input 
                             {...register("phone")}
                             type="tel" 
+                            inputMode="numeric"
+                            maxLength={10}
+                            onInput={(e) => {
+                              const target = e.currentTarget;
+                              target.value = target.value.replace(/\D/g, "").slice(0, 10);
+                            }}
                             placeholder="Phone Number" 
                             className={`w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-5 lg:px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:ring-4 focus:ring-primary/20 transition-all outline-none ${errors.phone ? 'ring-2 ring-red-500/50' : ''}`} 
                           />

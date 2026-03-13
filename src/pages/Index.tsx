@@ -59,7 +59,8 @@ const Index = () => {
     formState: { errors, isSubmitting },
   } = useForm<LoanEnquiryValues>({
     resolver: zodResolver(loanEnquirySchema),
-    mode: "onChange",
+    mode: "onSubmit",
+    reValidateMode: "onBlur",
     defaultValues: defaultLoanEnquiryValues,
   });
 
@@ -181,9 +182,7 @@ const Index = () => {
         <div className="animate-ticker whitespace-nowrap flex items-center gap-16">
           {[...Array(3)].map((_, i) => (
             <div key={i} className="flex items-center gap-16">
-              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> GHS 50 - 2,000 Available
-              </span>
+
               <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> No Deposit
               </span>
@@ -552,6 +551,12 @@ const Index = () => {
                             <input 
                               {...register("mobileNumber")}
                               type="tel" 
+                              inputMode="numeric"
+                              maxLength={10}
+                              onInput={(e) => {
+                                const target = e.currentTarget;
+                                target.value = target.value.replace(/\D/g, "").slice(0, 10);
+                              }}
                               placeholder="Mobile Number" 
                               className={`w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all ${errors.mobileNumber ? 'ring-2 ring-red-500/50' : ''}`} 
                             />
