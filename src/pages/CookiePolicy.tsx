@@ -44,18 +44,18 @@ const CookiePolicy = () => (
         </motion.p>
 
         <Section title="1. What Are Cookies?">
-          <p>Cookies are small text files placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently, remember your preferences, and provide information to website owners about how visitors interact with their site.</p>
+          <p>Cookies are small text files placed on your device (computer, smartphone, or tablet) when you visit a website. They are widely used to make websites work more efficiently, remember your preferences and provide information to website owners about how visitors interact with their site.</p>
         </Section>
 
         <Section title="2. Types of Cookies We Use">
           <div className="space-y-6 mt-2">
             <div className="bg-[#FAFAFA] border border-black/5 rounded-2xl p-5">
               <h3 className="font-heading font-black text-[#1A1A1A] mb-2 text-base">🔒 Strictly Necessary Cookies</h3>
-              <p>These cookies are essential for our website and loan application portal to function correctly. They enable core features such as secure login, session management, and fraud prevention. You cannot opt out of these cookies as they are required for service delivery.</p>
+              <p>These cookies are essential for our website and loan application portal to function correctly. They enable core features such as secure login, session management and fraud prevention. You cannot opt out of these cookies as they are required for service delivery.</p>
             </div>
             <div className="bg-[#FAFAFA] border border-black/5 rounded-2xl p-5">
               <h3 className="font-heading font-black text-[#1A1A1A] mb-2 text-base">📊 Analytics Cookies</h3>
-              <p>We use analytics cookies to understand how visitors interact with our platform — which pages are visited most, how long users spend on each page, and where drop-offs occur in the loan application flow. This helps us improve our user experience. We may use tools such as Google Analytics for this purpose.</p>
+              <p>We use analytics cookies to understand how visitors interact with our platform — which pages are visited most, how long users spend on each page and where drop-offs occur in the loan application flow. This helps us improve our user experience. We may use tools such as Google Analytics for this purpose.</p>
             </div>
             <div className="bg-[#FAFAFA] border border-black/5 rounded-2xl p-5">
               <h3 className="font-heading font-black text-[#1A1A1A] mb-2 text-base">🎯 Functional Cookies</h3>
