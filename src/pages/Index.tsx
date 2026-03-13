@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, CheckCircle, Smartphone, TrendingUp, Clock, Banknote, Zap, Shield, HelpCircle, ChevronDown, CheckCircle2, Star } from "lucide-react";
+import { ArrowRight, Users, CheckCircle, Smartphone, TrendingUp, Clock, Banknote, Zap, Shield, HelpCircle, ChevronDown, CheckCircle2, Star, MapPin, AlertCircle } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { loanEnquirySchema, type LoanEnquiryValues } from "@/lib/schemas";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import customerLoanImg from "@/assets/customer-loan.webp";
 import adizaImg from "@/assets/adiza.webp";
 import alexImg from "@/assets/alex.webp";
@@ -32,7 +40,69 @@ const testimonials = [
   { quote: "They actually reward you for paying on time. My interest rate keeps dropping — I love it!", name: "Esi K.", loc: "Cape Coast" },
 ];
 
+const defaultLoanEnquiryValues: LoanEnquiryValues = {
+  fullName: "",
+  mobileNumber: "",
+  region: "",
+  hasValidId: false as any,
+  isAgedEighteenPlus: false as any,
+};
+
 const Index = () => {
+  const [enquirySubmitted, setEnquirySubmitted] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    control,
+    reset,
+    clearErrors,
+    formState: { errors, isSubmitting },
+  } = useForm<LoanEnquiryValues>({
+    resolver: zodResolver(loanEnquirySchema),
+    mode: "onChange",
+    defaultValues: defaultLoanEnquiryValues,
+  });
+
+  const onSubmit = async (data: LoanEnquiryValues) => {
+    try {
+      const { API_ENDPOINTS, postRequest } = await import("@/lib/api");
+      await postRequest(API_ENDPOINTS.ENQUIRIES, data);
+
+      setEnquirySubmitted(true);
+      reset(defaultLoanEnquiryValues, {
+        keepErrors: false,
+        keepDirty: false,
+        keepTouched: false,
+        keepIsSubmitted: false,
+        keepSubmitCount: false,
+      });
+      clearErrors();
+    } catch (error: any) {
+      const { toast } = await import("sonner");
+      if (error.status === 429) {
+        toast.error("Too many submissions, please try again later.");
+      } else {
+        toast.error(error.message || "Something went wrong. Please check your details and try again.");
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (enquirySubmitted) {
+      const timer = setTimeout(() => {
+        setEnquirySubmitted(false);
+        reset(defaultLoanEnquiryValues, {
+          keepErrors: false,
+          keepDirty: false,
+          keepTouched: false,
+          keepIsSubmitted: false,
+          keepSubmitCount: false,
+        });
+        clearErrors();
+      }, 15000); // Reset after 15 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [enquirySubmitted, reset, clearErrors]);
   return (
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
@@ -52,7 +122,7 @@ const Index = () => {
                 Fast, simple, affordable micro-loans for individuals and small businesses.<br/>
                 No deposits, No collateral - just cash when you need it.
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mb-0 lg:mb-10">
+              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mb-0 lg:max-w-xl">
                 <Link to="/#apply">
                   <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full px-12 py-8 text-xl font-bold shadow-xl shadow-secondary/20 transition-all hover:-translate-y-1">
                     Apply Now <ArrowRight className="ml-2" size={24} />
@@ -163,7 +233,7 @@ const Index = () => {
                 <img src={iphone3Img} alt="Agenda Money App" className="h-full object-contain drop-shadow-2xl" loading="lazy" />
               </div>
               <p className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">100% Mobile</p>
-              <p className="text-[#6A6A6A] text-lg max-w-sm mx-auto">Apply, get approved, and receive cash instantly — all from the comfort of your phone.</p>
+              <p className="text-[#6A6A6A] text-lg max-w-sm mx-auto">Apply, get approved and receive cash instantly — all from the comfort of your phone.</p>
             </motion.div>
           </div>
         </div>
@@ -210,7 +280,7 @@ const Index = () => {
                Fast, Flexible and Affordable
              </motion.h2>
              <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-lg text-[#6A6A6A] leading-relaxed max-w-2xl mx-auto">
-               We've designed our loans to be as transparent as possible. Choose your term, know your interest, and get funded instantly.
+               We've designed our loans to be as transparent as possible. Choose your term, know your interest and get funded instantly.
              </motion.p>
           </div>
 
@@ -423,7 +493,7 @@ const Index = () => {
               </h2>
               <p className="text-lg lg:text-xl text-[#6A6A6A] mb-8 lg:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
                 It takes minutes. No collateral, no branch visit, no wahala. 
-                Instant disbursement to MTN, Telecel, and AT.
+                Instant disbursement to MTN, Telecel and AT.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link to="/contact">
@@ -435,55 +505,156 @@ const Index = () => {
             </div>
 
             {/* Apply Form */}
-            <div id="apply" className="lg:col-span-2 bg-[#FAFAFA] rounded-[2rem] lg:rounded-[2.5rem] p-6 lg:p-10 border border-black/5 shadow-inner">
-              <h3 className="text-2xl font-heading font-black text-[#1A1A1A] mb-2">Loan Enquiry</h3>
-              <p className="text-[#6A6A6A] font-medium mb-6 lg:mb-8 text-sm lg:text-base">Fill to express interest.</p>
-              
-              <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert("Thanks! We'll be in touch."); }}>
-                <input type="text" required placeholder="Full Name" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow" />
-                <input type="tel" required placeholder="Mobile Number" className="w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow" />
-                <div className="relative">
-                  <select required className="appearance-none w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-shadow text-[#6A6A6A] cursor-pointer">
-                    <option value="">Select Region</option>
-                    <option>Greater Accra</option>
-                    <option>Ashanti</option>
-                    <option>Western</option>
-                    <option>Western North</option>
-                    <option>Central</option>
-                    <option>Eastern</option>
-                    <option>Volta</option>
-                    <option>Oti</option>
-                    <option>Bono</option>
-                    <option>Bono East</option>
-                    <option>Ahafo</option>
-                    <option>Northern</option>
-                    <option>Savannah</option>
-                    <option>North East</option>
-                    <option>Upper East</option>
-                    <option>Upper West</option>
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 text-primary">
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                  </div>
-                </div>
-                <label className="flex items-start gap-3 bg-white rounded-[1.25rem] px-5 py-4 shadow-sm cursor-pointer group">
-                  <input type="checkbox" required className="mt-0.5 w-5 h-5 rounded accent-primary cursor-pointer flex-shrink-0" />
-                  <span className="text-sm text-[#4A4A4A] font-medium leading-snug">I have a valid National ID</span>
-                </label>
-                <label className="flex items-start gap-3 bg-white rounded-[1.25rem] px-5 py-4 shadow-sm cursor-pointer group">
-                  <input type="checkbox" required className="mt-0.5 w-5 h-5 rounded accent-primary cursor-pointer flex-shrink-0" />
-                  <span className="text-sm text-[#4A4A4A] font-medium leading-snug">I am 18 years &amp; above</span>
-                </label>
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white rounded-[1.25rem] lg:rounded-[1.5rem] py-6 lg:py-8 text-lg lg:text-xl font-bold shadow-xl shadow-primary/30 transition-transform hover:-translate-y-1 mt-2 lg:mt-4">
-                  Submit Enquiry <ArrowRight className="ml-2 w-5 h-5 lg:w-6 lg:h-6" />
-                </Button>
-              </form>
+              <div id="apply" className="lg:col-span-2 bg-[#FAFAFA] rounded-[2rem] lg:rounded-[2.5rem] p-6 lg:p-10 border border-black/5 shadow-inner min-h-[500px] flex flex-col justify-center">
+                {enquirySubmitted ? (
+                  <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-12">
+                    <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center text-white mx-auto mb-8 shadow-2xl shadow-primary/30">
+                      <CheckCircle2 size={40} />
+                    </div>
+                    <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Enquiry Received!</h3>
+                    <p className="text-[#6A6A6A] text-lg font-medium max-w-sm mx-auto leading-relaxed">
+                      Thank you for choosing Agenda Money. Our team is on standby to review your interest and we will get back to you soon.
+                    </p>
+                    <Button 
+                      onClick={() => setEnquirySubmitted(false)}
+                      variant="ghost" 
+                      className="mt-8 text-primary font-bold hover:bg-primary/5"
+                    >
+                      Send another enquiry
+                    </Button>
+                  </motion.div>
+                ) : (
+                  <>
+                    <h3 className="text-2xl font-heading font-black text-[#1A1A1A] mb-2">Loan Enquiry</h3>
+                    <p className="text-[#6A6A6A] font-medium mb-6 lg:mb-8 text-sm lg:text-base">Fill to express interest.</p>
+
+                    <form className="space-y-5" noValidate onSubmit={handleSubmit(onSubmit)}>
+                          {Object.keys(errors).length > 0 && (
+                            <Alert variant="destructive" className="bg-red-50 border-red-200 text-red-800 rounded-2xl py-3 mb-2">
+                              <AlertCircle className="h-4 w-4" />
+                              <AlertDescription className="font-medium text-xs">
+                                Please check your details to continue.
+                              </AlertDescription>
+                            </Alert>
+                          )}
+
+                          <div className="space-y-1.5">
+                            <input 
+                              {...register("fullName")}
+                              type="text" 
+                              placeholder="Full Name" 
+                              className={`w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all ${errors.fullName ? 'ring-2 ring-red-500/50' : ''}`} 
+                            />
+                            {errors.fullName && <p className="text-[11px] font-bold text-red-500 ml-5">{errors.fullName.message}</p>}
+                          </div>
+
+                          <div className="space-y-1.5">
+                            <input 
+                              {...register("mobileNumber")}
+                              type="tel" 
+                              placeholder="Mobile Number" 
+                              className={`w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:outline-none focus:ring-4 focus:ring-primary/20 transition-all ${errors.mobileNumber ? 'ring-2 ring-red-500/50' : ''}`} 
+                            />
+                            {errors.mobileNumber && <p className="text-[11px] font-bold text-red-500 ml-5">{errors.mobileNumber.message}</p>}
+                          </div>
+                          
+                          <div className="space-y-1.5">
+                            <Controller
+                              name="region"
+                              control={control}
+                              render={({ field }) => (
+                                <Select onValueChange={field.onChange} value={field.value}>
+                                  <SelectTrigger className={`w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-6 py-7 lg:py-8 text-sm lg:text-base focus:ring-4 focus:ring-primary/20 transition-all ${field.value ? 'text-[#1A1A1A]' : 'text-[#6A6A6A]'} ${errors.region ? 'ring-2 ring-red-500/50' : ''}`}>
+                                    <SelectValue placeholder="Select Region" />
+                                  </SelectTrigger>
+                                  <SelectContent className="rounded-[1.25rem] border-black/5 shadow-2xl overflow-y-auto max-h-[300px]">
+                                    {[
+                                      "Greater Accra", "Ashanti", "Western", "Western North", "Central", 
+                                      "Eastern", "Volta", "Oti", "Bono", "Bono East", "Ahafo", 
+                                      "Northern", "Savannah", "North East", "Upper East", "Upper West"
+                                    ].map((region) => (
+                                      <SelectItem key={region} value={region} className="py-3 px-6 cursor-pointer focus:bg-primary/10 focus:text-primary rounded-lg mx-1 my-1 transition-colors">
+                                        <div className="flex items-center gap-3">
+                                          <MapPin size={14} className="text-primary/40" />
+                                          <span className="font-medium">{region}</span>
+                                        </div>
+                                      </SelectItem>
+                                    ))}
+                                  </SelectContent>
+                                </Select>
+                              )}
+                            />
+                            {errors.region && <p className="text-[11px] font-bold text-red-500 ml-5">{errors.region.message}</p>}
+                          </div>
+
+                          <div className="space-y-3">
+                            <div className="space-y-1">
+                              <div className={`flex items-start gap-4 bg-white rounded-[1.25rem] px-5 py-4 shadow-sm cursor-pointer group transition-all hover:bg-white/80 ${errors.hasValidId ? 'ring-2 ring-red-500/50' : ''}`}>
+                                <Controller
+                                  name="hasValidId"
+                                  control={control}
+                                  render={({ field }) => (
+                                    <Checkbox 
+                                      id="hasValidId"
+                                      checked={field.value}
+                                      onCheckedChange={field.onChange}
+                                      className="mt-0.5 w-5 h-5 rounded border-black/10 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                                    />
+                                  )}
+                                />
+                                <Label htmlFor="hasValidId" className="text-sm text-[#4A4A4A] font-medium leading-snug cursor-pointer group-hover:text-black">
+                                  I have a valid National ID
+                                </Label>
+                              </div>
+                              {errors.hasValidId && <p className="text-[10px] font-bold text-red-500 ml-5">{errors.hasValidId.message}</p>}
+                            </div>
+
+                            <div className="space-y-1">
+                              <div className={`flex items-start gap-4 bg-white rounded-[1.25rem] px-5 py-4 shadow-sm cursor-pointer group transition-all hover:bg-white/80 ${errors.isAgedEighteenPlus ? 'ring-2 ring-red-500/50' : ''}`}>
+                                <Controller
+                                  name="isAgedEighteenPlus"
+                                  control={control}
+                                  render={({ field }) => (
+                                    <Checkbox 
+                                      id="isAgedEighteenPlus"
+                                      checked={field.value}
+                                      onCheckedChange={field.onChange}
+                                      className="mt-0.5 w-5 h-5 rounded border-black/10 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                                    />
+                                  )}
+                                />
+                                <Label htmlFor="isAgedEighteenPlus" className="text-sm text-[#4A4A4A] font-medium leading-snug cursor-pointer group-hover:text-black">
+                                  I am 18 years &amp; above
+                                </Label>
+                              </div>
+                              {errors.isAgedEighteenPlus && <p className="text-[10px] font-bold text-red-500 ml-5">{errors.isAgedEighteenPlus.message}</p>}
+                            </div>
+                          </div>
+
+                          <Button 
+                            type="submit" 
+                            disabled={isSubmitting}
+                            className="w-full bg-primary hover:bg-primary/90 text-white rounded-[1.25rem] lg:rounded-[1.5rem] py-6 lg:py-8 text-lg lg:text-xl font-bold shadow-xl shadow-primary/30 transition-all hover:-translate-y-1 hover:shadow-primary/40 active:scale-[0.98] mt-2 lg:mt-4 disabled:opacity-70 disabled:grayscale disabled:hover:translate-y-0"
+                          >
+                            {isSubmitting ? (
+                              <span className="flex items-center gap-2">
+                                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg> 
+                                Sending...
+                              </span>
+                            ) : (
+                              <>Submit Enquiry <ArrowRight className="ml-2 w-5 h-5 lg:w-6 lg:h-6" /></>
+                            )}
+                          </Button>
+                    </form>
+                  </>
+                )}
+              </div>
             </div>
-
           </div>
-        </div>
-      </section>
-
+        </section>
     </div>
   );
 };

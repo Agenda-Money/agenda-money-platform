@@ -68,7 +68,7 @@ const TermsAndConditions = () => (
         </Section>
 
         <Section title="2. Loan Application & Approval">
-          <p>Applying for a loan does not guarantee approval. Agenda Money reserves the right to approve or decline any application at its sole discretion based on creditworthiness, internal policies, and regulatory guidelines. All information provided in the application must be accurate, complete, and truthful. Providing false information is grounds for immediate rejection or loan recall.</p>
+          <p>Applying for a loan does not guarantee approval. Agenda Money reserves the right to approve or decline any application at its sole discretion based on creditworthiness, internal policies and regulatory guidelines. All information provided in the application must be accurate, complete and truthful. Providing false information is grounds for immediate rejection or loan recall.</p>
         </Section>
 
         <Section title="3. Loan Terms">
@@ -99,7 +99,7 @@ const TermsAndConditions = () => (
         </Section>
 
         <Section title="7. Fees & Charges">
-          <p>All fees associated with your loan — including processing fees, interest, and any applicable late fees — will be clearly disclosed before you accept a loan offer. We do not charge hidden fees. Any changes to fee structures will be communicated in advance.</p>
+          <p>All fees associated with your loan — including processing fees, interest and any applicable late fees — will be clearly disclosed before you accept a loan offer. We do not charge hidden fees. Any changes to fee structures will be communicated in advance.</p>
         </Section>
 
         <Section title="8. User Obligations">
@@ -113,7 +113,7 @@ const TermsAndConditions = () => (
         </Section>
 
         <Section title="9. Intellectual Property">
-          <p>All content, design, trademarks, and materials on the Agenda Money platform are the exclusive property of Agenda Money. You may not copy, reproduce, or distribute any content without our express written permission.</p>
+          <p>All content, design, trademarks and materials on the Agenda Money platform are the exclusive property of Agenda Money. You may not copy, reproduce, or distribute any content without our express written permission.</p>
         </Section>
 
         <Section title="10. Limitation of Liability">

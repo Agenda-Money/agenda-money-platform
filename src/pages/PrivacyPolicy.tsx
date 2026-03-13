@@ -34,7 +34,7 @@ const PrivacyPolicy = () => (
             Privacy <span className="text-primary italic">Policy</span>
           </motion.h1>
           <motion.p variants={fadeUp} className="text-[#6A6A6A] text-lg max-w-xl leading-relaxed font-medium">
-            We take your privacy seriously. Here's everything we collect, why we collect it, and how we keep it safe.
+            We take your privacy seriously. Here's everything we collect, why we collect it and how we keep it safe.
           </motion.p>
         </motion.div>
       </div>
@@ -50,17 +50,17 @@ const PrivacyPolicy = () => (
         className="container mx-auto max-w-3xl"
       >
         <motion.p variants={fadeUp} className="text-[#4A4A4A] text-lg leading-relaxed mb-12 p-6 bg-primary/5 border border-primary/10 rounded-2xl">
-          Agenda Money ("Agenda Money", "we", "our", or "us") is committed to protecting your personal information. This Privacy Policy describes how we collect, use, share, and safeguard your data when you use our digital lending platform, website, or mobile application.
+          Agenda Money ("Agenda Money", "we", "our" or "us") is committed to protecting your personal information. This Privacy Policy describes how we collect, use, share and safeguard your data when you use our digital lending platform, website or mobile application.
         </motion.p>
 
         <Section title="1. Information We Collect">
           <p>We collect the following categories of personal information to assess your creditworthiness and deliver our services:</p>
           <ul className="list-disc pl-6 space-y-2 mt-3">
-            <li><strong>Identity Information:</strong> Full name, date of birth, National ID number, and photograph.</li>
-            <li><strong>Contact Information:</strong> Phone number, email address, and residential address.</li>
-            <li><strong>Financial Information:</strong> Mobile money wallet details, income information, and repayment history.</li>
-            <li><strong>Device & Usage Data:</strong> IP address, device identifiers, browser type, and app usage data.</li>
-            <li><strong>Transactional Data:</strong> Loan amounts, disbursement records, repayment schedules, and account balances.</li>
+            <li><strong>Identity Information:</strong> Full name, date of birth, National ID number and photograph.</li>
+            <li><strong>Contact Information:</strong> Phone number, email address and residential address.</li>
+            <li><strong>Financial Information:</strong> Mobile money wallet details, income information and repayment history.</li>
+            <li><strong>Device & Usage Data:</strong> IP address, device identifiers, browser type and app usage data.</li>
+            <li><strong>Transactional Data:</strong> Loan amounts, disbursement records, repayment schedules and account balances.</li>
           </ul>
         </Section>
 
@@ -70,9 +70,9 @@ const PrivacyPolicy = () => (
             <li>To evaluate and process your loan application.</li>
             <li>To disburse funds and collect repayments via mobile money.</li>
             <li>To verify your identity and prevent fraud.</li>
-            <li>To communicate with you about your account, upcoming payments, and promotions.</li>
-            <li>To comply with applicable laws, regulations, and regulatory reporting obligations.</li>
-            <li>To improve our products, services, and user experience.</li>
+            <li>To communicate with you about your account, upcoming payments and promotions.</li>
+            <li>To comply with applicable laws, regulations and regulatory reporting obligations.</li>
+            <li>To improve our products, services and user experience.</li>
           </ul>
         </Section>
 
@@ -81,7 +81,7 @@ const PrivacyPolicy = () => (
           <ul className="list-disc pl-6 space-y-2 mt-3">
             <li><strong>Contract performance:</strong> Processing necessary to provide loan services you have requested.</li>
             <li><strong>Legal obligation:</strong> Compliance with applicable lending laws and regulations.</li>
-            <li><strong>Legitimate interests:</strong> Fraud prevention, credit risk assessment, and service improvement.</li>
+            <li><strong>Legitimate interests:</strong> Fraud prevention, credit risk assessment and service improvement.</li>
             <li><strong>Consent:</strong> Where you have expressly agreed to specific uses of your data.</li>
           </ul>
         </Section>
@@ -89,7 +89,7 @@ const PrivacyPolicy = () => (
         <Section title="4. Sharing Your Information">
           <p>We do not sell your personal data. We may share your information with:</p>
           <ul className="list-disc pl-6 space-y-2 mt-3">
-            <li><strong>Mobile Money Operators:</strong> MTN MoMo, Telecel Cash, and AT Money for disbursement and repayment processing.</li>
+            <li><strong>Mobile Money Operators:</strong> MTN MoMo, Telecel Cash and AT Money for disbursement and repayment processing.</li>
             <li><strong>Credit Bureaus:</strong> For credit reporting and identity verification, as required by law.</li>
             <li><strong>Regulatory Bodies:</strong> Applicable financial regulators and law enforcement agencies as required by law.</li>
             <li><strong>Service Providers:</strong> Trusted third-party vendors who help us operate our platform, bound by confidentiality agreements.</li>

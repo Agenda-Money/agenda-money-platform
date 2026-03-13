@@ -11,7 +11,7 @@ const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
 
 const steps = [
   { num: "01", title: "Get a Node Code", desc: (<>Connect with us using a Node code. This unique code is your passport to instant loan access.<br/><a href="/#apply" className="inline-block mt-2 text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors">How do I get a Node code?</a></>), icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
-  { num: "02", title: "Quick Application", desc: "Our 100% digital process takes minutes. Just your personal details, ID card, and a selfie.", icon: Smartphone, color: "text-primary", bg: "bg-primary/10" },
+  { num: "02", title: "Quick Application", desc: "Our 100% digital process takes minutes. Just your personal details, ID card and a selfie.", icon: Smartphone, color: "text-primary", bg: "bg-primary/10" },
   { num: "03", title: "Real-Time Review", desc: "Our intelligent engine reviews your application instantly. No paperwork, no queues, no stress.", icon: Zap, color: "text-amber-500", bg: "bg-amber-500/10" },
   { num: "04", title: "Instant Disbursement", desc: "Funds hit your MoMo wallet (MTN, Telecel, or AT) immediately upon approval — 24/7.", icon: HandCoins, color: "text-emerald-500", bg: "bg-emerald-500/10" },
 ];

@@ -47,7 +47,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-white/70 text-base lg:text-lg leading-relaxed mb-8 max-w-sm font-medium">
-              We're redefining access to credit in Africa. Fast, fair, and completely digital micro-loans for the backbone of our economy.
+              We're redefining access to credit in Africa. Fast, fair and completely digital micro-loans for the backbone of our economy.
             </p>
             <div className="flex gap-3">
               {socialLinks.map(({ Icon, href }, i) => (

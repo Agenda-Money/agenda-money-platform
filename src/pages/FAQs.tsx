@@ -15,8 +15,8 @@ const faqSections = [
   {
     title: "Eligibility & Requirements",
     items: [
-      { q: "Who qualifies for a loan?", a: "Anyone who is 18 years and above, holds a valid National ID, and has the ability and willingness to repay loans." },
-      { q: "What information is needed to apply?", a: "Personal details, a copy of your National ID, a selfie, your loan request details, and a valid Node code." },
+      { q: "Who qualifies for a loan?", a: "Anyone who is 18 years and above, holds a valid National ID and has the ability and willingness to repay loans." },
+      { q: "What information is needed to apply?", a: "Personal details, a copy of your National ID, a selfie, your loan request details and a valid Node code." },
     ],
   },
   {

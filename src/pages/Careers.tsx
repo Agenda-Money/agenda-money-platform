@@ -7,7 +7,7 @@ const stagger = { visible: { transition: { staggerChildren: 0.12 } } };
 
 const values = [
   { icon: Heart, title: "People First", desc: "We put our customers and our team at the centre of everything we do.", color: "bg-primary/10 text-primary" },
-  { icon: Zap, title: "Move Fast", desc: "We ship, iterate, and learn quickly. Bureaucracy has no place here.", color: "bg-amber-500/10 text-amber-500" },
+  { icon: Zap, title: "Move Fast", desc: "We ship, iterate and learn quickly. Bureaucracy has no place here.", color: "bg-amber-500/10 text-amber-500" },
   { icon: Shield, title: "Radical Honesty", desc: "Transparency is our currency — internally and externally.", color: "bg-secondary/10 text-secondary" },
   { icon: Users, title: "Team of Builders", desc: "We're a small, high-trust team where your impact is visible from day one.", color: "bg-blue-500/10 text-blue-500" },
 ];
