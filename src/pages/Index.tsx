@@ -115,7 +115,7 @@ const Index = () => {
                 <Zap size={18} /> Instant Loans in Africa
               </motion.div>
               <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-[1.05] mb-6 tracking-tight text-[#1A1A1A]">
-                Giving credit <br/>
+                Let&apos;s give credit <br/>
                 <span className="text-primary">where it's due.</span>
               </motion.h1>
               <motion.p variants={fadeUp} className="text-xl opacity-80 mb-10 leading-relaxed max-w-xl text-[#4A4A4A]">
@@ -308,7 +308,7 @@ const Index = () => {
       <section className="py-12 lg:py-32 bg-background">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-12 lg:mb-16">
-            <motion.div variants={fadeUp} className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Real People Real Impact</motion.div>
+            <motion.div variants={fadeUp} className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Real People, Real Impact</motion.div>
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight mb-8">Built for everyday people</motion.h2>
             <motion.div variants={fadeUp}>
               <Link to="/who-we-serve" className="inline-flex items-center text-secondary font-bold hover:text-secondary/80 transition-colors text-lg">
