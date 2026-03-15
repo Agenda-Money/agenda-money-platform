@@ -49,7 +49,7 @@ const About = () => (
               </div>
               <div>
                 <p className="font-heading font-black text-lg lg:text-2xl tracking-tighter">2030 Vision</p>
-                <p className="text-[10px] lg:text-sm font-bold opacity-60">1M Active Africans</p>
+                <p className="text-[10px] lg:text-sm font-bold opacity-60">1M Empowered Africans</p>
               </div>
             </div>
           </motion.div>
