@@ -88,7 +88,7 @@ const Index = () => {
     }
   };
 
-
+  // Removed auto-reset of enquirySubmitted state
   return (
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
@@ -179,9 +179,6 @@ const Index = () => {
               </span>
               <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> Transparent Pricing
-              </span>
-              <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Serving All of Africa
               </span>
             </div>
           ))}
@@ -497,7 +494,7 @@ const Index = () => {
                     </div>
                     <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Enquiry Received!</h3>
                     <p className="text-[#6A6A6A] text-lg font-medium max-w-sm mx-auto leading-relaxed">
-                      We will get back to you soon.
+                      Thank you for choosing Agenda Money. We will get back to you soon.
                     </p>
                   </motion.div>
                 ) : (
