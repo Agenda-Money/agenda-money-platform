@@ -33,14 +33,7 @@ const Contact = () => {
     },
   });
 
-  useEffect(() => {
-    if (submitted) {
-      const timer = setTimeout(() => {
-        setSubmitted(false);
-      }, 15000); // Reset after 15 seconds
-      return () => clearTimeout(timer);
-    }
-  }, [submitted]);
+
 
   const onSubmit = async (data: SupportValues) => {
     try {
@@ -177,7 +170,7 @@ const Contact = () => {
                       <Send size={32} className="lg:w-10 lg:h-10" />
                     </div>
                      <h3 className="text-3xl lg:text-4xl font-heading font-black text-[#1A1A1A] mb-3 lg:mb-4">Message Received!</h3>
-                    <p className="text-[#6A6A6A] text-lg lg:text-xl max-w-sm mx-auto">We'll get back to you soon. Thank you for reaching out!</p>
+                    <p className="text-[#6A6A6A] text-lg lg:text-xl max-w-sm mx-auto">We'll get back to you soon.</p>
                   </motion.div>
                 ) : (
                   <>

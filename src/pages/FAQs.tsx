@@ -34,7 +34,7 @@ const faqSections = [
       { q: "What are the loan durations?", a: "1, 5, 10, 14 and 30 days. Our flexibile terms allow you to choose what works best for your needs." },
       { q: "What is the interest rate?", a: "Transparent, flat-rate pricing at 0.5% per day. For example, if you borrow GHS 300 for 14 days, your total repayment is GHS 321. No hidden charges." },
       { q: "What happens if I repay late?", a: "Penal interest of 2% per day applies on any overdue amount. We encourage timely repayment to maintain your credit health and unlock higher limits." },
-      { q: "What happens if I don't repay?", a: "After all recovery measures are exhausted, the borrower is blacklisted and cannot access new loans. The credit record is shared with relevant credit bureaus. Connections within the defaulter's network may also be negatively affected." },
+      { q: "What happens if I don't repay?", a: "After all recovery measures are exhausted, the borrower is blacklisted and cannot access new loans. Your credit record is shared with relevant credit bureaus. Connections within the defaulter's network may also be negatively affected." },
     ],
   },
   {

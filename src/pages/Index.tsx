@@ -88,22 +88,7 @@ const Index = () => {
     }
   };
 
-  useEffect(() => {
-    if (enquirySubmitted) {
-      const timer = setTimeout(() => {
-        setEnquirySubmitted(false);
-        reset(defaultLoanEnquiryValues, {
-          keepErrors: false,
-          keepDirty: false,
-          keepTouched: false,
-          keepIsSubmitted: false,
-          keepSubmitCount: false,
-        });
-        clearErrors();
-      }, 15000); // Reset after 15 seconds
-      return () => clearTimeout(timer);
-    }
-  }, [enquirySubmitted, reset, clearErrors]);
+
   return (
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
@@ -512,15 +497,8 @@ const Index = () => {
                     </div>
                     <h3 className="text-3xl font-heading font-black text-[#1A1A1A] mb-4">Enquiry Received!</h3>
                     <p className="text-[#6A6A6A] text-lg font-medium max-w-sm mx-auto leading-relaxed">
-                      Thank you for choosing Agenda Money. Our team is on standby to review your interest and we will get back to you soon.
+                      We will get back to you soon.
                     </p>
-                    <Button 
-                      onClick={() => setEnquirySubmitted(false)}
-                      variant="ghost" 
-                      className="mt-8 text-primary font-bold hover:bg-primary/5"
-                    >
-                      Send another enquiry
-                    </Button>
                   </motion.div>
                 ) : (
                   <>
