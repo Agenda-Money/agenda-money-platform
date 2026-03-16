@@ -37,7 +37,7 @@ const Contact = () => {
     if (submitted) {
       const timer = setTimeout(() => {
         setSubmitted(false);
-      }, 15000); // Reset after 15 seconds
+      }, 3000); // Reset after 3 seconds
       return () => clearTimeout(timer);
     }
   }, [submitted]);

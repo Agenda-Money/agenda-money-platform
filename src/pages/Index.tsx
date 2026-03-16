@@ -88,7 +88,22 @@ const Index = () => {
     }
   };
 
-  // Removed auto-reset of enquirySubmitted state
+  useEffect(() => {
+    if (enquirySubmitted) {
+      const timer = setTimeout(() => {
+        setEnquirySubmitted(false);
+        reset(defaultLoanEnquiryValues, {
+          keepErrors: false,
+          keepDirty: false,
+          keepTouched: false,
+          keepIsSubmitted: false,
+          keepSubmitCount: false,
+        });
+        clearErrors();
+      }, 3000); // Reset after 3 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [enquirySubmitted, reset, clearErrors]);
   return (
     <div className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       
