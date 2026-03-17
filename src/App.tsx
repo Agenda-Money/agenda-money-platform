@@ -33,6 +33,27 @@ const ScrollToTop = () => {
   return null;
 };
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
+const Analytics = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Analytics: Track page views on route changes
+    if (window.gtag) {
+      window.gtag('config', import.meta.env.VITE_GA_ID, {
+        page_path: location.pathname + location.search,
+      });
+    }
+  }, [location]);
+
+  return null;
+};
+
 const App = () => {
   useEffect(() => {
     const handleContextMenu = (e: MouseEvent) => {
@@ -64,6 +85,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <Analytics />
           <ScrollToTop />
           <Layout>
             <Routes>
