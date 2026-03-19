@@ -44,8 +44,8 @@ const defaultLoanEnquiryValues: LoanEnquiryValues = {
   fullName: "",
   mobileNumber: "",
   region: "",
-  hasValidId: false as any,
-  isAgedEighteenPlus: false as any,
+  hasValidId: false,
+  isAgedEighteenPlus: false,
 };
 
 const Index = () => {
@@ -78,12 +78,13 @@ const Index = () => {
         keepSubmitCount: false,
       });
       clearErrors();
-    } catch (error: any) {
+    } catch (error) {
       const { toast } = await import("sonner");
-      if (error.status === 429) {
+      const { ApiError } = await import("@/lib/api");
+      if (error instanceof ApiError && error.status === 429) {
         toast.error("Too many submissions, please try again later.");
       } else {
-        toast.error(error.message || "Something went wrong. Please check your details and try again.");
+        toast.error(error instanceof Error ? error.message : "Something went wrong. Please check your details and try again.");
       }
     }
   };
