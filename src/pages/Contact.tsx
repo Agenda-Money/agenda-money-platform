@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { supportSchema, type SupportValues } from "@/lib/schemas";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
+import { sanitizePhoneInput } from "@/lib/utils";
 import contactImg from "@/assets/contact-us.webp";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
@@ -212,10 +213,7 @@ const Contact = () => {
                             type="tel" 
                             inputMode="numeric"
                             maxLength={10}
-                            onInput={(e) => {
-                              const target = e.currentTarget;
-                              target.value = target.value.replace(/\D/g, "").slice(0, 10);
-                            }}
+                            onInput={sanitizePhoneInput}
                             placeholder="Phone Number" 
                             className={`w-full rounded-[1.25rem] lg:rounded-[1.5rem] border-0 bg-white shadow-sm px-5 lg:px-6 py-3.5 lg:py-4 text-sm lg:text-base focus:ring-4 focus:ring-primary/20 transition-all outline-none ${errors.phone ? 'ring-2 ring-red-500/50' : ''}`} 
                           />
