@@ -125,7 +125,7 @@ const Index = () => {
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 mb-0 lg:max-w-xl">
                 <Link to="/#apply">
-                  <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full px-12 py-8 text-xl font-bold shadow-xl shadow-secondary/20 transition-all hover:-translate-y-1">
+                  <Button size="lg" className="bg-[#0F172A] hover:bg-[#1E293B] text-white rounded-full px-12 py-8 text-xl font-bold shadow-xl shadow-[#0F172A]/20 transition-all hover:-translate-y-1">
                     Apply Now <ArrowRight className="ml-2" size={24} />
                   </Button>
                 </Link>
