@@ -64,7 +64,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <div className="col-span-1 lg:col-span-2">
-            <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Navigation</h4>
+            <h4 className="text-white/40 font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Navigation</h4>
             <ul className="space-y-3 lg:space-y-4">
               {[
                 { label: "Home", to: "/" },
@@ -84,7 +84,7 @@ const Footer = () => {
 
           {/* Company */}
           <div className="col-span-1 lg:col-span-2">
-            <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Company</h4>
+            <h4 className="text-white/40 font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Company</h4>
             <ul className="space-y-3 lg:space-y-4">
               {[
                 { label: "About Us", to: "/about" },
@@ -103,7 +103,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div className="col-span-1 lg:col-span-2">
-            <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Legal</h4>
+            <h4 className="text-white/40 font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Legal</h4>
             <ul className="space-y-3 lg:space-y-4">
               {[
                 { label: "Privacy Policy", to: "/privacy-policy" },
@@ -121,7 +121,7 @@ const Footer = () => {
 
           {/* Connect With Us */}
           <div className="col-span-1 lg:col-span-2">
-            <h4 className="text-secondary font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Connect With Us</h4>
+            <h4 className="text-white/40 font-heading font-extrabold text-[10px] lg:text-xs uppercase tracking-[0.2em] mb-4 lg:mb-8">Connect With Us</h4>
             <div className="space-y-4">
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Email Support</p>
@@ -129,7 +129,7 @@ const Footer = () => {
               </div>
               <div className="pt-2">
                 <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Call Center</p>
-                <a href="tel:0558587833" className="text-sm font-bold hover:text-secondary transition-colors">0558587833</a>
+                <a href="tel:0558587833" className="text-sm font-bold hover:text-primary transition-colors">0558587833</a>
               </div>
             </div>
           </div>

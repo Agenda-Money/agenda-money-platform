@@ -47,7 +47,7 @@ const WhoWeServe = () => (
           </motion.div>
           <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-6 lg:mb-8 leading-[1.1] tracking-tight">
             Empowering the <br/>
-            <span className="text-secondary">Backbone</span> of Africa
+            <span className="text-white italic">Backbone</span> of Africa
           </motion.h1>
           <motion.p variants={fadeUp} className="text-xl opacity-90 leading-relaxed max-w-2xl mx-auto text-white">
             Across Sub-Saharan Africa, the informal sector employs over 85% of the workforce — yet contributes only 41% to GDP. We're here to change the narrative.
