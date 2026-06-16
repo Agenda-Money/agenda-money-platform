@@ -173,7 +173,7 @@ const Contact = () => {
 
                 {submitted ? (
                   <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-16 lg:py-20">
-                    <div className="bg-emerald-500 w-20 h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center text-white mx-auto mb-6 lg:mb-8 shadow-2xl shadow-emerald-500/30">
+                    <div className="bg-[#0F172A] w-20 h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center text-white mx-auto mb-6 lg:mb-8 shadow-2xl shadow-[#0F172A]/30">
                       <Send size={32} className="lg:w-10 lg:h-10" />
                     </div>
                      <h3 className="text-3xl lg:text-4xl font-heading font-black text-[#1A1A1A] mb-3 lg:mb-4">Message Received!</h3>

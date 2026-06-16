@@ -184,7 +184,7 @@ const Index = () => {
             <div key={i} className="flex items-center gap-16">
 
               <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> No Deposit
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> No Deposit
               </span>
               <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> No Collateral Required
@@ -193,7 +193,7 @@ const Index = () => {
                 <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Instant MoMo Disbursements
               </span>
               <span className="flex items-center gap-4 text-xs lg:text-sm font-black tracking-[0.3em] uppercase text-white/80">
-                <div className="w-1.5 h-1.5 rounded-full bg-secondary"></div> Transparent Pricing
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Transparent Pricing
               </span>
             </div>
           ))}
@@ -208,7 +208,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
               <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-8 leading-[1.1]">
-                Emergency cash. <br/>Working capital. <br/><span className="text-secondary">Real impact.</span>
+                Emergency cash. <br/>Working capital. <br/><span className="text-white">Real impact.</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="text-lg opacity-90 leading-relaxed mb-10 max-w-lg">
                 Agenda Money is an online micro-loan platform built for individuals and micro-entrepreneurs who need fast and affordable financial support without the need to meet the extensive loan requirements of traditional banks.
@@ -239,7 +239,7 @@ const Index = () => {
       <section className="py-12 lg:py-20 bg-background mt-2">
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-16 lg:mb-20">
-            <motion.div variants={fadeUp} className="inline-block bg-secondary/10 text-secondary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">Simple. Fast. Yours.</motion.div>
+            <motion.div variants={fadeUp} className="inline-block bg-secondary/10 text-secondary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm border border-secondary/20">Simple. Fast. Yours.</motion.div>
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#1A1A1A] tracking-tight">Get your loan in 3 easy steps</motion.h2>
           </motion.div>
 
@@ -381,9 +381,9 @@ const Index = () => {
                 </motion.div>
                 <motion.div 
                   whileHover={{ scale: 1.02, y: -5 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 transition-all hover:bg-white/10 hover:border-secondary/50 hover:shadow-2xl hover:shadow-secondary/10 group"
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 transition-all hover:bg-white/10 hover:border-white/30 hover:shadow-2xl hover:shadow-white/10 group"
                 >
-                  <h4 className="font-heading font-black text-2xl text-secondary mb-3 flex items-center gap-2">
+                  <h4 className="font-heading font-black text-2xl text-white/80 mb-3 flex items-center gap-2">
                     Connections 🤝
                   </h4>
                   <p className="text-lg opacity-80 leading-relaxed group-hover:opacity-100 transition-opacity">People and businesses within a Node's network but yet to be verified by Agenda Money. They can only access loans through the endorsement of a Node. Connections automatically become Nodes after successfully closing 5 loans with us</p>
@@ -391,7 +391,7 @@ const Index = () => {
               </motion.div>
               <motion.div variants={fadeUp} className="mt-12">
                 <Link to="/#apply">
-                  <Button className="bg-secondary hover:bg-white text-black rounded-full px-10 py-8 font-bold text-xl transition-colors">
+                  <Button className="bg-white text-[#0F172A] hover:bg-white/90 rounded-full px-10 py-8 font-bold text-xl transition-colors">
                     Get Your Node Code <ArrowRight className="ml-2" size={24} />
                   </Button>
                 </Link>

@@ -27,7 +27,7 @@ const TermsAndConditions = () => (
           <motion.div variants={fadeUp} className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary mb-8 shadow-sm border border-secondary/10">
             <Scale size={28} />
           </motion.div>
-          <motion.div variants={fadeUp} className="inline-block bg-secondary/10 text-secondary font-bold px-5 py-2 rounded-full mb-6 tracking-wide text-xs uppercase">
+          <motion.div variants={fadeUp} className="inline-block bg-secondary/10 text-secondary font-bold px-5 py-2 rounded-full mb-6 tracking-wide text-xs uppercase border border-secondary/20">
             Legal
           </motion.div>
           <motion.h1 variants={fadeUp} className="text-3xl md:text-4xl lg:text-6xl font-heading font-extrabold mb-4 leading-tight tracking-tight text-[#1A1A1A]">
