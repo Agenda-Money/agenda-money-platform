@@ -15,9 +15,13 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import CookiePolicy from "./pages/CookiePolicy";
 import Careers from "./pages/Careers";
+import UnderConstruction from "./pages/UnderConstruction";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+// Toggle to true to show the "under construction" page site-wide.
+// Set back to false to restore normal site.
+const UNDER_CONSTRUCTION = true;
 
 const queryClient = new QueryClient();
 
@@ -78,6 +82,10 @@ const App = () => {
       document.removeEventListener('cut', handleCut);
     };
   }, []);
+
+  if (UNDER_CONSTRUCTION) {
+    return <UnderConstruction />;
+  }
 
   return (
     <QueryClientProvider client={queryClient}>
