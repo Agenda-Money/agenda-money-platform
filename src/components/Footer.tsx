@@ -147,9 +147,9 @@ const Footer = () => {
             <p className="text-white/80 text-[10px] font-black uppercase tracking-[0.2em] text-center">
               G.I.A.C PORTFOLIO COMPANY
             </p>
-            <div className="flex items-center justify-center gap-6 pt-1">
-              <img src="/partner-logos/mcag.png" alt="Micro-Credit Association of Ghana" className="h-8 w-auto object-contain opacity-90" />
-              <img src="/partner-logos/data-protection.png" alt="Data Protection Commission Ghana" className="h-8 w-auto object-contain opacity-90" />
+            <div className="flex items-center justify-center gap-4 pt-1">
+              <img src="/partner-logos/mcag.png" alt="Micro-Credit Association of Ghana" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+              <img src="/partner-logos/data-protection.png" alt="Data Protection Commission Ghana" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
             </div>
           </div>
 
