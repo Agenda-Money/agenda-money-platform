@@ -155,13 +155,17 @@ const Footer = () => {
 
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-          <img src="/partner-logos/mtn.svg" alt="MTN MoMo" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
-          <img src="/partner-logos/telecel.png" alt="Telecel Cash" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
-          <img src="/partner-logos/at-money.svg" alt="AT Money" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
-          <img src="/partner-logos/paystack.png" alt="Paystack" className="h-7 w-auto object-contain bg-white rounded-lg px-3 py-2" />
-          <img src="/partner-logos/itc.png" alt="IT Consortium" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
-          <img src="/partner-logos/appsnmobile.png" alt="appsNmobile Solutions" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+        <div className="flex flex-col items-center gap-4 mt-8">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <img src="/partner-logos/mtn.svg" alt="MTN MoMo" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+            <img src="/partner-logos/telecel.png" alt="Telecel Cash" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+            <img src="/partner-logos/at-money.svg" alt="AT Money" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <img src="/partner-logos/paystack.png" alt="Paystack" className="h-7 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+            <img src="/partner-logos/itc.png" alt="IT Consortium" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+            <img src="/partner-logos/appsnmobile.png" alt="appsNmobile Solutions" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+          </div>
         </div>
       </div>
 
