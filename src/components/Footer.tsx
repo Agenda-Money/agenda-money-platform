@@ -142,28 +142,26 @@ const Footer = () => {
               © 2025 Agenda Money Limited. <span className="text-white/80 font-black ml-1"></span>
             </p>
             <p className="text-white/50 text-[10px] font-bold uppercase tracking-[0.1em] text-center max-w-xl leading-relaxed">
-              OPERATING UNDER THE RULES & REGULATIONS OF THE MICRO-CREDIT ASSOCIATION OF GHANA (MCAC)
+              REGISTERED MEMBER OF THE MICRO-CREDIT ASSOCIATION OF GHANA (MCAG)
             </p>
             <p className="text-white/80 text-[10px] font-black uppercase tracking-[0.2em] text-center">
               G.I.A.C PORTFOLIO COMPANY
             </p>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-white/40">
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
-              <span className="text-[10px] font-black tracking-tighter uppercase">MTN MoMo</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
-              <span className="text-[10px] font-black tracking-tighter uppercase">Telecel Cash</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-white/40"></div>
-              <span className="text-[10px] font-black tracking-tighter uppercase">AT Money</span>
+            <div className="flex items-center justify-center gap-6 pt-1">
+              <img src="/partner-logos/mcag.png" alt="Micro-Credit Association of Ghana" className="h-8 w-auto object-contain opacity-90" />
+              <img src="/partner-logos/data-protection.png" alt="Data Protection Commission Ghana" className="h-8 w-auto object-contain opacity-90" />
             </div>
           </div>
 
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <img src="/partner-logos/mtn.svg" alt="MTN MoMo" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+          <img src="/partner-logos/telecel.png" alt="Telecel Cash" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+          <img src="/partner-logos/at-money.svg" alt="AT Money" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+          <img src="/partner-logos/paystack.png" alt="Paystack" className="h-7 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+          <img src="/partner-logos/itc.png" alt="IT Consortium" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
+          <img src="/partner-logos/appsnmobile.png" alt="appsNmobile Solutions" className="h-9 w-auto object-contain bg-white rounded-lg px-3 py-2" />
         </div>
       </div>
 

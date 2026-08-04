@@ -21,7 +21,7 @@ import { useLocation } from "react-router-dom";
 
 // Toggle to true to show the "under construction" page site-wide.
 // Set back to false to restore normal site.
-const UNDER_CONSTRUCTION = true;
+const UNDER_CONSTRUCTION = false;
 
 const queryClient = new QueryClient();
 
