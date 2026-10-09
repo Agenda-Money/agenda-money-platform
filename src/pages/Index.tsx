@@ -37,7 +37,7 @@ const testimonials = [
   { quote: "I needed GHS 200 for a medical emergency and Agenda Money came through in less than 5 minutes. No stress, no wahala!", name: "Kwame A.", loc: "Accra" },
   { quote: "The whole process is online — I didn't have to go anywhere. Applied on my phone and got the money instantly.", name: "Abena M.", loc: "Kumasi" },
   { quote: "I've been able to grow my shop from one table to a full kiosk, all thanks to Agenda Money loans.", name: "Yusif D.", loc: "Tamale" },
-  { quote: "They actually reward you for paying on time. My interest rate keeps dropping — I love it!", name: "Esi K.", loc: "Cape Coast" },
+  { quote: "They actually reward you for paying on time. My loan limit keeps growing — I love it!", name: "Esi K.", loc: "Cape Coast" },
 ];
 
 const defaultLoanEnquiryValues: LoanEnquiryValues = {
@@ -284,7 +284,7 @@ const Index = () => {
              <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-start h-full min-h-[340px]">
                <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center text-primary mb-8 shrink-0"><PricingIcon size={40} /></div>
                 <h3 className="text-2xl lg:text-3xl font-heading font-black text-[#1A1A1A] mb-4 shrink-0">Transparent Pricing</h3>
-                <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed flex-grow">Interest is calculated and applied daily. Early repayment reduces your cost of borrowing.</p>
+                <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed flex-grow">Interest is 0.5% a day and never more than 7%, however long your loan runs. Repay early and the interest you have not used is rebated to your wallet.</p>
              </motion.div>
              <motion.div variants={fadeUp} className="bg-primary text-white rounded-[2.5rem] p-10 shadow-xl shadow-primary/30 flex flex-col justify-start h-full min-h-[340px]">
                <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center text-white mb-8 shrink-0"><FlexibleTermsIcon size={40} /></div>
@@ -294,7 +294,7 @@ const Index = () => {
              <motion.div variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 shadow-xl shadow-black/5 border border-black/5 flex flex-col justify-start h-full min-h-[340px]">
                 <div className="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center text-secondary mb-8 shrink-0"><Banknote size={40} /></div>
                 <h3 className="text-2xl lg:text-3xl font-heading font-black text-[#1A1A1A] mb-4 shrink-0">Flat Fees</h3>
-               <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed flex-grow">You pay a fixed processing fee no matter the amount you borrow. Your cost of borrowing reduces as you unlock higher loan amounts.</p>
+               <p className="text-[#6A6A6A] text-lg font-medium leading-relaxed flex-grow">You pay a fixed processing fee of GHS 15 to GHS 30, depending on your tier, however much you borrow. It is taken from the amount you receive, and it falls as you move up tiers.</p>
              </motion.div>
           </motion.div>
         </div>
@@ -438,10 +438,10 @@ const Index = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight mb-4"
             >
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent animate-gradient-x">
-                Trusted by thousands,
+                Trusted for
               </span> 
               <br className="sm:hidden" />
-              <span className="text-primary/70"> for fast, fair and reliable </span>
+              <span className="text-primary/70"> fast, fair and reliable </span>
               <br className="lg:hidden" />
               <span className="text-[#1A1A1A] relative inline-block">
                 financial support

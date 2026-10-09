@@ -16,6 +16,8 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import CookiePolicy from "./pages/CookiePolicy";
 import Careers from "./pages/Careers";
 import UnderConstruction from "./pages/UnderConstruction";
+import CookieBanner from "./components/CookieBanner";
+import RouteMeta from "./components/RouteMeta";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -37,20 +39,17 @@ const ScrollToTop = () => {
   return null;
 };
 
-declare global {
-  interface Window {
-    gtag: (...args: any[]) => void;
-  }
-}
-
 const Analytics = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Analytics: Track page views on route changes
+    // Page views on route changes; gtag only exists once the visitor has
+    // accepted analytics (see lib/consent.ts).
     if (window.gtag) {
-      window.gtag('config', import.meta.env.VITE_GA_ID, {
+      window.gtag('event', 'page_view', {
         page_path: location.pathname + location.search,
+        page_location: window.location.href,
+        page_title: document.title,
       });
     }
   }, [location]);
@@ -95,6 +94,8 @@ const App = () => {
         <BrowserRouter>
           <Analytics />
           <ScrollToTop />
+          <CookieBanner />
+          <RouteMeta />
           <Layout>
             <Routes>
               <Route path="/" element={<Index />} />

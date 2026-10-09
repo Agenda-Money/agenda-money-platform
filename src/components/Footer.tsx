@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { analyticsConfigured, reopenConsent } from "@/lib/consent";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -108,6 +109,7 @@ const Footer = () => {
               {[
                 { label: "Privacy Policy", to: "/privacy-policy" },
                 { label: "Terms & Conditions", to: "/terms-and-conditions" },
+                { label: "Cookie Policy", to: "/cookie-policy" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
@@ -116,6 +118,14 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              {analyticsConfigured && (
+                <li>
+                  <button type="button" onClick={reopenConsent} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">
+                    <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all"></span>
+                    Cookie Settings
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 
@@ -139,7 +149,7 @@ const Footer = () => {
         <div className="pt-12 border-t border-white/10 flex flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center gap-4">
             <p className="text-white/80 text-xs font-medium tracking-wide text-center">
-              © 2025 Agenda Money Limited. <span className="text-white/80 font-black ml-1"></span>
+              © {currentYear} Agenda Money Limited. <span className="text-white/80 font-black ml-1"></span>
             </p>
             <p className="text-white/50 text-[10px] font-bold uppercase tracking-[0.1em] text-center max-w-xl leading-relaxed">
               REGISTERED MEMBER OF THE MICRO-CREDIT ASSOCIATION OF GHANA (MCAG)

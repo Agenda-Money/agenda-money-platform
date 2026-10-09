@@ -24,7 +24,7 @@ const CookiePolicy = () => (
             Cookie <span className="text-primary italic">Policy</span>
           </motion.h1>
           <motion.p variants={fadeUp} className="text-white/60 text-sm font-medium">
-            Last updated: March 2025
+            Last updated: October 2026
           </motion.p>
         </motion.div>
       </div>
@@ -55,7 +55,7 @@ const CookiePolicy = () => (
             </div>
             <div className="bg-[#FAFAFA] border border-black/5 rounded-2xl p-5">
               <h3 className="font-heading font-black text-[#1A1A1A] mb-2 text-base">📊 Analytics Cookies</h3>
-              <p>We use analytics cookies to understand how visitors interact with our platform — which pages are visited most, how long users spend on each page and where drop-offs occur in the loan application flow. This helps us improve our user experience. We may use tools such as Google Analytics for this purpose.</p>
+              <p>We use analytics cookies to understand how visitors interact with our platform — which pages are visited most, how long users spend on each page and where drop-offs occur in the loan application flow. This helps us improve our user experience. We use Google Analytics and Microsoft Clarity (which records anonymised page interactions such as clicks and scrolling) for this purpose. These are switched off until you accept them in our cookie banner, and nothing is sent to either provider before then.</p>
             </div>
             <div className="bg-[#FAFAFA] border border-black/5 rounded-2xl p-5">
               <h3 className="font-heading font-black text-[#1A1A1A] mb-2 text-base">🎯 Functional Cookies</h3>
@@ -72,6 +72,7 @@ const CookiePolicy = () => (
           <p>Some cookies on our platform are set by third-party service providers who help us deliver our services, including:</p>
           <ul className="list-disc pl-6 space-y-2 mt-3">
             <li><strong>Google Analytics</strong> — for website analytics and performance measurement.</li>
+            <li><strong>Microsoft Clarity</strong> — for understanding how visitors use our pages (for example where they click and scroll).</li>
             <li><strong>Payment Processors</strong> — for secure mobile money transaction processing.</li>
             <li><strong>Customer Support Tools</strong> — for live chat and support ticket management.</li>
           </ul>
@@ -87,7 +88,7 @@ const CookiePolicy = () => (
           <ul className="list-disc pl-6 space-y-2 mt-3">
             <li><strong>Browser Settings:</strong> Most browsers allow you to view, block, or delete cookies through their settings (usually under "Privacy" or "Security").</li>
             <li><strong>Opt-Out Tools:</strong> For analytics cookies, you can opt out of Google Analytics by using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">Google Analytics Opt-Out Browser Add-on</a>.</li>
-            <li><strong>Our Cookie Banner:</strong> When you first visit our site, you will be presented with a cookie consent notice where you can accept or decline non-essential cookies.</li>
+            <li><strong>Our Cookie Banner:</strong> When you first visit our site, you will be presented with a cookie consent notice where you can accept or decline analytics cookies. You can change your choice at any time using "Cookie Settings" in the footer.</li>
           </ul>
           <p className="mt-3">Note: disabling certain cookies may impact the functionality of our platform, particularly the loan application process.</p>
         </Section>
