@@ -109,7 +109,6 @@ const Footer = () => {
               {[
                 { label: "Privacy Policy", to: "/privacy-policy" },
                 { label: "Terms & Conditions", to: "/terms-and-conditions" },
-                { label: "Cookie Policy", to: "/cookie-policy" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link to={link.to} className="text-white/60 hover:text-white text-sm lg:text-base transition-colors duration-300 flex items-center group">

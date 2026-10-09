@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import {
   REOPEN_EVENT,
   analyticsConfigured,
@@ -40,11 +39,7 @@ const CookieBanner = () => {
     >
       <p className="text-sm font-medium leading-relaxed text-[#4A4A4A]">
         We use analytics cookies (Google Analytics and Microsoft Clarity) to see how the site is used and improve it.
-        They stay off unless you accept. See our{" "}
-        <Link to="/cookie-policy" className="font-bold text-primary underline-offset-2 hover:underline">
-          Cookie Policy
-        </Link>
-        .
+        They stay off unless you accept.
       </p>
       <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:justify-end">
         <button
