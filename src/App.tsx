@@ -18,6 +18,7 @@ import Careers from "./pages/Careers";
 import UnderConstruction from "./pages/UnderConstruction";
 import CookieBanner from "./components/CookieBanner";
 import RouteMeta from "./components/RouteMeta";
+import { trackPageView } from "@/lib/consent";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -45,13 +46,7 @@ const Analytics = () => {
   useEffect(() => {
     // Page views on route changes; gtag only exists once the visitor has
     // accepted analytics (see lib/consent.ts).
-    if (window.gtag) {
-      window.gtag('event', 'page_view', {
-        page_path: location.pathname + location.search,
-        page_location: window.location.href,
-        page_title: document.title,
-      });
-    }
+    trackPageView();
   }, [location]);
 
   return null;
@@ -92,10 +87,10 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <RouteMeta />
           <Analytics />
           <ScrollToTop />
           <CookieBanner />
-          <RouteMeta />
           <Layout>
             <Routes>
               <Route path="/" element={<Index />} />

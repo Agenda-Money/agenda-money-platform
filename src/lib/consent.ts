@@ -49,6 +49,39 @@ const GA_ID = import.meta.env.VITE_GA_ID as string | undefined;
 const CLARITY_ID = import.meta.env.VITE_CLARITY_ID as string | undefined;
 
 let loaded = false;
+let lastPageView = "";
+
+/** One page_view per distinct path, so mount order can't double-count. */
+export const trackPageView = () => {
+  if (!window.gtag) return;
+  const path = window.location.pathname + window.location.search;
+  if (path === lastPageView) return;
+  lastPageView = path;
+  window.gtag("event", "page_view", {
+    page_path: path,
+    page_location: window.location.href,
+    page_title: document.title,
+  });
+};
+
+// Cookies written by the two analytics tools. Deleted on withdrawal for the
+// host and each parent domain, since they may be set on either.
+const ANALYTICS_COOKIE = /^(_ga|_gid|_gat|_clck|_clsk|CLID|ANONCHK|MR|MUID|SM)(_.*)?$/;
+
+const clearAnalyticsCookies = () => {
+  const names = document.cookie
+    .split(";")
+    .map((c) => c.split("=")[0].trim())
+    .filter((n) => ANALYTICS_COOKIE.test(n));
+  const parts = window.location.hostname.split(".");
+  const domains = [""];
+  for (let i = 0; i < parts.length - 1; i++) domains.push("; domain=." + parts.slice(i).join("."));
+  for (const name of names) {
+    for (const d of domains) {
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${d}`;
+    }
+  }
+};
 
 const inject = (src: string) => {
   const s = document.createElement("script");
@@ -76,6 +109,8 @@ export const loadAnalytics = () => {
     // Page views are sent per route by <Analytics /> in App.tsx.
     window.gtag("config", GA_ID, { send_page_view: false });
     inject(`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`);
+    // Pages viewed before consent aren't counted; this is the first one that is.
+    trackPageView();
   }
 
   if (CLARITY_ID) {
@@ -93,6 +128,7 @@ export const loadAnalytics = () => {
 export const disableAnalytics = () => {
   if (GA_ID) window[`ga-disable-${GA_ID}`] = true;
   window.clarity?.("consent", false);
+  clearAnalyticsCookies();
 };
 
 export const analyticsConfigured = Boolean(GA_ID || CLARITY_ID);
