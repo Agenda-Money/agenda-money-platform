@@ -13,7 +13,6 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import CookiePolicy from "./pages/CookiePolicy";
 import Careers from "./pages/Careers";
 import UnderConstruction from "./pages/UnderConstruction";
 import CookieBanner from "./components/CookieBanner";
@@ -102,7 +101,6 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-              <Route path="/cookie-policy" element={<CookiePolicy />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

@@ -49,10 +49,6 @@ export const ROUTE_META: Record<string, Meta> = {
     title: "Terms & Conditions",
     description: "The terms that apply when you use Agenda Money's loan services.",
   },
-  "/cookie-policy": {
-    title: "Cookie Policy",
-    description: "Which cookies Agenda Money uses, why, and how to control them.",
-  },
 };
 
 const NOT_FOUND: Meta = {
