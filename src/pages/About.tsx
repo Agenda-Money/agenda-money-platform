@@ -48,8 +48,8 @@ const About = () => (
                 <TrendingUp size={20} className="lg:w-8 lg:h-8" />
               </div>
               <div>
-                <p className="font-heading font-black text-lg lg:text-2xl tracking-tighter">2030 Vision</p>
-                <p className="text-[10px] lg:text-sm font-bold opacity-60">1M Empowered Africans</p>
+                <p className="font-heading font-black text-lg lg:text-2xl tracking-tighter">2035 Vision</p>
+                <p className="text-[10px] lg:text-sm font-bold opacity-60">3M+ Empowered Africans</p>
               </div>
             </div>
           </motion.div>
@@ -73,16 +73,16 @@ const About = () => (
                Our North Star is <span className="text-primary italic">Impact</span>
              </motion.h2>
              <motion.p variants={fadeUp} className="text-2xl md:text-3xl lg:text-4xl text-[#1A1A1A] leading-[1.3] font-medium italic border-l-4 border-secondary pl-8">
-               "To build and manage a loan book of <span className="text-primary font-black">$10 Million</span> for <span className="text-[#1A1A1A] font-black underline decoration-secondary decoration-8 underline-offset-8">a Million Africans</span> by 2030." - <span className="text-primary">We call it empowerment</span>
+               "To build and manage a loan book of <span className="text-primary font-black">$100 Million</span> for <span className="text-[#1A1A1A] font-black underline decoration-secondary decoration-8 underline-offset-8">3&nbsp;Million+ Africans</span> by 2035." - <span className="text-primary">We call it empowerment</span>
              </motion.p>
            </div>
            
            <motion.div variants={fadeUp} className="lg:col-span-4 hidden lg:block">
               <div className="bg-white px-10 py-10 rounded-[3rem] shadow-2xl border border-black/5 rotate-3 hover:rotate-0 transition-transform duration-500 flex flex-col gap-3">
-                <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#BABABA]">2030 Vision</div>
-                <div className="text-[5.5rem] font-heading font-black text-primary leading-none">1M</div>
+                <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#BABABA]">2035 Vision</div>
+                <div className="text-[5.5rem] font-heading font-black text-primary leading-none">3M+</div>
                 <div className="w-8 h-[2px] bg-primary/30 rounded-full"></div>
-                <div className="text-sm font-black uppercase tracking-[0.2em] text-[#8A8A8A]">A Million Africans</div>
+                <div className="text-sm font-black uppercase tracking-[0.2em] text-[#8A8A8A]">3 Million+ Africans</div>
               </div>
            </motion.div>
          </motion.div>

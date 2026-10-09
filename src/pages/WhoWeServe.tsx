@@ -107,10 +107,10 @@ const WhoWeServe = () => (
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="lg:col-span-4 lg:pr-12">
             <motion.div variants={fadeUp} className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full mb-6 tracking-wide uppercase text-sm">The Gap</motion.div>
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-[#1A1A1A] leading-[1.1] tracking-tight mb-8">
-              Closing the <br/><span className="text-secondary font-black">$5 Billion</span> <br/>Credit Gap
+              Closing the <br/><span className="text-secondary font-black">$330B</span> <br/>Credit Gap
             </motion.h2>
             <motion.p variants={fadeUp} className="text-lg lg:text-xl text-[#6A6A6A] leading-relaxed mb-10">
-              The SME credit gap in Sub-Saharan Africa exceeds US$330 billion. Agenda Money is here to close it — one sustainable microloan at a time.
+              The SME credit gap in Sub-Saharan Africa exceeds US$330 billion — over US$5 billion in Ghana alone. Agenda Money is here to close it — one sustainable microloan at a time.
             </motion.p>
             <motion.div variants={fadeUp}>
               <Link to="/#apply">
