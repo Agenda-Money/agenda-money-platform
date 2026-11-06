@@ -14,16 +14,16 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import Careers from "./pages/Careers";
-import UnderConstruction from "./pages/UnderConstruction";
+import Maintenance from "./pages/Maintenance";
+import { MAINTENANCE_MODE } from "@/lib/maintenance";
 import CookieBanner from "./components/CookieBanner";
 import RouteMeta from "./components/RouteMeta";
 import { trackPageView } from "@/lib/consent";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-// Toggle to true to show the "under construction" page site-wide.
-// Set back to false to restore normal site.
-const UNDER_CONSTRUCTION = false;
+// Maintenance mode is switched with VITE_MAINTENANCE_MODE at build time
+// (see lib/maintenance.ts); it is off unless that is exactly "true".
 
 const queryClient = new QueryClient();
 
@@ -53,6 +53,9 @@ const Analytics = () => {
 
 const App = () => {
   useEffect(() => {
+    // The maintenance page has contact details people will want to copy.
+    if (MAINTENANCE_MODE) return;
+
     const handleContextMenu = (e: MouseEvent) => {
       e.preventDefault();
     };
@@ -76,8 +79,8 @@ const App = () => {
     };
   }, []);
 
-  if (UNDER_CONSTRUCTION) {
-    return <UnderConstruction />;
+  if (MAINTENANCE_MODE) {
+    return <Maintenance />;
   }
 
   return (
