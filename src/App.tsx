@@ -22,8 +22,7 @@ import { trackPageView } from "@/lib/consent";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-// Maintenance mode is switched with VITE_MAINTENANCE_MODE at build time
-// (see lib/maintenance.ts); it is off unless that is exactly "true".
+// Maintenance mode: see lib/maintenance.ts (currently ON by default).
 
 const queryClient = new QueryClient();
 
