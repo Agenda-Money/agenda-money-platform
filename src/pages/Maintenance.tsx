@@ -36,17 +36,6 @@ const Maintenance = () => {
           {MAINTENANCE_ETA ? `Expected back: ${MAINTENANCE_ETA}.` : "Please check back shortly."}
         </p>
 
-        <div className="mt-8 w-full rounded-2xl bg-white/15 p-5 text-white backdrop-blur-sm">
-          <p className="font-semibold">Already a customer?</p>
-          <p className="mt-1 text-white/90">
-            Applying for a loan and repaying are not affected.{" "}
-            <a href="https://apply.agendamoney.com" className="font-bold underline underline-offset-2">
-              Go to the loan application
-            </a>
-            .
-          </p>
-        </div>
-
         <p className="mt-8 text-white/90">
           Need help? Email{" "}
           <a href="mailto:support@agendamoney.com" className="font-bold underline underline-offset-2">
