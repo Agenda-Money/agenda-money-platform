@@ -2,7 +2,7 @@
 // index.html (what a crawler that doesn't run JS, like WhatsApp's, will see);
 // this keeps them in step as the visitor moves around the SPA.
 
-export const SITE_URL = "https://agendamoney.com";
+export const SITE_URL = "https://www.agendamoney.com";
 const SUFFIX = "Agenda Money";
 
 type Meta = { title: string; description: string };
